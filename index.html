@@ -4,9 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>P6 créer un site accessible pour une plateforme de photographes</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </head>
 <body>
-    
+    <div class="container" aria-label="Website Container">
+        <header class="entete" aria-label="Header of the website">
+            <div class="logo" aria-label="Logo Fisheye">
+                <a href="/"><img src="./img/logo.JPG" alt="logo Fisheye"></a>
+            </div>
+            <nav class="menu" role="navigation" aria-label="Photographer's tags">
+                <a href="#portrait" data-filter="portrait">#Portrait</a>
+                <a href="#art" data-filter="art">#Art</a>            
+                <a href="#fashion" data-filter="fashion">#Fashion</a>
+                <a href="#architecture" data-filter="architecture">#Architecture</a>
+                <a href="#travel" data-filter="travel">#Travel</a>
+                <a href="#sport" data-filter="sport">#Sport</a>
+                <a href="#animals" data-filter="animals">#Animals</a>
+                <a href="#events" data-filter="events">#Events</a>
+
+            </nav>
+            <h1>
+                Nos photographes
+            </h1>
+        </header>
+        <main class="global">
+            <section class="listPhs" aria-label="Photographers list">
+            </section>
+        </main>
+    </div>
 </body>
 </html>

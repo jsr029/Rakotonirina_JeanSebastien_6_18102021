@@ -2,6 +2,8 @@ body {
   margin: 0;
   padding: 0;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 * {
@@ -20,17 +22,14 @@ img {
 }
 
 .container {
+  flex: 1;
   max-width: 1440px;
   margin: auto;
   display: flex;
   flex-direction: column;
 }
 
-header, section {
-  flex: 1;
-}
-
-.main {
+.listPhs {
   max-width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -39,20 +38,24 @@ header, section {
   row-gap: 30px;
 }
 
-.artist {
+.ph {
   width: 30%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
 }
-.artist .foto {
+.ph .foto {
   width: 200px;
   height: 200px;
   margin: 0 auto;
   border-radius: 50%;
   object-fit: cover;
   overflow: hidden;
+}
+
+header, main {
+  flex: 1;
 }
 
 header {
@@ -66,8 +69,7 @@ header {
 header img {
   width: 200px;
 }
-
-nav {
+header nav {
   position: absolute;
   left: 50%;
   right: 50%;
