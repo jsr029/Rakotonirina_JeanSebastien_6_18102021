@@ -1,0 +1,25 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "P6 Créer un site accessible pour une plateforme de photographes",
+  "main": "main.js",
+  "scripts": {
+    "sass": "sass --watch ./css/sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsr029/Rakotonirina_JeanSebastien_6_18102021.git"
+  },
+  "keywords": [
+    "P6",
+    "accessibility",
+    "website",
+    "photographers"
+  ],
+  "author": "jsr029",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsr029/Rakotonirina_JeanSebastien_6_18102021/issues"
+  },
+  "homepage": "https://github.com/jsr029/Rakotonirina_JeanSebastien_6_18102021#readme"
+}
