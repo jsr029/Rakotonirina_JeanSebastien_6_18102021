@@ -1,6 +1,6 @@
 import launchIndex from "./launchIndex.js";
 
-var requestURL = '../json/fisheye.json';
+var requestURL = './json/fisheye.json';
 var request = new XMLHttpRequest();
 request.open('GET', requestURL);
 request.responseType = 'text';
