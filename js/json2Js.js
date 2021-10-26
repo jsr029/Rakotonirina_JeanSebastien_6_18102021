@@ -19,8 +19,10 @@ function onload() {
 var databaseAvailable = onload().then(function() {
     const datas = request.response;
     const database = JSON.parse(datas);
-    return database;
-});
+
+        //console.log(database) ; 
+         return database;
+    });
 // databaseAvailable is a Promise object that resolves once datas
 // is executed and the result returned. It resolves with the returned value.
 // The handler passed to .then will be called once databaseAvailable resolves.

@@ -6,16 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>P6 créer un site accessible pour une plateforme de photographes</title>
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://d3js.org/d3.v5.min.js"></script>
     <script type="module" src="./js/main.js"></script>
 </head>
 <body>
-    <div class="container" aria-label="Website Container">
-        <header class="entete" aria-label="Header of the website">
-            <div class="logo" aria-label="Logo Fisheye">
+    <div class="container" role="Website Container">
+        <header class="entete" role="Header of the website">
+            <div class="logo" role="Logo Fisheye">
                 <a href="/"><img src="./img/logo.JPG" alt="logo Fisheye"></a>
             </div>
-            <nav class="menu" role="navigation" aria-label="Photographer's tags">
+            <nav class="menu" role="navigation">
                 <a href="#portrait" data-filter="portrait">#Portrait</a>
                 <a href="#art" data-filter="art">#Art</a>            
                 <a href="#fashion" data-filter="fashion">#Fashion</a>
@@ -31,7 +30,7 @@
             </h1>
         </header>
         <main class="global">
-            <section class="listPhs" aria-label="Photographers list">
+            <section class="listPhs" role="Photographers list">
             </section>
         </main>
     </div>

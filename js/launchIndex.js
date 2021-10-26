@@ -1,9 +1,9 @@
 //var header = document.querySelector('header');
 var section = document.querySelector('section');
 function launchIndex(datasPhs) {
-    var fotografers = datasPhs.photographers;
+    var fotografers = datasPhs;
+    fotografers = Array.from(new Set(fotografers));
     console.log(fotografers);
-
     for (var i = 0; i < fotografers.length; i++) {
         var myArticle = document.createElement('article');
         myArticle.className = "ph";
@@ -45,4 +45,5 @@ function launchIndex(datasPhs) {
     }
 
 }
+
 export default launchIndex;
