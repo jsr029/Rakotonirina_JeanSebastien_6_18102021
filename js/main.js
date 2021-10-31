@@ -5,25 +5,26 @@ var datasPhs = [];
 const aList = document.querySelectorAll('a');
 databaseAvailable.then(function(database) {
         d = database.photographers;
-        launchIndex(d);
+        new launchIndex(d);
         //console.log(d);
-        aList.forEach((btn) => btn.addEventListener("click", getTagUrl));
+        var newGetTagUrl = getTagUrl();
+        aList.forEach((btn) => btn.addEventListener("click", newGetTagUrl));
     console.log(database);
 });
-function getTagUrl(){
+ var getTagUrl = function(){
     const urlClicked = window.location.href;
     const urlSplit = urlClicked.split('#');
     const urlTag = urlSplit[1];
     console.log(urlTag);
         d.forEach(function(k){
              if(k.tags.includes(urlTag)){
-            datasPhs = [];
-            datasPhs.push(k);
-            console.log(k);
-            launchIndex(datasPhs);
+                datasPhs = [];
+                datasPhs.push(k);
+                console.log(k);
+                new launchIndex(datasPhs);
                 }
             });
-}
+};
 function removeListPhs(){
      // select the target element
      const e = document.querySelectorAll("article");

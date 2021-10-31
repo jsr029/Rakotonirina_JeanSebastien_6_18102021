@@ -1,6 +1,6 @@
 //var header = document.querySelector('header');
 var section = document.querySelector('section');
-function launchIndex(datasPhs) {
+ var launchIndex = function(datasPhs) {
         var fotografers = datasPhs;
         fotografers = Array.from(new Set(fotografers));
         console.log(fotografers);
@@ -43,6 +43,6 @@ function launchIndex(datasPhs) {
 
             section.appendChild(myArticle);
         }
-}
+};
 
 export default launchIndex;
