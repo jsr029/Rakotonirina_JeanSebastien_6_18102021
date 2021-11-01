@@ -1,5 +1,6 @@
 import databaseAvailable from "./json2Js.js";
 import launchIndex from "./launchIndex.js";
+import activeClass from "./activeClass.js";
 var d = [];
 var datasPhs = [];
 const aList = document.querySelectorAll('a');
@@ -37,4 +38,4 @@ window.addEventListener('hashchange', function() {
     removeListPhs();
     getTagUrl();
   }, false);
-  
+  activeClass();
