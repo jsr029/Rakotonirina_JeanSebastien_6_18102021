@@ -8,6 +8,9 @@ var section = document.querySelector('section');
             var myArticle = document.createElement('article');
             myArticle.className = "ph";
             myArticle.label = fotografers[i].name + "'s details";
+            var myNavA = document.createElement('a');
+            myNavA.className = 'photograph';
+            myNavA.href = "/photograph.html?id=" + fotografers[i].id;
             var myH2 = document.createElement('h2');
             myH2.className = "name";
             var myPara1 = document.createElement('img');
@@ -34,8 +37,10 @@ var section = document.querySelector('section');
             myList.appendChild(listItem);
             }
 
-            myArticle.appendChild(myPara1);
-            myArticle.appendChild(myH2);
+            myArticle.appendChild(myNavA);
+            
+            myNavA.appendChild(myPara1);
+            myNavA.appendChild(myH2);
             myArticle.appendChild(myPara2);
             myArticle.appendChild(myPara3);
             myArticle.appendChild(myPara4);      

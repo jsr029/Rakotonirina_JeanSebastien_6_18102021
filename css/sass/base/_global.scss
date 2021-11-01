@@ -14,6 +14,10 @@
 img{
     border:none;
 }
+a{
+   text-decoration: none;
+}
+
 .container{
 	display: flex;
 	flex-direction: column;
@@ -28,6 +32,7 @@ img{
     justify-content: space-around;
     align-items: center;
     row-gap: 30px;
+    margin-top: 50px;
 }
 .ph{
     width: 30%;
@@ -35,7 +40,12 @@ img{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    cursor: pointer;
+    a{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        }
     .foto{
         width: 200px;
         height: 200px;
@@ -66,9 +76,6 @@ header, main{
         justify-content: space-around;
         align-items: center;
         column-gap: 10px;
-        a{
-            text-decoration: none;
-        }
     }
 }
 .tags{
