@@ -1,6 +1,6 @@
 class Datas {
     async getJson() {
-        let url = '../json/fisheye.json';
+        let url = './json/fisheye.json';
         let response = await fetch(url);
         let data = await response.json();
 
