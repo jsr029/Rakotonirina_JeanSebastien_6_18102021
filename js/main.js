@@ -10,17 +10,20 @@ databaseAvailable.then(function(database) {
         //console.log(d);
         var newGetTagUrl = getTagUrl();
         aList.forEach((btn) => btn.addEventListener("click", newGetTagUrl));
+    console.clear();
     console.log(database);
 });
  var getTagUrl = function(){
     const urlClicked = window.location.href;
     const urlSplit = urlClicked.split('#');
     const urlTag = urlSplit[1];
+    console.clear();
     console.log(urlTag);
         d.forEach(function(k){
              if(k.tags.includes(urlTag)){
                 datasPhs = [];
                 datasPhs.push(k);
+    console.clear();
                 console.log(k);
                 new launchIndex(datasPhs);
                 }

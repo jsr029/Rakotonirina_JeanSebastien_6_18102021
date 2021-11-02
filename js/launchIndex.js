@@ -3,6 +3,7 @@ var section = document.querySelector('section');
  var launchIndex = function(datasPhs) {
         var fotografers = datasPhs;
         fotografers = Array.from(new Set(fotografers));
+        console.clear();
         console.log(fotografers);
         for (var i = 0; i < fotografers.length; i++) {
             var myArticle = document.createElement('article');
