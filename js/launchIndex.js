@@ -11,7 +11,7 @@ var section = document.querySelector('section');
             myArticle.label = fotografers[i].name + "'s details";
             var myNavA = document.createElement('a');
             myNavA.className = 'photograph';
-            myNavA.href = "/photograph.html?id=" + fotografers[i].id;
+            myNavA.href = "/Rakotonirina_JeanSebastien_6_18102021/photograph.html?id=" + fotografers[i].id;
             var myH2 = document.createElement('h2');
             myH2.className = "name";
             var myPara1 = document.createElement('img');
