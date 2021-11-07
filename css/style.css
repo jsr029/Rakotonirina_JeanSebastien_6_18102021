@@ -201,4 +201,8 @@ h2 {
   padding: 2px 10px;
 }
 
+.photographHeader .logo a img {
+  width: 200px;
+}
+
 /*# sourceMappingURL=style.css.map */
