@@ -101,6 +101,9 @@ header.entete nav {
   align-items: center;
   column-gap: 10px;
 }
+header.entete a {
+  color: #901c1c;
+}
 
 .tags {
   list-style-type: none;
