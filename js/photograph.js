@@ -33,7 +33,7 @@ function getProfilById(dataPhs) {
             address.textContent = k.city + ', ' + k.country;
             tagline.textContent = k.tagline;
             tags.textContent = k.tags;
-            photo.src = "../img/Photographers ID Photos/" + k.portrait;
+            photo.src = "./img/Photographers ID Photos/" + k.portrait;
             photo.alt = k.name;
             photo.title = k.name;
         }
