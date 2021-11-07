@@ -1,6 +1,7 @@
 import databaseAvailable from "./json2Js.js";
 import loopPhs from "./loopPhs.js";
 import getPhs from "./getPhs.js";
+import activeClass from "./activeClass.js";
 databaseAvailable.then(function (r) {
     var d = r.photographers;
     //Instantiate Object Photographers 
@@ -9,6 +10,7 @@ databaseAvailable.then(function (r) {
     new loopPhs(d);
     //Select all a in nav header in nav const
     const nav = document.querySelectorAll("nav a");
+
     //For each a listen on clic events and find the tag menu word
     nav.forEach((elm) => elm.addEventListener("click", function () {
         //Remove index Html
@@ -32,6 +34,7 @@ databaseAvailable.then(function (r) {
             }
         });
     }));
+    activeClass();
 });
 //Function remove Index Html
 function removeIndexHtml() {

@@ -6,6 +6,10 @@ header nav a{
     border: 1px solid #901C1C;
     border-radius: 20px;
     padding: 2px 10px;
+    &:hover, &.active{
+        background: #901C1C;
+        color: white;
+    }
 }
 h2{
     color: #D3573C;

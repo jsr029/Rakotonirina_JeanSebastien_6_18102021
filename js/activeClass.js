@@ -1,10 +1,11 @@
-function activeClass() {
-    var elems = document.querySelectorAll(".active");
-    elems.forEach(elm=>elm.addEventListener("click", function(){
-        if(elm.className.indexOf() == -1){
-            elm.classList.add("active");
+function activeClass(){
+    var menuA = document.querySelectorAll('.menu a');
+    menuA.forEach((elm) => elm.addEventListener("click", function(event){
+        console.log(elm);
+        if (elm.className == 'active' || elm.className == '') {
+            elm.className = 'active';
         }else{
-            elm.className = "";
+            elm.className = "notActive";
         }
     }));
 }
