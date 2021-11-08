@@ -12,12 +12,12 @@
 <body>
     <div class="container">
         <header class="entete" role="banner" aria-labelledby="titleId">
-            <div class="logo" tabindex="2">
+            <div class="logo" tabindex="2"  aria-level="2">
                 <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/"><img src="./img/logo.JPG"
                         alt="logo Fisheye"></a>
             </div>
-            <a id="flightMenu" href="#listPhotographers" role="navigation" tabindex="1">Passer au contenu</a>
-            <nav class="menu" role="navigation" aria-label="Photographer's tag" tabindex="3">
+            <a id="flightMenu" href="#listPhotographers" aria-level="1"  tabindex="1">Passer au contenu</a>
+            <nav class="menu" role="navigation" aria-label="Photographer's tag" tabindex="3" aria-level="3">
                 <a href="#portrait" data-filter="portrait">#Portrait</a>
                 <a href="#art" data-filter="art">#Art</a>
                 <a href="#fashion" data-filter="fashion">#Fashion</a>
@@ -27,7 +27,7 @@
                 <a href="#animals" data-filter="animals">#Animals</a>
                 <a href="#events" data-filter="events">#Events</a>
             </nav>
-            <h1 role="sectionhead" id="titleId" tabindex="4">
+            <h1 id="titleId" tabindex="4">
                 Nos photographes
             </h1>
         </header>
