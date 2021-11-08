@@ -35,7 +35,6 @@ databaseAvailable.then(function (r) {
             }
         });
     }));
-    activeClass();
 });
 //Function remove Index Html
 function removeIndexHtml() {
