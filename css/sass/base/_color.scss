@@ -1,29 +1,37 @@
-body{
+body {
     color: #901C1C;
 }
-header nav a{
+
+header nav a {
     color: #901C1C;
     border: 1px solid #901C1C;
     border-radius: 20px;
     padding: 2px 10px;
-    &:hover, &.active{
+
+    &:hover,
+    &.active {
         background: #901C1C;
         color: white;
     }
 }
-h2{
+
+h2 {
     color: #D3573C;
 }
-.location{
+
+.location {
     color: #901C1C;
 }
-.tagline{
+
+.tagline {
     color: black;
 }
-.price{
-    color:#757575
+
+.price {
+    color: #757575
 }
-.tags li{
+
+.tags li {
     border: 1px solid #901C1C;
     border-radius: 20px;
     padding: 2px 10px;

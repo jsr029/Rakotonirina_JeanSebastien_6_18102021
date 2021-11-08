@@ -29,12 +29,12 @@ var loopPhs = function (d) {
         taglineH.className = "tagline";
         tagsH.className = "tags";
         priceH.className = "price";
-        
+
         navA.tabIndex = 2 * i + 5;
         addressH.tabIndex = 3 * i + 6;
-        taglineH.tabIndex = 3 * i + 6;        
+        taglineH.tabIndex = 3 * i + 6;
         priceH.tabIndex = 3 * i + 6;
-        tagsH.tabIndex = 4 * i +7;
+        tagsH.tabIndex = 4 * i + 7;
 
         for (var j = 0; j < tags.length; j++) {
             var liH = document.createElement('li');
