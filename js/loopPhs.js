@@ -30,15 +30,6 @@ var loopPhs = function (d) {
         tagsH.className = "tags";
         priceH.className = "price";
 
-        for(let i=0; i < id.length; i++){
-            j=5;
-            navA[i].tabIndex = j++;
-            addressH[i].tabIndex = j++;
-            taglineH[i].tabIndex = j++;
-            priceH[i].tabIndex = j++;
-            tagsH[i].tabIndex = j++;
-        }
-
         for (var j = 0; j < tags.length; j++) {
             var liH = document.createElement('li');
             liH.textContent = "#" + tags[j];
@@ -62,5 +53,14 @@ var loopPhs = function (d) {
         priceH.textContent = price;
         article.appendChild(tagsH);
     }
+        const allA = document.querySelectorAll('.ph a');
+        allA.forEach(function(element){
+            for(let i=0; i < name.length; i++){
+                var j=5;
+                j++;
+                element.tabIndex = j;
+            }
+                });
+                console.log(allA.length);
 };
 export default loopPhs;
