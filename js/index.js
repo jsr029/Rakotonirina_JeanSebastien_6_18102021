@@ -2,7 +2,9 @@ import databaseAvailable from "./json2Js.js";
 import loopPhs from "./loopPhs.js";
 import getPhs from "./getPhs.js";
 import activeClass from "./activeClass.js";
+import FlightMenu from "./flightMenu.js";
 databaseAvailable.then(function (r) {
+    new FlightMenu().menuTop();
     var d = r.photographers;
     //Instantiate Object Photographers 
     var dataPhs = new getPhs(d);
