@@ -12,7 +12,7 @@ class Header {
             console.log(element);
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
-                <a href="${window.location.origin}" tabindex="2"><img src="../../img/logo.JPG" alt="Logo Fisheye"></a>
+                <img src="../../img/logo.JPG" alt="Logo Fisheye" tabindex="2">
                 <nav id="Menu" class="menu" tabindex="3">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
