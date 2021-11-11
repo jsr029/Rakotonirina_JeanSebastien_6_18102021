@@ -1,4 +1,5 @@
-import ActiveClass from "./activeClass";
+'use strick';
+import ActiveClass from "./activeClass.js";
 import GetPhs from "./GetPhs.js";
 import removeIndex from "./removeIndex.js";
 class Header {
@@ -12,7 +13,7 @@ class Header {
             console.log(element);
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
-                <a href="/" tabindex="2"><img src="./img/logo.JPG" alt="Logo Fisheye"></a>
+                <a href="${window.location.origin}" tabindex="2"><img src="../../img/logo.JPG" alt="Logo Fisheye"></a>
                 <nav id="Menu" class="menu" tabindex="3">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
