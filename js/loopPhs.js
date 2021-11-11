@@ -52,15 +52,12 @@ var loopPhs = function (d) {
         article.appendChild(priceH);
         priceH.textContent = price;
         article.appendChild(tagsH);
-    }
-        const allA = document.querySelectorAll('.ph a');
-        allA.forEach(function(element){
-            for(let i=0; i < name.length; i++){
-                var j=5;
-                j++;
-                element.tabIndex = j;
+
+            for(let z=0; z < d.length; z++){
+                var pha = document.querySelector(".ph a");
+                var l = 5;
+                pha.tabIndex = l + z;
             }
-                });
-                console.log(allA.length);
+    }
 };
 export default loopPhs;
