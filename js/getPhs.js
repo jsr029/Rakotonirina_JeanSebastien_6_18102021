@@ -6,11 +6,11 @@ class GetPhs{
         article.className = "ph";
         section.appendChild(article);
            let boxProfil = `
-            <a class="photograph" href="./photograph.html?id=${element.id}" tabindex="${5}">
+            <a class="photograph" href="./photograph.html?id=${element.id}" tabindex="5">
                 <img class="foto" src="./img/Photographers ID Photos/${element.portrait}" alt="${element.name}">
                 <h2>${element.name}</h2>
             </a>
-            <ul class="locationTaglinePrice" tabindex="6">
+            <ul class="locationTaglinePrice" tabindex="6" role="group">
                 <li>${element.city}, ${element.country}</li>
                 <li>${element.tagline}</li>
                 <li>${element.price}€/j</li>
