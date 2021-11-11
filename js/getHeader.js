@@ -13,7 +13,7 @@ class Header {
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
                 <img src="./img/logo.JPG" alt="Logo Fisheye" tabindex="2">
-                <nav id="Menu" class="menu" tabindex="3" role="navigation">
+                <nav id="Menu" class="menu" tabindex="3" role="menu">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
                      </a>
