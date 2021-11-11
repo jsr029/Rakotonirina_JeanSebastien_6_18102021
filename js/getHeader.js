@@ -1,7 +1,7 @@
 import ActiveClass from "./activeClass.js";
 import GetPhs from "./GetPhs.js";
 import removeIndex from "./removeIndex.js";
-class Header {
+class Header { 
     getHeader(r) {
         var dataPhotos = r.photographers;
         const main = document.querySelector('.global');
