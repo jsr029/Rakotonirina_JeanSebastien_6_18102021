@@ -8,10 +8,12 @@ import databaseAvailable from "./json2Js.js";
 import Header from "./getHeader.js";
 import editNav from "./navResp.js";
 import flightMenu from "./flightMenu.js";
+import tabIndex from "./tabIndex.js";
 databaseAvailable.then(function(r){
         new Header().getHeader(r);
         new Header().getNavFilter(r);
         new flightMenu().menuTop();
         const menu = document.querySelector('.entete');
         menu.addEventListener("click", editNav);
+        new tabIndex().setTab();
     });

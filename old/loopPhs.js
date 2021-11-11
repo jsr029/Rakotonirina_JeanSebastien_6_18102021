@@ -39,7 +39,7 @@ var loopPhs = function (d) {
         section.appendChild(article);
         article.appendChild(navA);
         navA.appendChild(portraitH);
-        portraitH.src = './img/Photographers ID Photos/' + portrait;
+        portraitH.src = '../img/Photographers ID Photos/' + portrait;
         portraitH.alt = name;
         portraitH.title = "Photograph " + name + " picture";
         navA.appendChild(h2);
