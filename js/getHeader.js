@@ -1,4 +1,4 @@
-'use strick';
+'use strict';
 import ActiveClass from "./activeClass.js";
 import GetPhs from "./GetPhs.js";
 import removeIndex from "./removeIndex.js";
