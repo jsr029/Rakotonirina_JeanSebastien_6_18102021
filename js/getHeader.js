@@ -17,14 +17,14 @@ class Header {
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
                      </a>
-                       <a href="#portrait" data-filter="portrait" class="aMenu">#Portrait</a>
-                       <a href="#art" data-filter="art" class="aMenu">#Art</a>                       
-                       <a href="#fashion" data-filter="fashion" class="aMenu">#Fashion</a>
-                       <a href="#architecture" data-filter="architecture" class="aMenu">#Architecture</a>
-                       <a href="#travel" data-filter="travel" class="aMenu">#Travel</a>
-                       <a href="#sport" data-filter="sport" class="aMenu">#Sport</a>                       
-                       <a href="#animals" data-filter="animals" class="aMenu">#Animals</a>
-                       <a href="#events" data-filter="events" class="aMenu">#Events</a>
+                       <a href="#portrait" data-filter="portrait" class="aMenu" role="menuitem">#Portrait</a>
+                       <a href="#art" data-filter="art" class="aMenu" role="menuitem">#Art</a>                       
+                       <a href="#fashion" data-filter="fashion" class="aMenu" role="menuitem">#Fashion</a>
+                       <a href="#architecture" data-filter="architecture" class="aMenu" role="menuitem">#Architecture</a>
+                       <a href="#travel" data-filter="travel" class="aMenu" role="menuitem">#Travel</a>
+                       <a href="#sport" data-filter="sport" class="aMenu" role="menuitem">#Sport</a>                       
+                       <a href="#animals" data-filter="animals" class="aMenu" role="menuitem">#Animals</a>
+                       <a href="#events" data-filter="events" class="aMenu" role="menuitem">#Events</a>
                     </nav>
                 <h2 tabindex="4">Nos Photographes</h2> 
                 `;
