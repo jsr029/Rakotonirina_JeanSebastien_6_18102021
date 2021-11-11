@@ -1,5 +1,4 @@
-'use strick';
-import ActiveClass from "../activeClass.js";
+import ActiveClass from "./activeClass.js";
 import GetPhs from "./GetPhs.js";
 import removeIndex from "./removeIndex.js";
 class Header {
@@ -12,8 +11,9 @@ class Header {
         dataPhotos.forEach(element => {
             console.log(element);
             let boxHeader = `
-                <a href="${window.location.origin}"><img src="../../img/logo.JPG" alt="Logo Fisheye"></a>
-                <nav id="Menu" class="menu">
+                <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
+                <a href="${window.location.origin}" tabindex="2"><img src="./img/logo.JPG" alt="Logo Fisheye"></a>
+                <nav id="Menu" class="menu" tabindex="3">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
                      </a>
@@ -26,7 +26,7 @@ class Header {
                        <a href="#animals" data-filter="animals" class="aMenu">#Animals</a>
                        <a href="#events" data-filter="events" class="aMenu">#Events</a>
                     </nav>
-                <h2>Nos Photographes</h2> 
+                <h2 tabindex="4">Nos Photographes</h2> 
                 `;
             header.innerHTML = boxHeader;
         });

@@ -1,6 +1,6 @@
 class Datas {
     async getJson() {
-        let url = '../../json/fisheye.json';
+        let url = './json/fisheye.json';
         let response = await fetch(url);
         let data = await response.json();
 
@@ -15,6 +15,7 @@ class Datas {
 }
 var databaseAvailable = new Datas().getJson();
 databaseAvailable.then(function(r){
-     console.log(r);
+    console.clear();
+    console.log(r);
 });
 export default databaseAvailable;

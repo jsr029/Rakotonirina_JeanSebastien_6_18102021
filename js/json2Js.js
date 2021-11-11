@@ -15,7 +15,6 @@ class Datas {
 }
 var databaseAvailable = new Datas().getJson();
 databaseAvailable.then(function(r){
-    console.clear();
-    console.log(r);
+     console.log(r);
 });
 export default databaseAvailable;

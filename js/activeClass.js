@@ -3,7 +3,7 @@ class ActiveClass{
     classActive(){
         var aContainer = document.getElementById("Menu");
 
-        // Get all buttons with class="a" inside the container
+        // Get all buttons with class="aMenu" inside the container
         var as = aContainer.getElementsByClassName("aMenu");
 
         // Loop through the buttons and add the active class to the current/clicked button
