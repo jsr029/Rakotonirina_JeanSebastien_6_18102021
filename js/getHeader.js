@@ -8,7 +8,7 @@ class Header {
         let header = document.createElement('header');
         header.className = "entete";
         main.prepend(header);
-        dataPhotos.forEach(element => {
+        dataPhotos.forEach(element => { 
             console.log(element);
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
