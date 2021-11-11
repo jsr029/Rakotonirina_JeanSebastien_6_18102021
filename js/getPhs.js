@@ -3,7 +3,7 @@ class GetPhs{
         dataPhotos.forEach(element => {
         let section = document.querySelector('section');
         const article = document.createElement('article');
-        article.className = "ph";
+        article.className = "ph"; 
         section.appendChild(article);
            let boxProfil = `
             <a class="photograph" href="./photograph.html?id=${element.id}" tabindex="5" aria-level="5">

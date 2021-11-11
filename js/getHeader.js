@@ -9,7 +9,7 @@ class Header {
         header.className = "entete";
         main.prepend(header);
         dataPhotos.forEach(element => { 
-            console.log(element);
+            console.log(element); 
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
                 <img src="./img/logo.JPG" alt="Logo Fisheye" tabindex="2">
