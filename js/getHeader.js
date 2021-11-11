@@ -1,6 +1,6 @@
-import ActiveClass from "./js/activeClass";
-import GetPhs from "./js/GetPhs.js";
-import removeIndex from "./js/removeIndex.js";
+import ActiveClass from "./activeClass";
+import GetPhs from "./GetPhs.js";
+import removeIndex from "./removeIndex.js";
 class Header {
     getHeader(r) {
         var dataPhotos = r.photographers;
@@ -12,7 +12,7 @@ class Header {
             console.log(element);
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers" tabindex="1">Passer au contenu</a>
-                <a href="/Rakotonirina_JeanSebastien_6_18102021/" tabindex="2"><img src="./img/logo.JPG" alt="Logo Fisheye"></a>
+                <a href="/" tabindex="2"><img src="./img/logo.JPG" alt="Logo Fisheye"></a>
                 <nav id="Menu" class="menu" tabindex="3">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
