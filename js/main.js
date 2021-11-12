@@ -9,6 +9,7 @@ import Header from "./getHeader.js";
 import editNav from "./navResp.js";
 import flightMenu from "./flightMenu.js";
 import tabIndex from "./tabIndex.js";
+import KeyDown from "./keyDown.js";
 databaseAvailable.then(function(r){
         new Header().getHeader(r);
         new Header().getNavFilter(r);
@@ -16,4 +17,5 @@ databaseAvailable.then(function(r){
         const menu = document.querySelector('.entete');
         menu.addEventListener("click", editNav);
         new tabIndex().setTab();
-    });
+        new KeyDown().rightArrow();
+});
