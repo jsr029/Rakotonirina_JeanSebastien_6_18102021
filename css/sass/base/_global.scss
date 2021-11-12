@@ -66,6 +66,12 @@ a{
         flex-direction: column;
         justify-content: space-around;
         align-items: center;
+        ul.locationTaglinePrice{
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
         a{
             display: flex;
             flex-direction: column;

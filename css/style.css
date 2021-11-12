@@ -76,6 +76,12 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+.ph ul.locationTaglinePrice {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .ph a {
   display: flex;
   flex-direction: column;
