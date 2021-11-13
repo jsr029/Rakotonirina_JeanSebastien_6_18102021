@@ -4,8 +4,8 @@ databaseAvailable.then(function (r) {
     new Photograph().getMediasByTags(r);
 });
 
-class Photograph{
-        getProfilById(r) {
+class Photograph {
+    getProfilById(r) {
         var dataPhotos = r.photographers;
         var urlClicked = window.location.href;
         //split it by #
@@ -17,26 +17,28 @@ class Photograph{
 
         // Loop in the photographers tab
         dataPhotos.forEach(function (k) {
-               if (k.id == aClicked) {
-    let boxPhotograph = `
+            if (k.id == aClicked) {
+                let boxPhotograph = `
                     <ul class="identity">
                         <li class="name">${k.name}</li>
                         <li class="location">${k.city + ', ' + k.country}</li>
                         <li class="tagline">${k.tagline}</li>
-                        <li class="tags">${k.tags}</li>
+                        <li class="tags">${k.tags.join(" ")}</li>
                     </ul>
-                    <ul class="contact"></ul>
+                    <ul class="contact">
+                        <button class="contactButton">Contacter Moi</button>
+                    </ul>
                     <ul class="image">
                         <li class="photo">
                             <a href="#"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}"></a>
                         </li>
                     </ul>
             `;
-            profil.innerHTML = boxPhotograph;
-               }
+                profil.innerHTML = boxPhotograph;
+            }
         });
     }
-        getMediasByTags(r){
+    getMediasByTags(r) {
         var dataMedia = r.media;
         var urlClicked = window.location.href;
         //split it by #
@@ -45,9 +47,9 @@ class Photograph{
         var aClicked = urlSplit[1];
         const section = document.querySelector("#media");
         const name = document.querySelector(".identity .name");
+        dataMedia.forEach(function (k) {
         const artMedia = document.createElement("article");
         artMedia.className = "pictVideos";
-        dataMedia.forEach(function (k) {
             const aMedia = document.createElement("a");
             const imgMedia = document.createElement("img");
             const videoMedia = document.createElement("video");
@@ -61,19 +63,28 @@ class Photograph{
                 aMedia.href = "#";
                 var srcMedia = name.innerHTML;
                 var srcSplit = srcMedia.split(" ");
-                var urlMedia = "./img/"+ srcSplit[0]+"/"+k.image;
+                var urlMedia = "./img/" + srcSplit[0] + "/" + k.image;
                 var urlMediaSplit = urlMedia.split('.');
                 console.log(urlMediaSplit[2]);
-                if(urlMediaSplit[2]==='jpg'){
+                if (urlMediaSplit[2] === 'jpg') {
                     aMedia.appendChild(imgMedia);
                     imgMedia.src = urlMedia;
-                }else{
+                } else {
                     aMedia.appendChild(videoMedia);
                     videoMedia.appendChild(videoSourceMedia);
                     videoMedia.controls = true;
-                    videoSourceMedia.src = "./img/"+ srcSplit[0]+"/"+k.video;
+                    videoSourceMedia.src = "./img/" + srcSplit[0] + "/" + k.video;
                     videoSourceMedia.type = 'video/mp4';
                 }
+                let boxMedia = `
+                <div class="mediaDetails">
+                    <h2>${k.title}</h2>
+                    <span class="mediaPrice">${k.price}€</span>
+                    <span class="mediaLikes">${k.likes}<i class="far fa-heart"></i></span>
+                    
+                </div>
+                `;
+                artMedia.insertAdjacentHTML('beforeend',boxMedia);
             }
         });
     }

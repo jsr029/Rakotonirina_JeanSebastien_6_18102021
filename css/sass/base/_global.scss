@@ -27,14 +27,6 @@ a{
     .global{
         display: flex;
         flex-direction: column;
-        .pictVideos{
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            column-gap: 20px;
-            row-gap: 20px;
-        }
     }
     #flightMenu{
         width: 20%;
@@ -162,16 +154,7 @@ a{
     ul.image{
         text-align: center;
     }
-    #media{
-        margin: 2rem 5rem;
-    }
-    #media img, #media video{
-        width: 350px;
-        height: 300px;
-        margin: 0.5rem;
-        object-fit: cover;
-        //object-position: center 0%;
-    }
+ 
 @media screen and (max-width:768px){
     .ph{
         width: 100%;

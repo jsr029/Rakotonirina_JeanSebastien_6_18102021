@@ -34,14 +34,6 @@ a {
   display: flex;
   flex-direction: column;
 }
-.global .pictVideos {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  column-gap: 20px;
-  row-gap: 20px;
-}
 
 #flightMenu {
   width: 20%;
@@ -179,17 +171,6 @@ ul.image {
   text-align: center;
 }
 
-#media {
-  margin: 2rem 5rem;
-}
-
-#media img, #media video {
-  width: 350px;
-  height: 300px;
-  margin: 0.5rem;
-  object-fit: cover;
-}
-
 @media screen and (max-width: 768px) {
   .ph {
     width: 100%;
@@ -253,6 +234,49 @@ h2 {
 
 .photographHeader .logo a img {
   width: 200px;
+}
+.photographHeader #media {
+  margin: 2rem 5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.photographHeader #media img, .photographHeader #media video {
+  width: 320px;
+  height: 300px;
+  margin: 0.5rem;
+  object-fit: cover;
+}
+.photographHeader .mediaDetails {
+  max-width: 320px;
+  display: flex;
+  margin: 0 5px 5px 8px;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #901c1c;
+}
+.photographHeader .mediaDetails h2 {
+  font-size: 1rem;
+  color: #901c1c;
+  font-weight: 300;
+}
+.photographHeader .mediaPrice, .photographHeader .mediaLikes {
+  font-weight: bold;
+}
+.photographHeader .contactButton {
+  padding: 15px;
+  background: #901c1c;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  border: none;
+  border-radius: 5px;
+}
+.photographHeader .contactButton:hover {
+  transform: scale(1.1);
+  background: #bb2424;
 }
 
 @media screen and (min-width: 800px) {

@@ -4,4 +4,48 @@
             width: 200px;
         }
     }
+    #media{
+        margin: 2rem 5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    #media img, #media video{
+        width: 320px;
+        height: 300px;
+        margin: 0.5rem;
+        object-fit: cover;
+        //object-position: center 0%;
+    }
+    .mediaDetails{
+        max-width: 320px;
+        display: flex;
+        margin: 0 5px 5px 8px;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+        color: #901c1c;
+        h2{
+            font-size: 1rem;
+            color: #901c1c;
+            font-weight: 300;
+        }
+    }
+        .mediaPrice, .mediaLikes{
+            font-weight: bold;
+        }
+        .contactButton{
+            padding: 15px;
+            background: #901c1c;
+            color: white;
+            font-size: 1rem;
+            font-weight: 400;
+            border: none;
+            border-radius: 5px;
+            &:hover{
+                transform: scale(1.1);
+                background: lighten(#901c1c, 10%);
+            }
+        }
 }
