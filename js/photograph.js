@@ -1,4 +1,7 @@
 import databaseAvailable from "./json2Js.js";
+import Modal from "./modal.js";
+import Form from "./form.js";
+import LightBox from "./lightBox.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
@@ -26,7 +29,7 @@ class Photograph {
                         <li class="tags">${k.tags.join(" ")}</li>
                     </ul>
                     <ul class="contact">
-                        <button class="contactButton">Contacter Moi</button>
+                        <button class="contactButton" id="myBtn">Contacter Moi</button>
                     </ul>
                     <ul class="image">
                         <li class="photo">
@@ -50,22 +53,22 @@ class Photograph {
         dataMedia.forEach(function (k) {
         const artMedia = document.createElement("article");
         artMedia.className = "pictVideos";
-            const aMedia = document.createElement("a");
+            const aMedia = document.createElement("div");
             const imgMedia = document.createElement("img");
             const videoMedia = document.createElement("video");
             const videoSourceMedia = document.createElement("source");
             //console.log(k.id);
             //If the tag menu is the same of the tag photographers, show photographers with the same tag
             if (k.photographerId == aClicked) {
-                console.log(k);
+                //console.log(k);
                 section.appendChild(artMedia);
                 artMedia.appendChild(aMedia);
-                aMedia.href = "#";
+                aMedia.className = "videoRimg";
                 var srcMedia = name.innerHTML;
                 var srcSplit = srcMedia.split(" ");
                 var urlMedia = "./img/" + srcSplit[0] + "/" + k.image;
                 var urlMediaSplit = urlMedia.split('.');
-                console.log(urlMediaSplit[2]);
+                //console.log(urlMediaSplit[2]);
                 if (urlMediaSplit[2] === 'jpg') {
                     aMedia.appendChild(imgMedia);
                     imgMedia.src = urlMedia;
@@ -87,6 +90,13 @@ class Photograph {
                 artMedia.insertAdjacentHTML('beforeend',boxMedia);
             }
         });
-    }
+        const allEltMedia = document.querySelectorAll('.videoRimg');
+                new Modal().showHtmlModal();
+                new Modal().addModal();
+                new Form().getFields();
+                allEltMedia.forEach((elm) => elm.addEventListener("click", function(){
+                    new LightBox().showHtmlModal();
+                }));
+       }
 }
 export default Photograph;
