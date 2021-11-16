@@ -51,8 +51,8 @@ class Photograph {
         const section = document.querySelector("#media");
         const name = document.querySelector(".identity .name");
         dataMedia.forEach(function (k) {
-        const artMedia = document.createElement("article");
-        artMedia.className = "pictVideos";
+            const artMedia = document.createElement("article");
+            artMedia.className = "pictVideos";
             const aMedia = document.createElement("div");
             const imgMedia = document.createElement("img");
             const videoMedia = document.createElement("video");
@@ -68,7 +68,7 @@ class Photograph {
                 var srcSplit = srcMedia.split(" ");
                 var urlMedia = "./img/" + srcSplit[0] + "/" + k.image;
                 var urlMediaSplit = urlMedia.split('.');
-                //console.log(urlMediaSplit[2]);
+                  //console.log(urlMediaSplit[2]);
                 if (urlMediaSplit[2] === 'jpg') {
                     aMedia.appendChild(imgMedia);
                     imgMedia.src = urlMedia;
@@ -87,16 +87,15 @@ class Photograph {
                     
                 </div>
                 `;
-                artMedia.insertAdjacentHTML('beforeend',boxMedia);
+                artMedia.insertAdjacentHTML('beforeend', boxMedia);
             }
         });
-        const allEltMedia = document.querySelectorAll('.videoRimg');
-                new Modal().showHtmlModal();
-                new Modal().addModal();
-                new Form().getFields();
-                allEltMedia.forEach((elm) => elm.addEventListener("click", function(){
-                    new LightBox().showHtmlModal();
-                }));
-       }
+        new Modal().showHtmlModal();
+        new Modal().addModal();
+        new Form().getFields();
+                new LightBox().showHtmlModal();
+                new LightBox().addModal();
+
+    }
 }
 export default Photograph;
