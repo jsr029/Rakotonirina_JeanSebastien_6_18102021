@@ -18,14 +18,13 @@ class LightBox{
 
         // Get the <span> element that closes the lightBoxModal
         const span = document.querySelector(".closeLightBox");
-        const mediaDetailsH2 = document.querySelector('.mediaDetails h2');
 
         // When the user clicks on the class selector videoRimg, open the lightBoxModal
         // and display the img clicked
         const videoRimg = document.querySelectorAll('.videoRimg');
         videoRimg.forEach((v) => v. addEventListener("click", function(elt){
-            console.log(mediaDetailsH2.innerHTML);
-            lmc.innerHTML = v.innerHTML + mediaDetailsH2.innerHTML;
+            console.log(v.parentNode.childNodes[2]);
+            lmc.innerHTML = v.innerHTML + `${v.parentNode.childNodes[2].innerHTML}`;
             lightBoxModal.style.display = "block";
         }));
         // When the user clicks on <span> (x), close the lightBoxModal

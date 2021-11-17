@@ -462,6 +462,9 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 .light-modal-content img {
   max-width: 100%;
 }
+.light-modal-content h2 {
+  color: black;
+}
 
 /* The Close Button */
 .close {
