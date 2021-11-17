@@ -460,7 +460,8 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   border: 1px solid #888;
 }
 .light-modal-content img {
-  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 .light-modal-content h2 {
   color: black;
