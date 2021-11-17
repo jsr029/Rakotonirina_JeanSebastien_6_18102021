@@ -279,8 +279,8 @@ h2 {
   background: #bb2424;
 }
 
-video {
-  max-width: 100%;
+video, source {
+  width: 100%;
 }
 
 @media screen and (min-width: 800px) {
