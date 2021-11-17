@@ -6,7 +6,7 @@ class LightBox{
         <section id="myLightModal" class="lightModal">
             <div class="light-modal-content" id="myLightModal">
             </div>
-            <span class="closeLightBox">&times;</span>
+            <span class="closeLightBox">X</span>
         </section>
                 `;
                 container.insertAdjacentHTML("beforeend", boxModal);
