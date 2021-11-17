@@ -15,18 +15,12 @@ class LightBox{
         var lmc = document.querySelector('.light-modal-content');
         // Get the lightBoxModal
         var lightBoxModal = document.getElementById("myLightModal");
-           // lightBoxModal.style.display = "none";
-
-        // Get the button that opens the lightBoxModal
-        var btn = document.querySelectorAll(".pictVideos");
 
         // Get the <span> element that closes the lightBoxModal
         const span = document.querySelector(".closeLightBox");
 
-        // When the user clicks on the button, open the lightBoxModal
-        /*btn.onclick = function() {
-            lightBoxModal.style.display = "block";
-        };*/
+        // When the user clicks on the class selector videoRimg, open the lightBoxModal
+        // and display the img clicked
         const videoRimg = document.querySelectorAll('.videoRimg');
         videoRimg.forEach((v) => v. addEventListener("click", function(elt){
             lmc.innerHTML = v.innerHTML;
