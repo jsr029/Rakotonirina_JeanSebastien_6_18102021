@@ -30,7 +30,6 @@ class Form {
         });
     }
     checkFirstName(elm, regex) {
-        console.log(elm.value);
         let errorBlocFirstName = document.querySelector('.error-blocFirstName');        
         if (regex.test(elm.value) === true && elm.value.trim().length > 2 && elm.value.trim() !== "") {
                 elm.style.border = "3px solid green";

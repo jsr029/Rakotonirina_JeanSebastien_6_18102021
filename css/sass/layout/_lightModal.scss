@@ -23,7 +23,7 @@
 /* Modal Content/Box */
 .light-modal-content {
     position: relative;
-    max-width: 70%;
+    //max-width: 70%;
     color: black;
     background-color: #D3573C;
     margin: 15% auto;
@@ -34,7 +34,8 @@
         max-width: 100%;
     }
     h2{
-        color: black
+        color: black;
+        font-size: 1rem;
     }
 }
 

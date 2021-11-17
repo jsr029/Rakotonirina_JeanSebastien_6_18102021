@@ -451,7 +451,6 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 /* Modal Content/Box */
 .light-modal-content {
   position: relative;
-  max-width: 70%;
   color: black;
   background-color: #D3573C;
   margin: 15% auto;
@@ -464,6 +463,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 .light-modal-content h2 {
   color: black;
+  font-size: 1rem;
 }
 
 /* The Close Button */
