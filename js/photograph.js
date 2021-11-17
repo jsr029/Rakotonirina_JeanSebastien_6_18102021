@@ -33,7 +33,7 @@ class Photograph {
                     </ul>
                     <ul class="image">
                         <li class="photo">
-                            <a href="#"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}"></a>
+                            <a href="#" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}"></a>
                         </li>
                     </ul>
             `;
@@ -95,7 +95,6 @@ class Photograph {
         new Form().getFields();
                 new LightBox().showHtmlModal();
                 new LightBox().addModal();
-
     }
 }
 export default Photograph;

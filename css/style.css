@@ -279,6 +279,10 @@ h2 {
   background: #bb2424;
 }
 
+video {
+  max-width: 100%;
+}
+
 @media screen and (min-width: 800px) {
   .menu a {
     display: block;
@@ -474,6 +478,10 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.videoRimg {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */

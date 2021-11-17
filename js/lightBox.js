@@ -1,11 +1,10 @@
 class LightBox{
-    showHtmlModal(e){
+    showHtmlModal(){
         const container = document.querySelector('.container');
-        const videoRimg = document.querySelectorAll('.videoRimg');
+        //const videoRimg = document.querySelectorAll('.videoRimg');
         let boxModal =`
         <section id="myLightModal" class="lightModal">
             <div class="light-modal-content" id="myLightModal">
-                ${videoRimg.item(e).innerHTML}
             </div>
             <span class="closeLightBox">&times;</span>
         </section>
@@ -13,6 +12,7 @@ class LightBox{
                 container.insertAdjacentHTML("beforeend", boxModal);
             }
     addModal(){
+        var lmc = document.querySelector('.light-modal-content');
         // Get the lightBoxModal
         var lightBoxModal = document.getElementById("myLightModal");
            // lightBoxModal.style.display = "none";
@@ -28,7 +28,8 @@ class LightBox{
             lightBoxModal.style.display = "block";
         };*/
         const videoRimg = document.querySelectorAll('.videoRimg');
-        videoRimg.forEach((v) => v. addEventListener("click", function(){
+        videoRimg.forEach((v) => v. addEventListener("click", function(elt){
+            lmc.innerHTML = v.innerHTML;
             lightBoxModal.style.display = "block";
         }));
         // When the user clicks on <span> (x), close the lightBoxModal
