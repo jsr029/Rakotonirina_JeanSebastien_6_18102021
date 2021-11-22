@@ -42,59 +42,45 @@ class Photograph {
         });
     }
     getMediasByTags(r) {
-        var dataMedia = r.media;
+        var dataMedia = Array.from(r.media);
+        var lightBoxModal = document.querySelector("#myLightModal");
         var urlClicked = window.location.href;
         //split it by #
         var urlSplit = urlClicked.split('=');
         // take the index 1 which contains the tag we need to compare
         var aClicked = urlSplit[1];
-        const section = document.querySelector("#media");
-        const name = document.querySelector(".identity .name");
-        dataMedia.forEach(function (k) {
-            const artMedia = document.createElement("article");
-            artMedia.className = "pictVideos";
-            const aMedia = document.createElement("div");
-            const imgMedia = document.createElement("img");
-            const videoMedia = document.createElement("video");
-            const videoSourceMedia = document.createElement("source");
-            //console.log(k.id);
-            //If the tag menu is the same of the tag photographers, show photographers with the same tag
-            if (k.photographerId == aClicked) {
-                //console.log(k);
-                section.appendChild(artMedia);
-                artMedia.appendChild(aMedia);
-                aMedia.className = "videoRimg";
-                var srcMedia = name.innerHTML;
-                var srcSplit = srcMedia.split(" ");
-                var urlMedia = "./img/" + srcSplit[0] + "/" + k.image;
-                var urlMediaSplit = urlMedia.split('.');
-                  //console.log(urlMediaSplit[2]);
-                if (urlMediaSplit[2] === 'jpg') {
-                    aMedia.appendChild(imgMedia);
-                    imgMedia.src = urlMedia;
-                } else {
-                    aMedia.appendChild(videoMedia);
-                    videoMedia.appendChild(videoSourceMedia);
-                    videoMedia.controls = true;
-                    videoSourceMedia.src = "./img/" + srcSplit[0] + "/" + k.video;
-                    videoSourceMedia.type = 'video/mp4';
-                }
+        const mediaH = document.querySelector('#media');
+        const idn = document.querySelector('.identity .name');
+        var idnSplit = idn.innerHTML.split(" ");
+        dataMedia.forEach(function (d) {
+            var media = (d.image) ? d.image : d.video;
+            var mediaSplit = media.split('.');
+            var mediaExt = mediaSplit[1];
+            if (d.photographerId == aClicked) {
+                var videoOrimg = (mediaExt === 'jpg') ?
+                    `<img src="./img/${idnSplit[0]}/${d.image}" alt="${idn.innerHTML}">` :
+                    `<video controls><source src="./img/${idnSplit[0]}/${d.video}" alt="${idn.innerHTML}"></video>`;
                 let boxMedia = `
-                <div class="mediaDetails">
-                    <h2>${k.title}</h2>
-                    <span class="mediaPrice">${k.price}€</span>
-                    <span class="mediaLikes">${k.likes}<i class="far fa-heart"></i></span>
-                    
-                </div>
-                `;
-                artMedia.insertAdjacentHTML('beforeend', boxMedia);
+                <article class="pictVideos">
+                    <div class="videoRimg">
+                        ${videoOrimg}
+                    </div>
+                    <div class="mediaDetails">
+                       <h2>${d.title}</h2>
+                        <span class="mediaPrice">${d.price}</span>
+                        <span class="mediaLikes">${d.likes}<i class="far fa-heart" aria-hidden="true"></i></span>
+                    </div>
+                </article>
+                    `;
+                    mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });
-        new Modal().showHtmlModal();
-        new Modal().addModal();
-        new Form().getFields();
-                new LightBox().showHtmlModal();
-                new LightBox().addModal();
+        new LightBox().addModal();
     }
+
+    //new Modal().showHtmlModal();
+    //new Modal().addModal();
+    //new Form().getFields();
+    //new LightBox().addModal();
 }
 export default Photograph;

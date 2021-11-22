@@ -283,6 +283,10 @@ video, source {
   width: 100%;
 }
 
+.index {
+  visibility: hidden;
+}
+
 @media screen and (min-width: 800px) {
   .menu a {
     display: block;
@@ -426,6 +430,17 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   flex-direction: column;
 }
 
+#lightBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#myLightModal {
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* The Modal (background) */
 .lightModal {
   display: none;
@@ -446,6 +461,43 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
   /* Black w/ opacity */
+}
+.lightModal .videoRimg {
+  max-width: 90%;
+  margin: auto;
+}
+.lightModal .mediaDetails {
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+  margin: 0 auto;
+  background: #D3573C;
+  color: white;
+}
+.lightModal .mediaDetails h2 {
+  color: white;
+}
+.lightModal .videoRimg img {
+  max-width: 100%;
+}
+.lightModal .arrow {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+.lightModal .arrow .leftArrow, .lightModal .arrow .rightArrow {
+  width: 50px;
+  font-size: 6rem;
+  color: grey;
+  font-weight: 700;
+  cursor: pointer;
+}
+.lightModal .arrow .leftArrow:hover, .lightModal .arrow .rightArrow:hover {
+  color: black;
 }
 
 /* Modal Content/Box */
@@ -471,8 +523,8 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 /* The closeLightBox Button */
 .closeLightBox {
   position: absolute;
-  top: 46%;
-  right: 15px;
+  top: 5%;
+  right: 5%;
   color: grey;
   font-size: 28px;
   font-weight: bold;
@@ -485,8 +537,40 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   cursor: pointer;
 }
 
-.videoRimg {
-  display: block;
+/*.videoRimg{
+    display: block;
+}*/
+#slider {
+  position: relative;
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+#precedent,
+#suivant {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  position: absolute;
+  font-size: 100px;
+  color: rgba(220, 220, 220, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+}
+
+#precedent {
+  left: 0;
+}
+
+#suivant {
+  right: 0;
+}
+
+#slider:hover #precedent,
+#slider:hover #suivant {
+  opacity: 1;
 }
 
 /*# sourceMappingURL=style.css.map */

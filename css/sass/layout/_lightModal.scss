@@ -1,3 +1,12 @@
+#lightBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#myLightModal{
+    flex-direction: column;
+    justify-content: center;
+}
 /* The Modal (background) */
 .lightModal{
     display: none;
@@ -17,7 +26,46 @@
     background-color: rgb(0, 0, 0);
     /* Fallback color */
     background-color: rgba(0, 0, 0, 0.4);
+    .videoRimg{
+        max-width: 90%;
+        margin: auto;
+    }
+    .mediaDetails{
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin: 0 auto;
+        background: #D3573C;
+        color: white;
+        h2{
+            color: white;
+        }
+    }
+    .videoRimg img{
+        max-width: 100%;
+    }
     /* Black w/ opacity */
+    .arrow{
+        width: 100%;
+        //margin-left: 30px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        position: absolute;
+        top:50%;
+        left: 0;
+        //z-index: 900;
+        .leftArrow, .rightArrow{
+            width: 50px;
+            font-size: 6rem;
+            color: grey;
+            font-weight: 700;
+            cursor: pointer;
+            &:hover{
+                color: black;
+            }
+        }
+    }
 }
 
 /* Modal Content/Box */
@@ -43,8 +91,8 @@
 /* The closeLightBox Button */
 .closeLightBox {
     position: absolute;
-    top: 46%;
-    right: 15px;
+    top: 5%;
+    right: 5%;
     color:grey;
     font-size: 28px;
     font-weight: bold;
@@ -57,6 +105,6 @@
     cursor: pointer;
 }
 
-.videoRimg{
+/*.videoRimg{
     display: block;
-}
+}*/
