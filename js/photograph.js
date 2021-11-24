@@ -37,7 +37,7 @@ class Photograph {
                         </li>
                     </ul>
             `;
-                profil.innerHTML = boxPhotograph;
+                profil.insertAdjacentHTML("afterbegin", boxPhotograph);
             }
         });
     }
@@ -52,6 +52,8 @@ class Photograph {
         const mediaH = document.querySelector('#media');
         const idn = document.querySelector('.identity .name');
         var idnSplit = idn.innerHTML.split(" ");
+        const videoRimg = document.querySelectorAll('#myLightModal .videoRimg');
+        const mD = document.querySelectorAll('#myLightModal .mediaDetails');
         dataMedia.forEach(function (d) {
             var media = (d.image) ? d.image : d.video;
             var mediaSplit = media.split('.');
@@ -70,10 +72,10 @@ class Photograph {
                         <span class="mediaPrice">${d.price}</span>
                         <span class="mediaLikes">${d.likes}<i class="far fa-heart" aria-hidden="true"></i></span>
                     </div>
-                </article>
+                    </article>
                     `;
                     mediaH.insertAdjacentHTML('afterbegin', boxMedia);
-            }
+                }
         });
         new LightBox().addModal();
     }

@@ -1,3 +1,4 @@
+import SliderModal from "./Slider.js";
 class LightBox {
 
     addModal() {
@@ -5,18 +6,20 @@ class LightBox {
         const lmcH2 = document.querySelector('.light-modal-content h2');
         // Get the lightBoxModal
         var lightBoxModal = document.querySelector("#myLightModal");
-
+        var imageModalH = document.querySelector('.imageModal');
         // Get the <span> element that closes the lightBoxModal
         const spanClose = document.querySelector(".closeLightBox");
         // When the user clicks on the class selector videoRimg, open the lightBoxModal
         // and display the img clicked
-        const videoRimg = document.querySelectorAll('.videoRimg');
-        const pv = document.querySelectorAll('.pictVideos');
+        const videoRimg = document.querySelector('#myLightModal .videoRimg');
+        const videoOrimgAll = document.querySelectorAll("#myLightModal .videoRimg");
+        const mD = document.querySelector('#myLightModal .mediaDetails');
+        const pv = Array.from(document.querySelectorAll('.pictVideos'));
         pv.forEach((v, index) => v.addEventListener("click", function (elt) {
-        //const indexH = document.getElementsByClassName('.index').value;
-            console.log(index);
-            lightBoxModal.insertAdjacentHTML("afterbegin", v.innerHTML);
+            imageModalH.innerHTML = v.innerHTML;
             lightBoxModal.style.display = "flex";
+                console.log(pv, index);
+                new SliderModal(pv, index);
         }));
         // When the user clicks on <span> (x), close the lightBoxModal
         spanClose.addEventListener("click", function () {
