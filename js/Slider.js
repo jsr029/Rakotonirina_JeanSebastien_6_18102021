@@ -9,7 +9,7 @@ var SliderModal = function (pv, index) {
         numero = numero + index;
         if (numero < 0)
             numero = slide.length - 1;
-        if (0 > numero > slide.length - 1)
+        if (numero > slide.length - 1)
             numero = 0;
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
@@ -22,7 +22,7 @@ var SliderModal = function (pv, index) {
         numero = numero + index;
         if (numero < 0)
             numero = slide.length - 1;
-        if (0 > numero > slide.length - 1)
+        if (numero > slide.length - 1)
             numero = 0;
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
@@ -35,7 +35,7 @@ function ChangeSlide(pv, index) {
     numero = numero + index;
     if (numero < 0)
         numero = slide.length - 1;
-    if (0 > numero > slide.length - 1)
+    if (numero > slide.length - 1)
         numero = 0;
     var slideModal = document.querySelector("#slide");
     slideModal.innerHTML = slide[numero].innerHTML;

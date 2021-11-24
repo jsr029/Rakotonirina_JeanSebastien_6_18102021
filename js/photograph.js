@@ -54,10 +54,11 @@ class Photograph {
         var idnSplit = idn.innerHTML.split(" ");
         const videoRimg = document.querySelectorAll('#myLightModal .videoRimg');
         const mD = document.querySelectorAll('#myLightModal .mediaDetails');
-        dataMedia.forEach(function (d) {
+        dataMedia.forEach(function (d, index) {
             var media = (d.image) ? d.image : d.video;
             var mediaSplit = media.split('.');
             var mediaExt = mediaSplit[1];
+            var likesTab = [];
             if (d.photographerId == aClicked) {
                 var videoOrimg = (mediaExt === 'jpg') ?
                     `<img src="./img/${idnSplit[0]}/${d.image}" alt="${idn.innerHTML}">` :
@@ -74,15 +75,20 @@ class Photograph {
                     </div>
                     </article>
                     `;
-                mediaH.insertAdjacentHTML('afterbegin', boxMedia);
+                    likesTab.push(d.likes);
+                    var total = 0,
+                    len = likesTab.length;
+                    for (var i = 0; i < len; i++){
+                    total += likesTab[i];
+                        console.log(total, index);
+                    }
+                    mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });
         new LightBox().addModal();
+    new Modal().showHtmlModal();
+    new Modal().addModal();
+    new Form().getFields();
     }
-
-    //new Modal().showHtmlModal();
-    //new Modal().addModal();
-    //new Form().getFields();
-    //new LightBox().addModal();
 }
 export default Photograph;

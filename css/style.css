@@ -478,6 +478,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 .lightModal .videoRimg img {
   max-width: 100%;
+  object-fit: cover;
 }
 .lightModal .arrow {
   width: 100%;
@@ -572,6 +573,24 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 #slider:hover #precedent,
 #slider:hover #suivant {
   opacity: 1;
+}
+
+.totalLikes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 350px;
+  position: fixed;
+  bottom: 0;
+  right: 2%;
+  background: #db8876;
+  border-radius: 5px;
+}
+.totalLikes .likes {
+  padding: 10px 5px;
+}
+.totalLikes .salary {
+  padding: 10px 5px;
 }
 
 /*# sourceMappingURL=style.css.map */
