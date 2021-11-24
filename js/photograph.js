@@ -38,6 +38,10 @@ class Photograph {
                     </ul>
             `;
                 profil.insertAdjacentHTML("afterbegin", boxPhotograph);
+                /** Inject in the Html the salary per day */
+                const salary = document.querySelector('.salary');
+                salary.insertAdjacentHTML("beforeend", k.price + '€/jour');
+                /*** End Salary injection */
             }
         });
     }
@@ -54,12 +58,13 @@ class Photograph {
         var idnSplit = idn.innerHTML.split(" ");
         const videoRimg = document.querySelectorAll('#myLightModal .videoRimg');
         const mD = document.querySelectorAll('#myLightModal .mediaDetails');
-        dataMedia.forEach(function (d, index) {
+        var likesTab = [];
+        dataMedia.forEach(function (d) {
             var media = (d.image) ? d.image : d.video;
             var mediaSplit = media.split('.');
             var mediaExt = mediaSplit[1];
-            var likesTab = [];
             if (d.photographerId == aClicked) {
+                var ml = d.likes;
                 var videoOrimg = (mediaExt === 'jpg') ?
                     `<img src="./img/${idnSplit[0]}/${d.image}" alt="${idn.innerHTML}">` :
                     `<video controls><source src="./img/${idnSplit[0]}/${d.video}" alt="${idn.innerHTML}"></video>`;
@@ -75,20 +80,24 @@ class Photograph {
                     </div>
                     </article>
                     `;
-                    likesTab.push(d.likes);
-                    var total = 0,
-                    len = likesTab.length;
-                    for (var i = 0; i < len; i++){
-                    total += likesTab[i];
-                        console.log(total, index);
-                    }
-                    mediaH.insertAdjacentHTML('afterbegin', boxMedia);
+                    likesTab.push(ml);
+                    console.log(d);
+                mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });
+        /**** Sum Likes and innerHtml it */
+                var total = 0,
+                len = likesTab.length;
+                for (var i = 0; i < len; i++){
+                total += likesTab[i];
+                }
+                const likes = document.querySelector('.likes');
+                likes.insertAdjacentHTML("afterbegin", total);
+        /** End Sum */
+        new Modal().showHtmlModal();
+        new Modal().addModal();
+        new Form().getFields();
         new LightBox().addModal();
-    new Modal().showHtmlModal();
-    new Modal().addModal();
-    new Form().getFields();
     }
 }
 export default Photograph;

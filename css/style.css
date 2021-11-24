@@ -579,7 +579,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 350px;
+  width: 320px;
   position: fixed;
   bottom: 0;
   right: 2%;
@@ -587,6 +587,9 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   border-radius: 5px;
 }
 .totalLikes .likes {
+  width: 100px;
+  flex-direction: row;
+  justify-content: space-evenly;
   padding: 10px 5px;
 }
 .totalLikes .salary {
