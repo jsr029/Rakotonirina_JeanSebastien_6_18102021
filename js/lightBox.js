@@ -18,8 +18,7 @@ class LightBox {
         pv.forEach((v, index) => v.addEventListener("click", function (elt) {
             imageModalH.innerHTML = v.innerHTML;
             lightBoxModal.style.display = "flex";
-                console.log(pv, index);
-                new SliderModal(pv, index);
+            new SliderModal(pv, index);
         }));
         // When the user clicks on <span> (x), close the lightBoxModal
         spanClose.addEventListener("click", function () {

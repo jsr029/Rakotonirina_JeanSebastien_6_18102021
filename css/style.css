@@ -488,14 +488,16 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   top: 50%;
   left: 0;
 }
-.lightModal .arrow .leftArrow, .lightModal .arrow .rightArrow {
+.lightModal .arrow .leftArrow,
+.lightModal .arrow .rightArrow {
   width: 50px;
   font-size: 6rem;
   color: grey;
   font-weight: 700;
   cursor: pointer;
 }
-.lightModal .arrow .leftArrow:hover, .lightModal .arrow .rightArrow:hover {
+.lightModal .arrow .leftArrow:hover,
+.lightModal .arrow .rightArrow:hover {
   color: black;
 }
 

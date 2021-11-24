@@ -74,8 +74,8 @@ class Photograph {
                     </div>
                     </article>
                     `;
-                    mediaH.insertAdjacentHTML('afterbegin', boxMedia);
-                }
+                mediaH.insertAdjacentHTML('afterbegin', boxMedia);
+            }
         });
         new LightBox().addModal();
     }
