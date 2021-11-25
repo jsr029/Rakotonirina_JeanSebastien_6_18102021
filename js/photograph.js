@@ -2,9 +2,11 @@ import databaseAvailable from "./json2Js.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
 import LightBox from "./lightBox.js";
+import AddLikes from "./addLikes.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
+    new AddLikes().adHeart();
 });
 
 class Photograph {
@@ -70,18 +72,20 @@ class Photograph {
                     `<video controls><source src="./img/${idnSplit[0]}/${d.video}" alt="${idn.innerHTML}"></video>`;
                 let boxMedia = `
                 <article class="pictVideos">
+                <a href="#">
                     <div class="videoRimg">
                         ${videoOrimg}
                     </div>
+                </a>
                     <div class="mediaDetails">
-                       <h2>${d.title}</h2>
+                    <h2>${d.title}</h2>
                         <span class="mediaPrice">${d.price}</span>
                         <span class="mediaLikes">${d.likes}<i class="far fa-heart" aria-hidden="true"></i></span>
                     </div>
-                    </article>
+                </article>
                     `;
                     likesTab.push(ml);
-                    console.log(d);
+                    //console.log(d);
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });

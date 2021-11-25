@@ -248,7 +248,7 @@ h2 {
   margin: 0.5rem;
   object-fit: cover;
 }
-.photographHeader .mediaDetails {
+.photographHeader .pictVideos .mediaDetails {
   max-width: 320px;
   display: flex;
   margin: 0 5px 5px 8px;
@@ -257,7 +257,7 @@ h2 {
   align-items: center;
   color: #901c1c;
 }
-.photographHeader .mediaDetails h2 {
+.photographHeader .pictVideos .mediaDetails h2 {
   font-size: 1rem;
   color: #901c1c;
   font-weight: 300;
