@@ -6,7 +6,6 @@ import AddLikes from "./addLikes.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
-    new AddLikes().adHeart();
 });
 
 class Photograph {
@@ -95,6 +94,8 @@ class Photograph {
                 for (var i = 0; i < len; i++){
                 total += likesTab[i];
                 }
+                new AddLikes().adHeart();
+                new AddLikes().removeHeart();
                 const likes = document.querySelector('.likes');
                 likes.insertAdjacentHTML("afterbegin", total);
         /** End Sum */

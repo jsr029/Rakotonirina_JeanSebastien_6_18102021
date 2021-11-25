@@ -103,16 +103,17 @@
 /* The closeLightBox Button */
 .closeLightBox {
     position: absolute;
-    top: 5%;
-    right: 5%;
+    top: 2%;
+    right: 7%;
     color: grey;
     font-size: 28px;
     font-weight: bold;
+    background: black;
 }
 
 .closeLightBox:hover,
 .closeLightBox:focus {
-    color: black;
+    color: red;
     text-decoration: none;
     cursor: pointer;
 }
