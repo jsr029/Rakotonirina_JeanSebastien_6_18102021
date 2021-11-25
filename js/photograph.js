@@ -95,7 +95,6 @@ class Photograph {
                 total += likesTab[i];
                 }
                 new AddLikes().adHeart();
-                new AddLikes().removeHeart();
                 const likes = document.querySelector('.likes');
                 likes.insertAdjacentHTML("afterbegin", total);
         /** End Sum */

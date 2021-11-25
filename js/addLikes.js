@@ -5,24 +5,13 @@ class AddLikes{
             let mediaLikes = ic.parentNode;
             let likesNum = parseInt(mediaLikes.textContent);
             //TextContent ParentNode Selector mediaDetails i => mediaDetails
-            if(ico.target.classList.value.split(' ')[0] === 'far'){
-                ico.target.classList.value.split(' ')[0].replace('far', 'fas');            
+            if(ico.target.classList.value === 'far fa-heart'){
                 mediaLikes.textContent = likesNum + 1;
-               mediaLikes.insertAdjacentHTML("beforeend",`<i class="fas fa-heart" aria-label="likes" aria-hidden="true"></i>`);
-            }
-        }));
-    }
-    removeHeart(){
-        const iconHeart = document.querySelectorAll('.mediaDetails i');
-        iconHeart.forEach((ic) => ic.addEventListener("click", function(ico){
-            let mediaLikes = ic.parentNode;
-            let likesNum = parseInt(mediaLikes.textContent);
-            //TextContent ParentNode Selector mediaDetails i => mediaDetails
-            if(ico.target.classList.value.split(' ')[0] === 'fas'){
-                ico.target.classList.value.split(' ')[0].replace('fas', 'far');            
+                mediaLikes.insertAdjacentHTML("beforeend",`<i class="fas fa-heart" aria-label="likes" aria-hidden="true"></i>`);
+            }else if(ico.target.classList.value === 'fas fa-heart'){
                 mediaLikes.textContent = likesNum - 1;
-                //mediaLikes.insertAdjacentHTML("beforeend",`<i class="far fa-heart" aria-label="likes" aria-hidden="true"></i>`);
-                }
+                mediaLikes.insertAdjacentHTML("beforeend",`<i class="far fa-heart" aria-label="likes" aria-hidden="true"></i>`);
+            }
         }));
     }    
 }
