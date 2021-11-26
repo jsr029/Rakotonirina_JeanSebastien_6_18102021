@@ -79,7 +79,8 @@ class Photograph {
                     <div class="mediaDetails">
                     <h2>${d.title}</h2>
                         <span class="mediaPrice">${d.price}</span>
-                        <span class="mediaLikes">${d.likes}<i class="far fa-heart" aria-hidden="true"></i></span>
+                        <span class="mediaLikes">${d.likes}</span>
+                        <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
                     </div>
                 </article>
                     `;
@@ -97,7 +98,7 @@ class Photograph {
                 new AddLikes().adHeart();
                 const likes = document.querySelector('.likes');
                 likes.insertAdjacentHTML("afterbegin", total);
-        /** End Sum */
+                    /** End Sum */
         new Modal().showHtmlModal();
         new Modal().addModal();
         new Form().getFields();

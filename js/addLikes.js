@@ -1,16 +1,21 @@
 class AddLikes{
     adHeart(){
-        const iconHeart = document.querySelectorAll('.mediaDetails i');
+        const iconHeart = document.querySelectorAll('.heartLikes i');
         iconHeart.forEach((ic) => ic.addEventListener("click", function(ico){
-            let mediaLikes = ic.parentNode;
-            let likesNum = parseInt(mediaLikes.textContent);
-            //TextContent ParentNode Selector mediaDetails i => mediaDetails
-            if(ico.target.classList.value === 'far fa-heart'){
-                mediaLikes.textContent = likesNum + 1;
-                mediaLikes.insertAdjacentHTML("beforeend",`<i class="fas fa-heart" aria-label="likes" aria-hidden="true"></i>`);
-            }else if(ico.target.classList.value === 'fas fa-heart'){
-                mediaLikes.textContent = likesNum - 1;
-                mediaLikes.insertAdjacentHTML("beforeend",`<i class="far fa-heart" aria-label="likes" aria-hidden="true"></i>`);
+            let iconSplit =  ico.target.classList.value.split(" ");
+            let mediaLikes = ic.parentNode.parentNode;
+            //console.log(mediaLikes.childNodes[5]);
+            let likesNum = parseInt(mediaLikes.childNodes[5].textContent);
+            //console.log(mediaLikes.childNodes[5].textContent);
+            if(iconSplit[0] == 'far'){
+                ico.target.classList.replace('far', 'fas');
+                ico.target.classList.remove('clicked');
+                mediaLikes.childNodes[5].textContent = likesNum + 1;            
+            }
+            if(iconSplit[0] == 'fas'){
+                ico.target.classList.replace('fas', 'far');
+                ico.target.classList.add('clicked');
+                mediaLikes.childNodes[5].textContent = likesNum - 1;            
             }
         }));
     }    
