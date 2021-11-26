@@ -19,5 +19,19 @@ class AddLikes{
             }
         }));
     }    
+    totalLikes(){
+        const allLikes = document.querySelectorAll('.mediaLikes');
+        let arrayLikes = []; 
+        allLikes.forEach((elm) => {
+            //console.log(elm.textContent);
+            arrayLikes.push(parseInt(elm.textContent));
+        });
+        var total = 0;
+        for (var i = 0; i < arrayLikes.length; i++){
+            total += arrayLikes[i];
+            }
+        const likes = document.querySelector('.likes');
+        likes.insertAdjacentHTML("afterbegin", total);
+    }
 }
 export default AddLikes;

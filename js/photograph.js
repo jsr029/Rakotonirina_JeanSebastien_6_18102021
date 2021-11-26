@@ -6,6 +6,7 @@ import AddLikes from "./addLikes.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
+    new AddLikes().totalLikes();
 });
 
 class Photograph {
@@ -89,16 +90,7 @@ class Photograph {
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });
-        /**** Sum Likes and innerHtml it */
-                var total = 0,
-                len = likesTab.length;
-                for (var i = 0; i < len; i++){
-                total += likesTab[i];
-                }
                 new AddLikes().adHeart();
-                const likes = document.querySelector('.likes');
-                likes.insertAdjacentHTML("afterbegin", total);
-                    /** End Sum */
         new Modal().showHtmlModal();
         new Modal().addModal();
         new Form().getFields();
