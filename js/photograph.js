@@ -75,6 +75,12 @@ class Photograph {
                     <div class="videoRimg">
                         ${videoOrimg}
                     </div>
+                    <div class="mediaDetails">
+                    <h2>${d.title}</h2>
+                        <span class="mediaPrice">${d.price}€</span>
+                        <span class="mediaLikes">${d.likes}</span>
+                        <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
+                    </div>
                 </a>
                     <div class="mediaDetails">
                     <h2>${d.title}</h2>
