@@ -580,6 +580,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 320px;
   position: fixed;
   bottom: 0;
@@ -588,13 +589,17 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   border-radius: 5px;
 }
 .totalLikes .likes {
-  width: 100px;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   padding: 10px 5px;
 }
 .totalLikes .salary {
-  padding: 10px 5px;
+  width: 100px;
+  padding: 10px 5px 10px 15px;
+  text-align: right;
+}
+.totalLikes .icon {
+  width: 150px;
 }
 
 /*# sourceMappingURL=style.css.map */

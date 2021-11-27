@@ -6,7 +6,7 @@ import AddLikes from "./addLikes.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
-    new AddLikes().totalLikes();
+    //new AddLikes().totalLikes();
 });
 
 class Photograph {
@@ -60,7 +60,6 @@ class Photograph {
         var idnSplit = idn.innerHTML.split(" ");
         const videoRimg = document.querySelectorAll('#myLightModal .videoRimg');
         const mD = document.querySelectorAll('#myLightModal .mediaDetails');
-        var likesTab = [];
         dataMedia.forEach(function (d) {
             var media = (d.image) ? d.image : d.video;
             var mediaSplit = media.split('.');
@@ -85,16 +84,14 @@ class Photograph {
                     </div>
                 </article>
                     `;
-                    likesTab.push(ml);
-                    //console.log(d);
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
         });
-                new AddLikes().adHeart();
         new Modal().showHtmlModal();
         new Modal().addModal();
         new Form().getFields();
         new LightBox().addModal();
+        new AddLikes().adHeart();
     }
 }
 export default Photograph;
