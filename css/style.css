@@ -466,15 +466,24 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   margin: auto;
 }
 .lightModal .mediaDetails {
+  position: absolute;
+  bottom: 5px;
+  left: 5%;
+  display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
   margin: 0 auto;
   background: #D3573C;
   color: white;
 }
+.lightModal .mediaDetails .mediaPrice, .lightModal .mediaDetails .mediaLikes, .lightModal .mediaDetails .heartLikes {
+  display: none;
+}
 .lightModal .mediaDetails h2 {
   color: white;
+  padding: 10px;
 }
 .lightModal .videoRimg img {
   max-width: 100%;
