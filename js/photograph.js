@@ -67,8 +67,8 @@ class Photograph {
             if (d.photographerId == aClicked) {
                 var ml = d.likes;
                 var videoOrimg = (mediaExt === 'jpg') ?
-                    `<img src="./img/${idnSplit[0]}/${d.image}" alt="${idn.innerHTML}">` :
-                    `<video controls><source src="./img/${idnSplit[0]}/${d.video}" alt="${idn.innerHTML}"></video>`;
+                    `<img src="./img/${idnSplit[0]}/${d.image}" alt="${d.title}, a ${idn.innerHTML}'s work">` :
+                    `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
                 let boxMedia = `
                 <article class="pictVideos">
                 <a href="#">

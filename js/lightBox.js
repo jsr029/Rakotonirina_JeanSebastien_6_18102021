@@ -17,6 +17,7 @@ class LightBox {
         const pv = Array.from(document.querySelectorAll('.pictVideos a'));
         pv.forEach((v, index) => v.addEventListener("click", function (elt) {
             imageModalH.innerHTML = v.innerHTML;
+            //mD.innerHTML = v.parentNode.childNodes[3].innerHTML;
             lightBoxModal.style.display = "flex";
             new SliderModal(pv, index);
         }));
