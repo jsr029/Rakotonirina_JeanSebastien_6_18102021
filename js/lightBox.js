@@ -13,7 +13,7 @@ class LightBox {
         // and display the img clicked
         const videoRimg = document.querySelector('#myLightModal .videoRimg');
         const videoOrimgAll = document.querySelectorAll("#myLightModal .videoRimg");
-        const pv = Array.from(document.querySelectorAll('.pictVideos'));
+        const pv = Array.from(document.querySelectorAll('.pictVideos a'));
         pv.forEach((v, index) => v.addEventListener("click", function (elt) {
             imageModalH.innerHTML = v.innerHTML;
             //mD.innerHTML = v.parentNode.childNodes[3].innerHTML;
