@@ -56,7 +56,7 @@ class DropDown {
                     `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
                 let boxMedia = `
                 <article class="pictVideos">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <div class="videoRimg">
                         ${videoOrimg}
                     </div>
