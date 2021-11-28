@@ -68,7 +68,7 @@ class Photograph {
                     `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
                 let boxMedia = `
                 <article class="pictVideos">
-                <a href="#">
+                <a href="javascript:void(0)">
                     <div class="videoRimg">
                         ${videoOrimg}
                     </div>
@@ -89,7 +89,7 @@ class Photograph {
                     `;
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
-     });
+        });
         new Modal().showHtmlModal();
         new Modal().addModal();
         new Form().getFields();

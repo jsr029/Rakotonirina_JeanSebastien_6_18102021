@@ -30,8 +30,6 @@ class DropDown {
                     return 0;
                 });
             }
-            //document.querySelector('#Photograph').innerHTML = '';
-            //new Photograph().getMediasByTags(r);
             new displayMediaSort(dataMediaSort);
         });
     }
