@@ -552,6 +552,10 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   cursor: pointer;
 }
 
+.imageModal .mediaDetails .mediaLikes {
+  display: none;
+}
+
 /*.videoRimg{
     display: block;
 }*/

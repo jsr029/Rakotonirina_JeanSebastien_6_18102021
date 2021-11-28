@@ -50,6 +50,6 @@ var totalLikes = function () {
         total += arrayLikes[i];
     }
     const likes = document.querySelector('.likes');
-    likes.innerHTML = total/2;
+    likes.innerHTML = total;
 };
 export default AddLikes;
