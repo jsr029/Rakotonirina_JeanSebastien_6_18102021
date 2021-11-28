@@ -1,0 +1,18 @@
+.tri{
+    width: 80%;
+    margin: auto;
+    font-size: 2rem;
+    label{
+        margin-top: 15px;
+    }
+    #tri-select{
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: #901c1c;
+        color: white;
+    }
+}
+select option:hover{
+    background: ligthen(#901c1c, 10%);
+    -webkit-background: ligthen(#901c1c, 10%);
+  }

@@ -3,10 +3,11 @@ import Modal from "./modal.js";
 import Form from "./form.js";
 import LightBox from "./lightBox.js";
 import AddLikes from "./addLikes.js";
+import DropDown from "./DropDown.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
-    //new AddLikes().totalLikes();
+    new DropDown().upDown(r);
 });
 
 class Photograph {
@@ -48,8 +49,7 @@ class Photograph {
         });
     }
     getMediasByTags(r) {
-        var dataMedia = Array.from(r.media);
-        var lightBoxModal = document.querySelector("#myLightModal");
+        var dataMedia = r.media;
         var urlClicked = window.location.href;
         //split it by #
         var urlSplit = urlClicked.split('=');
@@ -58,14 +58,11 @@ class Photograph {
         const mediaH = document.querySelector('#media');
         const idn = document.querySelector('.identity .name');
         var idnSplit = idn.innerHTML.split(" ");
-        const videoRimg = document.querySelectorAll('#myLightModal .videoRimg');
-        const mD = document.querySelectorAll('#myLightModal .mediaDetails');
         dataMedia.forEach(function (d) {
             var media = (d.image) ? d.image : d.video;
             var mediaSplit = media.split('.');
             var mediaExt = mediaSplit[1];
             if (d.photographerId == aClicked) {
-                var ml = d.likes;
                 var videoOrimg = (mediaExt === 'jpg') ?
                     `<img src="./img/${idnSplit[0]}/${d.image}" alt="${d.title}, a ${idn.innerHTML}'s work">` :
                     `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
@@ -92,7 +89,7 @@ class Photograph {
                     `;
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
-        });
+     });
         new Modal().showHtmlModal();
         new Modal().addModal();
         new Form().getFields();

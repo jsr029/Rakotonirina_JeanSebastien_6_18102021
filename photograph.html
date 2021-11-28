@@ -22,6 +22,14 @@
                 <section id="Photograph" aria-label="Photograph's details">
                     <header class="profil"></header>
                 </section>
+                <section class="tri">
+                    <label for="tri-select">Trier par : </label>
+                    <select name="tri" id="tri-select">
+                        <option value="popularite" selected>Popularité</option>
+                        <option value="date">Date</option>
+                        <option value="titre">Titre</option>
+                    </select>
+                </section>
                 <section id="media" aria-label="Photographer's medias">
                 </section>
                 <section id="lightBox">
@@ -30,8 +38,9 @@
                             <div class="imageModal" id="slide"></div>
                             <div class="mediaDetails"></div>
                             <span class="closeLightBox">X</span>
-                            <div id="precedent"><</div> 
-                            <div id="suivant">></div>
+                            <div id="precedent">
+                                <</div> <div id="suivant">>
+                            </div>
                         </div>
                     </div>
                 </section>
