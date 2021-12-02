@@ -26,12 +26,14 @@ class Photograph {
         dataPhotos.forEach(function (k) {
             if (k.id == aClicked) {
                 let boxPhotograph = `
-                    <ul class="identity">
-                        <li class="name">${k.name}</li>
-                        <li class="location">${k.city + ', ' + k.country}</li>
-                        <li class="tagline">${k.tagline}</li>
-                        <li class="tags">${k.tags.join(" ")}</li>
-                    </ul>
+                    <div class="identity">
+                        <h2 class="name">${k.name}</h2>
+                        <ul>
+                            <li class="location">${k.city + ', ' + k.country}</li>
+                            <li class="tagline">${k.tagline}</li>
+                            <li class="tags">${k.tags}</li>
+                        </ul>
+                    </div>
                     <ul class="contact">
                         <button class="contactButton" id="myBtn">Contacter Moi</button>
                     </ul>
@@ -94,6 +96,20 @@ class Photograph {
         new Modal().addModal();
         new Form().getFields();
         new LightBox().addModal();
+        this.splitProfilTags();
+    }
+    splitProfilTags(){
+        let tags = document.querySelector('header .profil .tags');
+        var tagsSplit = tags.innerHTML.split(',');
+        let tagsHtml1 = document.createElement('span');
+        tagsHtml1.className = 'first';
+        tags.appendChild(tagsHtml1);
+        for(let i=0; i < 8; i++){
+            if(tagsSplit[i] !== 'undefined' && !isNaN(tagsSplit[i])){
+                console.log(tagsSplit[i]);
+            }
+        }
+        console.log(tagsSplit[1]);
     }
 }
 export default Photograph;

@@ -2,11 +2,12 @@ class Modal{
     showHtmlModal(){
         const nameTitle = document.querySelector('.identity .name');
         const container = document.querySelector('.container');
+        let nameTitleSplit = nameTitle.innerHTML.split(" ");
         let boxModal = `
         <div id="myModal" class="modal">
           <div class="modal-content" id="myModal">
             <form action="send.php" method="POST" class="contactForm" id="Contact">
-                <h1>Contactez-moi ${nameTitle.innerHTML}</h1>
+                <h1>Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
                 <div class="inputBloc">
                     <div class="blocName">
                         <label for="name" id="nameLabel">Name</label>
@@ -35,9 +36,9 @@ class Modal{
                     <div class="error-blocMessage">Message is alphabetic and more than 2 characters</div>
                     </div>
                 </div>
-                <input type="submit" value="Send" class="formSubmit">
+                <input type="submit" value="Envoyer" class="formSubmit">
             </form>
-            <span class="close">&times;</span>
+            <span class="close">X</span>
           </div>
         </div>
         `;

@@ -144,7 +144,7 @@ header.entete a {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
-  justify-items: center;
+  align-items: center;
   background: #fafafa;
   padding: 1.5rem;
 }
@@ -153,6 +153,11 @@ ul.identity, ul.contact, ul.image {
   display: flex;
   flex-direction: column;
   list-style-type: none;
+}
+
+ul.contact {
+  width: 170px;
+  height: 69px;
 }
 
 ul.identity {
@@ -242,7 +247,8 @@ h2 {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.photographHeader #media img, .photographHeader #media video {
+.photographHeader #media img,
+.photographHeader #media video {
   width: 320px;
   height: 300px;
   margin: 0.5rem;
@@ -265,15 +271,34 @@ h2 {
   color: #901c1c;
   font-weight: 300;
 }
-.photographHeader .mediaPrice, .photographHeader .mediaLikes {
+.photographHeader .mediaPrice,
+.photographHeader .mediaLikes {
   font-weight: bold;
+}
+.photographHeader .profil .identity {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.photographHeader .profil .identity h2 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+.photographHeader .profil .identity ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 20px;
+  font-size: 1.5rem;
+  list-style-type: none;
+  line-height: 26px;
 }
 .photographHeader .contactButton {
   padding: 15px;
   background: #901c1c;
   color: white;
-  font-size: 1rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: bold;
   border: none;
   border-radius: 5px;
 }
@@ -282,7 +307,8 @@ h2 {
   background: #bb2424;
 }
 
-video, source {
+video,
+source {
   width: 100%;
 }
 
@@ -361,9 +387,11 @@ video, source {
 /* Modal Content/Box */
 .modal-content {
   position: relative;
-  max-width: 70%;
+  max-height: 900px;
+  max-width: 669px;
+  border-radius: 5px;
   color: black;
-  background-color: #D3573C;
+  background-color: #DB8876;
   margin: 15% auto;
   /* 15% from the top and centered */
   padding: 20px;
@@ -375,7 +403,7 @@ video, source {
   position: absolute;
   top: 5px;
   right: 15px;
-  color: #aaa;
+  color: #fff;
   font-size: 28px;
   font-weight: bold;
 }
@@ -399,33 +427,53 @@ form {
 }
 form h1 {
   margin-bottom: 20px;
+  font-size: 3rem;
+  font-weight: 400;
 }
 form .formSubmit {
   background: #901C1C;
   color: white;
-  width: 20%;
-  margin: 15px auto;
+  width: 170px;
+  height: 68px;
+  margin-top: 20px;
   padding: 10px;
   border: none;
   border-radius: 5px;
+  font-size: 2rem;
 }
 form .formSubmit:hover {
   background: #bb2424;
   transform: scale(1.1);
 }
 form .inputBloc {
-  width: 85%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
+  font-size: 2.25rem;
   margin: auto;
 }
+form .inputBloc input[type=text], form .inputBloc input[type=email] {
+  height: 68px;
+  max-width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 2.25rem;
+}
+form .inputBloc textarea {
+  font-size: 2rem;
+  border-radius: 5px;
+}
 form .inputBloc .error-firstName,
-form .inputBloc .error-lastName {
+form .inputBloc .error-lastName,
+form .inputBloc .error-blocName,
+form .inputBloc .error-blocFirstName,
+form .inputBloc .error-blocMail,
+form .inputBloc .error-blocMessage {
   margin-left: 30px;
   color: red;
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
 form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   width: 100%;
@@ -489,7 +537,8 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   padding: 10px;
 }
 .lightModal .videoRimg img {
-  max-width: 100%;
+  width: 100%;
+  height: 95vh;
   object-fit: cover;
 }
 .lightModal .arrow {
@@ -623,6 +672,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   width: 80%;
   margin: auto;
   font-size: 2rem;
+  margin-top: 20px;
 }
 .tri label {
   margin-top: 15px;

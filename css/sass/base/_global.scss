@@ -27,7 +27,7 @@ a{
     .global{
         display: flex;
         flex-direction: column;
-    }
+     }
     #flightMenu{
         width: 20%;
         height: 30px;
@@ -131,7 +131,7 @@ a{
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
-        justify-items: center;
+        align-items: center;
         background: #fafafa;
         padding: 1.5rem;
     }
@@ -139,6 +139,10 @@ a{
         display: flex;
         flex-direction: column;
         list-style-type: none;
+    }
+    ul.contact{
+        width: 170px;
+        height: 69px;
     }
     ul.identity{
         justify-content: space-between;

@@ -30,7 +30,7 @@ class DropDown {
                     return 0;
                 });
             }
-            new displayMediaSort(dataMediaSort);
+            displayMediaSort(dataMediaSort);
         });
     }
 }
