@@ -699,6 +699,11 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
     height: auto;
     padding: 5px;
   }
+
+  .lightModal .mediaDetails h2 {
+    margin: 5px;
+    font-size: 1rem;
+  }
 }
 .totalLikes {
   display: flex;
