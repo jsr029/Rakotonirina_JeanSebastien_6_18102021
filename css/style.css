@@ -257,6 +257,7 @@ h2 {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-bottom: 5rem;
 }
 .photographHeader #media img,
 .photographHeader #media video {
@@ -278,6 +279,7 @@ h2 {
   color: #901c1c;
 }
 .photographHeader .pictVideos .mediaDetails h2 {
+  width: 222px;
   font-size: 1rem;
   color: #901c1c;
   font-weight: 300;
@@ -285,6 +287,9 @@ h2 {
 .photographHeader .mediaPrice,
 .photographHeader .mediaLikes {
   font-weight: bold;
+}
+.photographHeader .mediaLikes {
+  margin-left: 15px;
 }
 .photographHeader .profil .identity {
   display: flex;

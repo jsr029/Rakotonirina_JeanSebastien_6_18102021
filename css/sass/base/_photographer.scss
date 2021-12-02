@@ -11,6 +11,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-bottom: 5rem;
     }
 
     #media img,
@@ -36,6 +37,7 @@
         color: #901c1c;
 
         h2 {
+            width: 222px;
             font-size: 1rem;
             color: #901c1c;
             font-weight: 300;
@@ -45,6 +47,9 @@
     .mediaPrice,
     .mediaLikes {
         font-weight: bold;
+    }
+    .mediaLikes{
+        margin-left: 15px;
     }
     .profil .identity{
         display: flex;
