@@ -519,22 +519,20 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   /* Stay in place */
   z-index: 1;
   /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
   /* Full width */
-  height: 100%;
   /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
+  background: white;
   /* Black w/ opacity */
 }
 .lightModal .videoRimg {
   max-width: 90%;
   margin: auto;
+  text-align: center;
 }
 .lightModal .mediaDetails {
   position: absolute;
@@ -546,20 +544,21 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   align-items: center;
   width: 90%;
   margin: 0 auto;
-  background: #D3573C;
-  color: white;
+  background: white;
 }
 .lightModal .mediaDetails .mediaPrice, .lightModal .mediaDetails .mediaLikes, .lightModal .mediaDetails .heartLikes {
   display: none;
 }
 .lightModal .mediaDetails h2 {
-  color: white;
   padding: 10px;
+  margin-left: 3.2rem;
 }
 .lightModal .videoRimg img {
-  width: 100%;
-  height: 95vh;
+  width: 950px;
+  height: 600px;
   object-fit: cover;
+  margin: auto;
+  padding: 30px 30px;
 }
 .lightModal .arrow {
   width: 100%;
@@ -608,15 +607,14 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   position: absolute;
   top: 2%;
   right: 7%;
-  color: grey;
+  color: #901C1C;
   font-size: 28px;
   font-weight: bold;
-  background: black;
 }
 
 .closeLightBox:hover,
 .closeLightBox:focus {
-  color: red;
+  color: #901C1C;
   text-decoration: none;
   cursor: pointer;
 }
@@ -639,12 +637,9 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 #precedent,
 #suivant {
   cursor: pointer;
-  transition: opacity 0.3s ease;
-  opacity: 0;
   position: absolute;
   font-size: 100px;
-  color: rgba(220, 220, 220, 0.8);
-  background-color: rgba(0, 0, 0, 0.8);
+  color: #901C1C;
   padding: 10px;
 }
 
@@ -656,11 +651,10 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   right: 0;
 }
 
-#slider:hover #precedent,
+/*#slider:hover #precedent,
 #slider:hover #suivant {
-  opacity: 1;
-}
-
+    opacity: 1;
+}*/
 .totalLikes {
   display: flex;
   flex-direction: row;
