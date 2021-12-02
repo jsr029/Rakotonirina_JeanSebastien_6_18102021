@@ -681,19 +681,71 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 
 .tri {
+  position: relative;
   width: 80%;
   margin: auto;
   font-size: 2rem;
-  margin-top: 20px;
+  display: block;
+  margin-top: 2rem;
 }
 .tri label {
   margin-top: 15px;
+  font-size: 18px;
+  color: black;
 }
 .tri #tri-select {
-  font-size: 1.5rem;
-  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   background: #901c1c;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  left: 7rem;
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  list-style-type: none;
+}
+.tri #tri-select .date, .tri #tri-select .titre, .tri #tri-select hr {
+  display: none;
+}
+.tri #tri-select hr {
+  width: 150px;
+  height: 1px;
   color: white;
+}
+.tri #tri-select i.triArrow {
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+.tri #tri-select i.clicked {
+  visibility: hidden;
+  position: absolute;
+  top: 20px;
+  right: 15px;
+}
+.tri #tri-select li {
+  height: 23px;
+  width: 90px;
+  left: 20px;
+  top: 23px;
+  font-size: 18px;
+  font-weight: 70;
+  padding: 23px 60px 23px 20px;
+  border-radius: nullpx;
+  cursor: pointer;
+  display: block;
+}
+.tri #tri-select li:hover {
+  height: 23px;
+  width: 76px;
+  border-radius: 5px;
+  background: #bb2424;
 }
 
 select option:hover {

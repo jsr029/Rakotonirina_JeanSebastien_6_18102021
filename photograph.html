@@ -24,11 +24,15 @@
                 </section>
                 <section class="tri">
                     <label for="tri-select">Trier par : </label>
-                    <select name="tri" id="tri-select">
-                        <option value="popularite" selected>Popularité</option>
-                        <option value="date">Date</option>
-                        <option value="titre">Titre</option>
-                    </select>
+                    <ul name="tri" id="tri-select">
+                        <li class="popularite" selected>Popularité</li>
+                        <hr>
+                        <li class="date">Date</li>
+                        <hr>
+                        <li class="titre">Titre</li>
+                        <i class="fas fa-chevron-down triArrow" role="button"></i>
+                        <i class="fas fa-chevron-up clicked" role="button"></i>
+                    </ul>
                 </section>
                 <section id="media" aria-label="Photographer's medias">
                 </section>
