@@ -33,6 +33,9 @@
     .photographHeader {
         #media {
             margin: 2rem 0;
+            img, video{
+                width: 300px;
+            }
         }
 
         .profil {
@@ -71,7 +74,7 @@
     }
 
     .totalLikes {
-        width: 320px !important;
+        width: 310px !important;
         height: 40px !important;
         .salary, .likes, .icon {
             padding: 5px 5px 5px 5px !important;

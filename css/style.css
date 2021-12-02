@@ -659,6 +659,9 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   .photographHeader #media {
     margin: 2rem 0;
   }
+  .photographHeader #media img, .photographHeader #media video {
+    width: 300px;
+  }
   .photographHeader .profil h2 {
     font-size: 2rem !important;
   }
@@ -687,7 +690,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   }
 
   .totalLikes {
-    width: 320px !important;
+    width: 310px !important;
     height: 40px !important;
   }
   .totalLikes .salary, .totalLikes .likes, .totalLikes .icon {

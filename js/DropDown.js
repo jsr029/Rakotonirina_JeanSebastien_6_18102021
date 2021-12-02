@@ -41,31 +41,17 @@ class DropDown {
                 });
                 displayMediaSort(dataMediaSort);
             });
-            li.forEach(function(elm){
-                if(elm.innerHTML == "propriete"){
-                    elm.addEventListener("click", function(event){
-                        dat.style.display = 'block';
-                        tit.style.display = 'block';
-                        clicked.style.visibility = 'visible';
-                        this.style.visibility = 'hidden';
-                    });
-                }
-                else if(elm.innerHTML == "date"){
-                    elm.addEventListener("click", function(event){
-                        pop.style.display = 'none';
-                        tit.style.display = 'none';
-                        triArrow.style.visibility = 'visible';
-                        this.style.visibility = 'hidden';
-                    });
-                }
-                else if(elm.innerHTML == "titre"){
-                    elm.addEventListener("click", function(event){
-                        dat.style.display = 'none';
-                        tit.style.display = 'none';
-                        triArrow.style.visibility = 'visible';
-                        this.style.visibility = 'hidden';
-                    });
-                }
+            triArrow.addEventListener("click", function(event){
+                dat.style.display = 'block';
+                tit.style.display = 'block';
+                clicked.style.visibility = 'visible';
+                this.style.visibility = 'hidden';
+            });
+            clicked.addEventListener("click", function(event){
+                dat.style.display = 'none';
+                tit.style.display = 'none';
+                triArrow.style.visibility = 'visible';
+                this.style.visibility = 'hidden';
             });
     }
 }
