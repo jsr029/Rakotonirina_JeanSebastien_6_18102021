@@ -96,7 +96,7 @@ class Photograph {
         new Modal().addModal();
         new Form().getFields();
         new LightBox().addModal();
-        this.splitProfilTags();
+        //this.splitProfilTags();
     }
     splitProfilTags() {
         let tags = document.querySelector('header .profil .tags');

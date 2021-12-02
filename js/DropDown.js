@@ -14,13 +14,13 @@ class DropDown {
             let clicked = document.querySelector("#tri-select i.clicked");
 
             pop.addEventListener('click', function (opt) {
-                console.log("Trier par : Popularité");
+                //console.log("Trier par : Popularité");
                 dataMediaSort = dataMedia.sort((a, b) => b.likes - a.likes);
                 displayMediaSort(dataMediaSort);
             });
 
             dat.addEventListener('click', function (opt) {
-                console.log("Trier par : Date");
+                //console.log("Trier par : Date");
                 dataMediaSort = dataMedia.sort((a, b) => {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                 });
@@ -28,7 +28,7 @@ class DropDown {
             }); 
 
             tit.addEventListener('click', function (opt) {
-                console.log("Trier par : titre");
+                //console.log("Trier par : titre");
                 dataMediaSort = dataMedia.sort(function (a, b) {
                 if (a.title < b.title) {
                     return 1;

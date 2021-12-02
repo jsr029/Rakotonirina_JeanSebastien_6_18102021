@@ -30,7 +30,6 @@
         text-align: left;
         .date, .titre{
             display: none;
-            transition: 5s ease-in display;
         }
         .date{
             color: white;
@@ -40,21 +39,21 @@
 
         i.triArrow{
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: 15px;
             cursor: pointer;
         }
         i.clicked {
             visibility: hidden;
             position: absolute;
-            top: 20px;
+            top: 25px;
             right: 15px;
             cursor: pointer;
         }
 
         li {
             height: 23px;
-            //width: 90px;
+            width: 80px;
             left: 20px;
             top: 23px;
             font-size: 18px;

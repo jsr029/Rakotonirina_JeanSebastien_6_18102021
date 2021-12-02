@@ -723,7 +723,6 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 .tri #tri-select .date, .tri #tri-select .titre {
   display: none;
-  transition: 5s ease-in display;
 }
 .tri #tri-select .date {
   color: white;
@@ -732,19 +731,20 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 .tri #tri-select i.triArrow {
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 15px;
   cursor: pointer;
 }
 .tri #tri-select i.clicked {
   visibility: hidden;
   position: absolute;
-  top: 20px;
+  top: 25px;
   right: 15px;
   cursor: pointer;
 }
 .tri #tri-select li {
   height: 23px;
+  width: 80px;
   left: 20px;
   top: 23px;
   font-size: 18px;
