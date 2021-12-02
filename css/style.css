@@ -707,7 +707,6 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 .tri #tri-select {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   background: #901c1c;
   border: none;
@@ -717,32 +716,35 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   font-weight: 500;
   left: 7rem;
   position: absolute;
-  top: 0;
+  top: -10px;
   width: 10rem;
   list-style-type: none;
+  text-align: left;
 }
-.tri #tri-select .date, .tri #tri-select .titre, .tri #tri-select hr {
+.tri #tri-select .date, .tri #tri-select .titre {
   display: none;
+  transition: 5s ease-in display;
 }
-.tri #tri-select hr {
-  width: 150px;
-  height: 1px;
+.tri #tri-select .date {
   color: white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 }
 .tri #tri-select i.triArrow {
   position: absolute;
   top: 20px;
   right: 15px;
+  cursor: pointer;
 }
 .tri #tri-select i.clicked {
   visibility: hidden;
   position: absolute;
   top: 20px;
   right: 15px;
+  cursor: pointer;
 }
 .tri #tri-select li {
   height: 23px;
-  width: 90px;
   left: 20px;
   top: 23px;
   font-size: 18px;

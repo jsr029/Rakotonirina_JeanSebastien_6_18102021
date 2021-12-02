@@ -15,7 +15,6 @@
     #tri-select {
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: flex-start;
         background: #901c1c;
         border: none;
@@ -25,33 +24,37 @@
         font-weight: 500;
         left: 7rem;
         position: absolute;
-        top: 0;
+        top: -10px;
         width: 10rem;
         list-style-type: none;
-        .date, .titre, hr{
+        text-align: left;
+        .date, .titre{
             display: none;
+            transition: 5s ease-in display;
         }
-        hr {
-            width: 150px;
-            height: 1px;
+        .date{
             color: white;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
         }
 
         i.triArrow{
             position: absolute;
             top: 20px;
             right: 15px;
+            cursor: pointer;
         }
         i.clicked {
             visibility: hidden;
             position: absolute;
             top: 20px;
             right: 15px;
+            cursor: pointer;
         }
 
         li {
             height: 23px;
-            width: 90px;
+            //width: 90px;
             left: 20px;
             top: 23px;
             font-size: 18px;
