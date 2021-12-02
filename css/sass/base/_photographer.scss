@@ -35,7 +35,9 @@
         justify-content: space-between;
         align-items: center;
         color: #901c1c;
-
+        .heartLikes{
+            cursor: pointer;
+        }
         h2 {
             width: 222px;
             font-size: 1rem;

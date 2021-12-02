@@ -278,6 +278,9 @@ h2 {
   align-items: center;
   color: #901c1c;
 }
+.photographHeader .pictVideos .mediaDetails .heartLikes {
+  cursor: pointer;
+}
 .photographHeader .pictVideos .mediaDetails h2 {
   width: 222px;
   font-size: 1rem;
