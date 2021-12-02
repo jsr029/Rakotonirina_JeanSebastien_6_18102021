@@ -659,7 +659,8 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   .photographHeader #media {
     margin: 2rem 0;
   }
-  .photographHeader #media img, .photographHeader #media video {
+  .photographHeader #media img,
+.photographHeader #media video {
     width: 300px;
   }
   .photographHeader .profil h2 {
@@ -690,7 +691,9 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
     width: 310px !important;
     height: 40px !important;
   }
-  .totalLikes .salary, .totalLikes .likes, .totalLikes .icon {
+  .totalLikes .salary,
+.totalLikes .likes,
+.totalLikes .icon {
     padding: 5px 5px 5px 5px !important;
   }
 
@@ -702,7 +705,28 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 
   .lightModal .mediaDetails h2 {
     margin: 5px;
+    padding: 0;
     font-size: 1rem;
+  }
+
+  .closeLightBox {
+    top: 5px;
+    right: 5px;
+    font-size: 14px;
+  }
+
+  #precedent,
+#suivant {
+    font-size: 50px;
+    padding: 5px;
+  }
+
+  #precedent {
+    left: -10px;
+  }
+
+  #suivant {
+    right: -10px;
   }
 }
 .totalLikes {

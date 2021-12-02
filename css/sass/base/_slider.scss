@@ -33,7 +33,9 @@
     .photographHeader {
         #media {
             margin: 2rem 0;
-            img, video{
+
+            img,
+            video {
                 width: 300px;
             }
         }
@@ -63,6 +65,7 @@
                 flex-flow: row wrap;
                 row-gap: 10px;
                 line-height: 21px;
+
                 .tagsProfil {
                     font-size: 1rem;
                 }
@@ -73,18 +76,41 @@
     .totalLikes {
         width: 310px !important;
         height: 40px !important;
-        .salary, .likes, .icon {
+
+        .salary,
+        .likes,
+        .icon {
             padding: 5px 5px 5px 5px !important;
         }
     }
-            .lightModal .videoRimg img {
-                width: 95%;
-                height: auto;
-                padding: 5px;
-            }
-            .lightModal .mediaDetails h2{
-                    margin: 5px;
-                    font-size: 1rem;
-                }
 
+    .lightModal .videoRimg img {
+        width: 95%;
+        height: auto;
+        padding: 5px;
+    }
+
+    .lightModal .mediaDetails h2 {
+        margin: 5px;
+        padding: 0;
+        font-size: 1rem;
+    }
+
+    .closeLightBox {
+        top: 5px;
+        right: 5px;
+        font-size: 14px;
+    }
+
+    #precedent,
+    #suivant {
+        font-size: 50px;
+        padding: 5px;
+    }
+    #precedent{
+        left: -10px;
+    }
+    #suivant{
+        right: -10px;
+    }
 }
