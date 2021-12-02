@@ -658,26 +658,29 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  width: 320px;
-  height: 41px;
+  max-width: 376px;
+  height: 89px;
   position: fixed;
   bottom: 0;
   right: 2%;
   background: #db8876;
   border-radius: 5px;
+  font-size: 24px;
+  font-weight: 500;
+  color: black;
 }
 .totalLikes .likes {
   flex-direction: row;
   justify-content: space-around;
-  padding: 10px 5px;
+  padding: 21px 5px 27px 31px;
 }
 .totalLikes .salary {
-  width: 100px;
-  padding: 10px 5px 10px 15px;
+  width: 133px;
+  padding: 21px 34px 27px 15px;
   text-align: right;
 }
 .totalLikes .icon {
-  width: 150px;
+  width: 70px;
 }
 
 .tri {
