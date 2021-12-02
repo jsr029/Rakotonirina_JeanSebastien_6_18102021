@@ -676,9 +676,6 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 .photographHeader .profil .lightModal {
     width: 90%;
   }
-  .photographHeader .profil .lightModal .videoRimg img {
-    width: 100%;
-  }
   .photographHeader .profil .tags {
     width: 90%;
     flex-flow: row wrap;
@@ -695,6 +692,12 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   }
   .totalLikes .salary, .totalLikes .likes, .totalLikes .icon {
     padding: 5px 5px 5px 5px !important;
+  }
+
+  .lightModal .videoRimg img {
+    width: 95%;
+    height: auto;
+    padding: 5px;
   }
 }
 .totalLikes {
