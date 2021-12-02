@@ -29,3 +29,52 @@
 #slider:hover #suivant {
     opacity: 1;
 }*/
+@media screen and (max-width:1024px) {
+    .photographHeader {
+        #media {
+            margin: 2rem 0;
+        }
+
+        .profil {
+            h2 {
+                font-size: 2rem !important;
+            }
+
+            .identity ul {
+                margin: 15px 0;
+                line-height: 12px;
+
+                li {
+                    font-size: 1rem;
+                }
+            }
+
+            #slider,
+            .lightModal {
+                width: 90%;
+            }
+
+            .lightModal .videoRimg img {
+                width: 100%;
+            }
+
+            .tags {
+                width: 90%;
+                flex-flow: row wrap;
+                row-gap: 10px;
+                line-height: 21px;
+                .tagsProfil {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .totalLikes {
+        width: 320px !important;
+        height: 40px !important;
+        .salary, .likes, .icon {
+            padding: 5px 5px 5px 5px !important;
+        }
+    }
+}

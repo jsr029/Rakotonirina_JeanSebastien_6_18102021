@@ -12,6 +12,7 @@ class DropDown {
             let tit = document.querySelector('#tri-select .titre');
             let triArrow = document.querySelector('#tri-select i.triArrow');
             let clicked = document.querySelector("#tri-select i.clicked");
+            let li = document.querySelectorAll('#tri-select li');
 
             pop.addEventListener('click', function (opt) {
                 //console.log("Trier par : Popularité");
@@ -40,17 +41,31 @@ class DropDown {
                 });
                 displayMediaSort(dataMediaSort);
             });
-            triArrow.addEventListener("click", function(event){
-                dat.style.display = 'block';
-                tit.style.display = 'block';
-                clicked.style.visibility = 'visible';
-                this.style.visibility = 'hidden';
-            });
-            clicked.addEventListener("click", function(event){
-                dat.style.display = 'none';
-                tit.style.display = 'none';
-                triArrow.style.visibility = 'visible';
-                this.style.visibility = 'hidden';
+            li.forEach(function(elm){
+                if(elm.innerHTML == "propriete"){
+                    elm.addEventListener("click", function(event){
+                        dat.style.display = 'block';
+                        tit.style.display = 'block';
+                        clicked.style.visibility = 'visible';
+                        this.style.visibility = 'hidden';
+                    });
+                }
+                else if(elm.innerHTML == "date"){
+                    elm.addEventListener("click", function(event){
+                        pop.style.display = 'none';
+                        tit.style.display = 'none';
+                        triArrow.style.visibility = 'visible';
+                        this.style.visibility = 'hidden';
+                    });
+                }
+                else if(elm.innerHTML == "titre"){
+                    elm.addEventListener("click", function(event){
+                        dat.style.display = 'none';
+                        tit.style.display = 'none';
+                        triArrow.style.visibility = 'visible';
+                        this.style.visibility = 'hidden';
+                    });
+                }
             });
     }
 }
