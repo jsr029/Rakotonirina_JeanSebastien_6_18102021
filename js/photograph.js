@@ -8,7 +8,7 @@ databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
     new DropDown().upDown(r);
-        new AddLikes().adHeart();
+    new AddLikes().adHeart();
 });
 
 class Photograph {
@@ -31,7 +31,7 @@ class Photograph {
                         <ul>
                             <li class="location">${k.city + ', ' + k.country}</li>
                             <li class="tagline">${k.tagline}</li>
-                            <li class="tags">${k.tags}</li>
+                            <li class="tags">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
                         </ul>
                     </div>
                     <ul class="contact">
@@ -98,14 +98,14 @@ class Photograph {
         new LightBox().addModal();
         this.splitProfilTags();
     }
-    splitProfilTags(){
+    splitProfilTags() {
         let tags = document.querySelector('header .profil .tags');
         var tagsSplit = tags.innerHTML.split(',');
         let tagsHtml1 = document.createElement('span');
         tagsHtml1.className = 'first';
         tags.appendChild(tagsHtml1);
-        for(let i=0; i < 8; i++){
-            if(tagsSplit[i] !== 'undefined' && !isNaN(tagsSplit[i])){
+        for (let i = 0; i < 8; i++) {
+            if (tagsSplit[i] !== 'undefined' && !isNaN(tagsSplit[i])) {
                 console.log(tagsSplit[i]);
             }
         }

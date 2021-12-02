@@ -112,6 +112,17 @@ a{
         list-style-type: none;
         display: flex;
         flex-direction: row;
+        .tagsProfil{
+            color: #901C1C;
+            border: 1px solid #901C1C;
+            border-radius: 20px;
+            padding: 2px 10px;
+            margin-left: 5px;
+            &:hover{
+                color: white;
+                background: #901c1c;
+            }
+        }
         li{
             margin-left: 5px;
         }
