@@ -632,6 +632,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   margin: auto;
   display: flex;
   align-items: center;
+  z-index: 3000;
 }
 
 #precedent,
