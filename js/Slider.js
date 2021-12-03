@@ -10,7 +10,7 @@ var SliderModal = function (pv, index) {
             numero = slide.length - 1;
         if (numero > slide.length - 1)
             index = 0;
-        index--;
+        --index;
         console.log(numero);
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
@@ -24,10 +24,10 @@ var SliderModal = function (pv, index) {
             numero = slide.length - 1;
         if (numero > slide.length - 1)
             index = 0;
-        index++;
+        ++index;
         console.log(numero);
         var slideModal = document.querySelector("#slide");
-        slideModal.innerHTML = slide[numero].innerHTML;
+            slideModal.innerHTML = slide[numero].innerHTML;
     });
 };
 
