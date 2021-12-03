@@ -26,9 +26,6 @@ class DropDown {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                     });
                 displayMediaSort(dataMediaSort);
-                pop.style.display = 'none';
-                dat.style.display = 'block';
-                tit.style.display = 'none';
             }); 
 
             tit.addEventListener('click', function (opt) {
