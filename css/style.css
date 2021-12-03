@@ -788,6 +788,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   width: 10rem;
   list-style-type: none;
   text-align: left;
+  z-index: 2000;
 }
 .tri #tri-select .date, .tri #tri-select .titre {
   display: none;
@@ -804,7 +805,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   cursor: pointer;
 }
 .tri #tri-select i.clicked {
-  visibility: hidden;
+  display: none;
   position: absolute;
   top: 25px;
   right: 15px;

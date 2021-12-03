@@ -28,6 +28,7 @@
         width: 10rem;
         list-style-type: none;
         text-align: left;
+        z-index: 2000;
         .date, .titre{
             display: none;
         }
@@ -44,7 +45,8 @@
             cursor: pointer;
         }
         i.clicked {
-            visibility: hidden;
+            display: none;
+            //visibility: hidden;
             position: absolute;
             top: 25px;
             right: 15px;

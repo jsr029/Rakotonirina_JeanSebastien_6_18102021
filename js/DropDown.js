@@ -24,8 +24,11 @@ class DropDown {
                 //console.log("Trier par : Date");
                 dataMediaSort = dataMedia.sort((a, b) => {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
-                });
+                    });
                 displayMediaSort(dataMediaSort);
+                pop.style.display = 'none';
+                dat.style.display = 'block';
+                tit.style.display = 'none';
             }); 
 
             tit.addEventListener('click', function (opt) {
@@ -42,16 +45,17 @@ class DropDown {
                 displayMediaSort(dataMediaSort);
             });
             triArrow.addEventListener("click", function(event){
+                pop.style.display = 'block';
                 dat.style.display = 'block';
                 tit.style.display = 'block';
-                clicked.style.visibility = 'visible';
-                this.style.visibility = 'hidden';
+                clicked.style.display = 'block';
+                this.style.display = 'none';
             });
             clicked.addEventListener("click", function(event){
                 dat.style.display = 'none';
                 tit.style.display = 'none';
-                triArrow.style.visibility = 'visible';
-                this.style.visibility = 'hidden';
+                triArrow.style.display = 'block';
+                this.style.display = 'none';
             });
     }
 }

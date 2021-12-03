@@ -4,12 +4,13 @@ var SliderModal = function (pv, index) {
     slideMoins.addEventListener('click', function (elt) {
         var slide = pv;
         var numero = 0;
-        numero = numero + index;
+        numero = numero - index;
         if (numero < 0)
             numero = slide.length - 1;
         if (numero > slide.length - 1)
-            numero = 0;
+            index = 0;
         index--;
+        console.log(numero);
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
     });
@@ -21,8 +22,9 @@ var SliderModal = function (pv, index) {
         if (numero < 0)
             numero = slide.length - 1;
         if (numero > slide.length - 1)
-            numero = 0;
+            index = 0;
         index++;
+        console.log(numero);
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
     });
