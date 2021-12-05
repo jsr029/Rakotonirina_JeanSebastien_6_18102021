@@ -4,11 +4,15 @@ import Form from "./form.js";
 import LightBox from "./lightBox.js";
 import AddLikes from "./addLikes.js";
 import DropDown from "./DropDown.js";
+import KeyDownPh from "./keyDownPh.js";
+import TabIndexPh from "./tabIndexPh.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
     new DropDown().upDown(r);
     new AddLikes().adHeart();
+    new KeyDownPh().rightArrow(r);
+    new TabIndexPh().settriSelect();
 });
 
 class Photograph {
@@ -26,20 +30,20 @@ class Photograph {
         dataPhotos.forEach(function (k) {
             if (k.id == aClicked) {
                 let boxPhotograph = `
-                    <div class="identity">
-                        <h2 class="name">${k.name}</h2>
-                        <ul>
+                    <div class="identity" aria-label="Photographer's id">
+                        <h2 class="name" tabindex="2">${k.name}</h2>
+                        <ul tabindex="3" aria-label="Location and tags">
                             <li class="location">${k.city + ', ' + k.country}</li>
                             <li class="tagline">${k.tagline}</li>
                             <li class="tags">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
                         </ul>
                     </div>
-                    <ul class="contact">
-                        <button class="contactButton" id="myBtn">Contacter Moi</button>
+                    <ul class="contact" aria-label="Contacter-moi">
+                        <button class="contactButton" id="myBtn" tabindex="4">Contacter Moi</button>
                     </ul>
                     <ul class="image">
                         <li class="photo">
-                            <a href="#" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}"></a>
+                            <a href="#" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}" tabindex="5"></a>
                         </li>
                     </ul>
             `;
@@ -81,7 +85,7 @@ class Photograph {
                         <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
                     </div>
                 </a>
-                    <div class="mediaDetails">
+                    <div class="mediaDetails tab">
                     <h2>${d.title}</h2>
                         <span class="mediaPrice">${d.price}€</span>
                         <span class="mediaLikes">${d.likes}</span>

@@ -57,6 +57,9 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        .location{
+            font-size: 1.5rem;
+        }
         h2{
             font-size: 4rem;
             font-weight: 400;
@@ -66,10 +69,10 @@
             flex-direction: column;
             justify-content: space-around;
             row-gap: 20px;
-            font-size: 1.5rem;
+            font-size: 1.12rem;
             list-style-type: none;
-            line-height: 26px;
-            margin-left: 15px;
+            line-height: 23px;
+            margin-left: 5px;
         }
     }
     .contactButton {
