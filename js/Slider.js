@@ -1,7 +1,7 @@
 var SliderModal = function (pv, index) {
     const mD = document.querySelector('#myLightModal .mediaDetails');
     var slideMoins = document.querySelector('#precedent');
-        var slide = new Array(pv);
+        var slide = pv;
     slideMoins.addEventListener('click', function (elt) {
         console.log(pv[index]);
         var numero = 0;
@@ -14,6 +14,7 @@ var SliderModal = function (pv, index) {
         console.log(numero);
         var slideModal = document.querySelector("#slide");
         slideModal.innerHTML = slide[numero].innerHTML;
+        slideModal.setAttribute("tabindex", 1);
         console.log(slide[numero]);
     });
     var slidePlus = document.querySelector('#suivant');

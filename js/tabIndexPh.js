@@ -11,7 +11,7 @@ class TabIndexPh{
          dateH.setAttribute("tabindex", 9);
          const titre = document.querySelector(".titre");        
          titre.setAttribute("tabindex", 10);
-         let pictVideos = document.querySelectorAll('.pictVideos');
+         let pictVideos = document.querySelectorAll('#media .pictVideos');
          pictVideos.forEach(function(elm){
          let details = elm.children[1].children;
              let img = elm.children[0].children[0].children[0];
@@ -21,7 +21,6 @@ class TabIndexPh{
             for (let k = 0; k < details.length; k++) {
                details[k].setAttribute("tabindex", tabd);    
             }
-            console.log(elm.children[1].children);
          });
      }
 }
