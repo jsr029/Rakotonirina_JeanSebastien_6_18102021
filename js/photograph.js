@@ -43,7 +43,7 @@ class Photograph {
                     </ul>
                     <ul class="image">
                         <li class="photo">
-                            <a href="#" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}" tabindex="5"></a>
+                            <a href="javascript:void(0)" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}" tabindex="5"></a>
                         </li>
                     </ul>
             `;
