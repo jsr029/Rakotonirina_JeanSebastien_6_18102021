@@ -18,7 +18,7 @@ class DropDown {
         tit.style.display = "none";
         pop.addEventListener('click', function (opt) {
             //console.log("Trier par : Popularité");
-            dataMediaSort = dataMedia.sort((a, b) => b.likes - a.likes);
+            dataMediaSort = dataMedia.sort((a, b) => a.likes - b.likes);
             displayMediaSort(dataMediaSort);
             dat.classList.remove("selected");
             pop.classList.add("selected");
