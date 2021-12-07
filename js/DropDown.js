@@ -12,12 +12,31 @@ class DropDown {
             let tit = document.querySelector('#tri-select .titre');
             let triArrow = document.querySelector('#tri-select i.triArrow');
             let clicked = document.querySelector("#tri-select i.clicked");
-            let li = document.querySelectorAll('#tri-select li');
+            let li = document.querySelector('#tri-select li');
+            let ul = document.querySelector('.tri #tri-select');
 
             pop.addEventListener('click', function (opt) {
                 //console.log("Trier par : Popularité");
                 dataMediaSort = dataMedia.sort((a, b) => b.likes - a.likes);
                 displayMediaSort(dataMediaSort);
+                dat.classList.remove("selected");
+                pop.classList.add("selected");                
+                tit.classList.remove("selected");
+                pop.style.order = "1";
+                pop.style.marginTop = "0px";                
+                pop.after(tit);
+                dat.style.order = "2";
+                dat.style.borderTop = "1px solid white";
+                dat.style.borderBottom = "1px solid white";
+                dat.after(tit);
+                pop.style.borderTop = "none";
+                pop.style.borderBottom = "none";
+                tit.style.order = "3";                
+                dat.style.visibility ="hidden";
+                tit.style.visibility ="hidden";
+                ul.style.height = "49px";
+                triArrow.style.display = 'block';
+                clicked.style.display = 'none';
             });
 
             dat.addEventListener('click', function (opt) {
@@ -26,6 +45,24 @@ class DropDown {
                     return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                     });
                 displayMediaSort(dataMediaSort);
+                dat.classList.add("selected");
+                pop.classList.remove("selected");                
+                dat.style.order = "1";
+                dat.after(tit);
+                tit.style.order = "2";
+                tit.after(pop);
+                pop.style.order = "3";
+                pop.style.borderTop = "1px solid white";
+                pop.style.borderBottom = "1px solid white";
+                dat.style.borderTop = "none";
+                dat.style.borderBottom = "none";
+                pop.style.marginTop = "55px";                
+                tit.classList.remove("selected");
+                pop.style.visibility ="hidden";
+                tit.style.visibility ="hidden";
+                ul.style.height = "49px";
+                triArrow.style.display = 'block';
+                clicked.style.display = 'none';
             }); 
 
             tit.addEventListener('click', function (opt) {
@@ -40,19 +77,53 @@ class DropDown {
                     return 0;
                 });
                 displayMediaSort(dataMediaSort);
+                dat.classList.remove("selected");
+                pop.classList.remove("selected");                
+                tit.classList.add("selected");
+                pop.style.visibility ="hidden";
+                pop.style.marginTop = "55px";                
+                tit.style.order = "1";                
+                dat.style.order = "2";
+                tit.after(dat);
+                pop.style.order = "3";
+                dat.after(pop);
+                dat.style.visibility ="hidden";
+                ul.style.height = "49px";
+                triArrow.style.display = 'block';
+                clicked.style.display = 'none';
+                pop.style.borderTop = "1px solid white";
+                pop.style.borderBottom = "1px solid white";
             });
             triArrow.addEventListener("click", function(event){
-                pop.style.display = 'block';
-                dat.style.display = 'block';
-                tit.style.display = 'block';
+                pop.style.visibility = 'visible';
+                pop.classList.remove("selected");
+                dat.style.visibility = 'visible';
+                tit.style.visibility = 'visible';
                 clicked.style.display = 'block';
                 this.style.display = 'none';
+                ul.style.height = "150px";
+                pop.style.order = "1";
+                pop.after(dat);
+                dat.style.order = "2";
+                dat.after(tit);
+                tit.style.order = "3";                
             });
             clicked.addEventListener("click", function(event){
-                dat.style.display = 'none';
-                tit.style.display = 'none';
+                pop.style.visibility = 'visible';
+                pop.classList.remove("selected");                
+                dat.style.visibility = 'hidden';
+                tit.style.visibility = 'hidden';
                 triArrow.style.display = 'block';
                 this.style.display = 'none';
+                ul.style.height = "49px";
+                pop.style.order = "1";
+                pop.style.marginTop = "0px";                
+                pop.after(dat);
+                dat.style.order = "2";
+                dat.after(tit);
+                pop.style.borderTop = "none";
+                pop.style.borderBottom = "none";
+                tit.style.order = "3";                
             });
     }
 }

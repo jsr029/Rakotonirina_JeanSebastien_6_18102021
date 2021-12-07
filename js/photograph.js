@@ -101,7 +101,7 @@ class Photograph {
         new Form().getFields();
         new LightBox().addModal();
         //this.splitProfilTags();
-    }
+}
     splitProfilTags() {
         let tags = document.querySelector('header .profil .tags');
         var tagsSplit = tags.innerHTML.split(',');

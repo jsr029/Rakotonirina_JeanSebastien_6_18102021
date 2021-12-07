@@ -321,7 +321,7 @@ h2 {
   background: #901c1c;
   color: white;
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
   border: none;
   border-radius: 5px;
 }
@@ -740,7 +740,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   justify-content: space-between;
   align-items: center;
   max-width: 376px;
-  height: 89px;
+  height: 55px;
   position: fixed;
   bottom: 0;
   right: 2%;
@@ -753,11 +753,11 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 .totalLikes .likes {
   flex-direction: row;
   justify-content: space-around;
-  padding: 21px 5px 27px 31px;
+  padding: 11px 5px 17px 21px;
 }
 .totalLikes .salary {
   width: 133px;
-  padding: 21px 34px 27px 15px;
+  padding: 11px 24px 17px 5px;
   text-align: right;
 }
 .totalLikes .icon {
@@ -779,17 +779,19 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 .tri #tri-select {
   display: flex;
+  display: -webkit-flex;
   flex-direction: column;
+  flex-direction: -webkit-column;
   justify-content: flex-start;
   background: #901c1c;
   border: none;
   border-radius: 5px;
   color: #fff;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 700;
   left: 7rem;
   position: absolute;
-  top: -10px;
+  top: 0;
   width: 10rem;
   list-style-type: none;
   text-align: left;
@@ -798,41 +800,62 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 .tri #tri-select .date, .tri #tri-select .titre {
   display: none;
 }
-.tri #tri-select .date {
-  color: white;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
-}
 .tri #tri-select i.triArrow {
   position: absolute;
-  top: 25px;
+  top: 15px;
   right: 15px;
   cursor: pointer;
+  z-index: 3000;
 }
 .tri #tri-select i.clicked {
   display: none;
   position: absolute;
-  top: 25px;
+  top: 15px;
   right: 15px;
   cursor: pointer;
+  z-index: 3000;
 }
-.tri #tri-select li {
+.tri #tri-select .popularite, .tri #tri-select .date, .tri #tri-select .titre {
   height: 23px;
   width: 80px;
-  left: 20px;
-  top: 23px;
+  left: 0;
+  top: 0;
   font-size: 18px;
-  font-weight: 70;
-  padding: 23px 60px 23px 20px;
-  border-radius: nullpx;
+  font-weight: 700;
+  padding: 13px 50px 13px 10px;
   cursor: pointer;
   display: block;
+  margin-left: 10px;
+  z-index: 1000;
 }
-.tri #tri-select li:hover {
+.tri #tri-select .popularite:hover, .tri #tri-select .date:hover, .tri #tri-select .titre:hover {
   height: 23px;
-  width: 76px;
+  width: 80px;
   border-radius: 5px;
   background: #bb2424;
+}
+.tri #tri-select li:first-chiild {
+  order: 1;
+}
+.tri #tri-select li:nth-child(2) {
+  order: 2;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+.tri #tri-select li:nth-child(3) {
+  order: 3;
+}
+.tri #tri-select .selected {
+  position: absolute;
+  height: 23px;
+  width: 49px;
+  top: 0;
+  left: 0;
+  background: #901c1c;
+  overflow: hidden;
+  z-index: 2000;
+  border-radius: 5px;
+  padding: 13px 50px 13px 10px;
 }
 
 select option:hover {

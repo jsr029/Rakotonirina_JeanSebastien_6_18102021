@@ -5,7 +5,6 @@
     font-size: 2rem;
     display: block;
     margin-top: 2rem;
-
     label {
         margin-top: 15px;
         font-size: 18px;
@@ -14,17 +13,19 @@
 
     #tri-select {
         display: flex;
+        display: -webkit-flex;
         flex-direction: column;
+        flex-direction: -webkit-column;
         justify-content: flex-start;
         background: #901c1c;
         border: none;
         border-radius: 5px;
         color: #fff;
         font-size: 1rem;
-        font-weight: 500;
+        font-weight: 700;
         left: 7rem;
         position: absolute;
-        top: -10px;
+        top: 0;
         width: 10rem;
         list-style-type: none;
         text-align: left;
@@ -32,44 +33,65 @@
         .date, .titre{
             display: none;
         }
-        .date{
-            color: white;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-        }
 
         i.triArrow{
             position: absolute;
-            top: 25px;
+            top: 15px;
             right: 15px;
             cursor: pointer;
+            z-index: 3000;
         }
         i.clicked {
             display: none;
             //visibility: hidden;
             position: absolute;
-            top: 25px;
+            top: 15px;
             right: 15px;
             cursor: pointer;
+            z-index: 3000;
         }
 
-        li {
+        .popularite, .date, .titre{
             height: 23px;
             width: 80px;
-            left: 20px;
-            top: 23px;
+            left: 0;
+            top: 0;
             font-size: 18px;
-            font-weight: 70;
-            padding: 23px 60px 23px 20px;
-            border-radius: nullpx;
+            font-weight: 700;
+            padding: 13px 50px 13px 10px;
             cursor: pointer;
             display: block;
+            margin-left: 10px;
+            z-index: 1000;
             &:hover {
                 height: 23px;
-                width: 76px;
+                width: 80px;
                 border-radius: 5px;
                 background: lighten(#901c1c, 10%);
             }
+        }
+        li:first-chiild{
+            order:1;
+        }
+        li:nth-child(2){
+           order:2;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        li:nth-child(3){
+            order:3;
+        }
+        .selected{
+            position: absolute;
+            height: 23px;
+            width: 49px;
+            top: 0;
+            left: 0;
+            background: #901c1c;
+            overflow: hidden;
+            z-index: 2000;
+            border-radius: 5px;
+            padding: 13px 50px 13px 10px;
         }
     }
 }

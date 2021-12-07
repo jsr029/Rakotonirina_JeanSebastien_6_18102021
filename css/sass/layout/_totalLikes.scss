@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 376px;
-    height: 89px;
+    height: 55px;
     position: fixed;
     bottom: 0;
     right: 2%;
@@ -16,11 +16,11 @@
     .likes{
         flex-direction: row;
         justify-content: space-around;
-        padding: 21px 5px 27px 31px;
+        padding: 11px 5px 17px 21px;
     }
     .salary{
         width: 133px;
-        padding: 21px 34px 27px 15px;
+        padding: 11px 24px 17px 5px;
         text-align: right;
     }
     .icon{
