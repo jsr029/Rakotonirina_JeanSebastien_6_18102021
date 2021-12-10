@@ -327,7 +327,7 @@ h2 {
 }
 .container .contactButton:hover {
   transform: scale(1.1);
-  background: #bb2424;
+  background: #DB8876;
 }
 
 video,
@@ -636,23 +636,20 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   margin: auto;
   display: flex;
   align-items: center;
-  z-index: 3000;
+  z-index: 2000;
 }
-
-#precedent,
-#suivant {
+#slider #precedent,
+#slider #suivant {
   cursor: pointer;
   position: absolute;
   font-size: 100px;
   color: #901C1C;
   padding: 10px;
 }
-
-#precedent {
+#slider #precedent {
   left: 0;
 }
-
-#suivant {
+#slider #suivant {
   right: 0;
 }
 
@@ -661,34 +658,34 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
     opacity: 1;
 }*/
 @media screen and (max-width: 1024px) {
-  .photographHeader #media {
+  #slider #media {
     margin: 2rem 0;
   }
-  .photographHeader #media img,
-.photographHeader #media video {
+  #slider #media img,
+#slider #media video {
     width: 300px;
   }
-  .photographHeader .profil h2 {
+  #slider .profil h2 {
     font-size: 2rem !important;
   }
-  .photographHeader .profil .identity ul {
+  #slider .profil .identity ul {
     margin: 15px 0;
     line-height: 12px;
   }
-  .photographHeader .profil .identity ul li {
+  #slider .profil .identity ul li {
     font-size: 1rem;
   }
-  .photographHeader .profil #slider,
-.photographHeader .profil .lightModal {
+  #slider .profil #slider,
+#slider .profil .lightModal {
     width: 90%;
   }
-  .photographHeader .profil .tags {
+  #slider .profil .tags {
     width: 90%;
     flex-flow: row wrap;
     row-gap: 10px;
     line-height: 21px;
   }
-  .photographHeader .profil .tags .tagsProfil {
+  #slider .profil .tags .tagsProfil {
     font-size: 1rem;
   }
 
