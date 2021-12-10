@@ -859,7 +859,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 }
 
 select option:hover {
-  background: ligthen(#901c1c, 10%);
+  background: #bb2424;
 }
 
 /*# sourceMappingURL=style.css.map */
