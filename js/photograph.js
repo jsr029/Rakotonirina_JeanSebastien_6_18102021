@@ -13,7 +13,7 @@ databaseAvailable.then(function (r) {
     new AddLikes().adHeart();
     new KeyDownPh().rightArrow(r);
     new TabIndexPh().settriSelect();
-});
+ });
 
 class Photograph {
     getProfilById(r) {

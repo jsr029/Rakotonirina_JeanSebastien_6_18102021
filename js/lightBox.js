@@ -1,4 +1,6 @@
 import SliderModal from "./Slider.js";
+import TabIndexModal from "./tabIndexModal.js";
+import TabIndexPh from "./tabIndexPh.js";
 class LightBox {
 
     addModal() {
@@ -19,6 +21,7 @@ class LightBox {
             //mD.innerHTML = v.parentNode.childNodes[3].innerHTML;
             lightBoxModal.style.display = "flex";
             new SliderModal(pv, index);
+            new TabIndexModal().tabIndexPhModal();
         }));
         // When the user clicks on <span> (x), close the lightBoxModal
         spanClose.addEventListener("click", function () {

@@ -12,7 +12,6 @@ class TabIndexPh{
          const titre = document.querySelector(".titre");        
          titre.setAttribute("tabindex", 10);
          let pictVideos = document.querySelectorAll('#media .pictVideos');
-         let modalPict = document.querySelectorAll('.imgModal .videoRimg');
          pictVideos.forEach(function(elm){
          let details = elm.children[1].children;
              let img = elm.children[0].children[0].children[0];
