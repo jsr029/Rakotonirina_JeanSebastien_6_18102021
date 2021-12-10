@@ -834,7 +834,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   border-radius: 5px;
   background: #bb2424;
 }
-.tri #tri-select li:first-chiild {
+.tri #tri-select li:first-child {
   order: 1;
 }
 .tri #tri-select li:nth-child(2) {
