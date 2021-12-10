@@ -1,5 +1,3 @@
-import Modal from "./modal.js";
-
 class KeyDownPh {
     rightArrow(r) {
         let pop = document.querySelector('#tri-select .popularite');

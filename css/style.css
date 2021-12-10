@@ -248,10 +248,10 @@ h2 {
   padding: 2px 10px;
 }
 
-.photographHeader .logo a img {
+.container .logo a img {
   width: 200px;
 }
-.photographHeader #media {
+.container #media {
   margin: 2rem 5rem;
   display: flex;
   flex-direction: row;
@@ -259,17 +259,17 @@ h2 {
   justify-content: space-around;
   margin-bottom: 5rem;
 }
-.photographHeader #media img,
-.photographHeader #media video {
+.container #media img,
+.container #media video {
   width: 320px;
   height: 300px;
   margin: 0.5rem;
   object-fit: cover;
 }
-.photographHeader .pictVideos a .mediaDetails {
+.container .pictVideos a .mediaDetails {
   display: none;
 }
-.photographHeader .pictVideos .mediaDetails {
+.container .pictVideos .mediaDetails {
   max-width: 320px;
   display: flex;
   margin: 0 5px 5px 8px;
@@ -278,35 +278,35 @@ h2 {
   align-items: center;
   color: #901c1c;
 }
-.photographHeader .pictVideos .mediaDetails .heartLikes {
+.container .pictVideos .mediaDetails .heartLikes {
   cursor: pointer;
 }
-.photographHeader .pictVideos .mediaDetails h2 {
+.container .pictVideos .mediaDetails h2 {
   width: 222px;
   font-size: 1rem;
   color: #901c1c;
   font-weight: 300;
 }
-.photographHeader .mediaPrice,
-.photographHeader .mediaLikes {
+.container .mediaPrice,
+.container .mediaLikes {
   font-weight: bold;
 }
-.photographHeader .mediaLikes {
+.container .mediaLikes {
   margin-left: 15px;
 }
-.photographHeader .profil .identity {
+.container .profil .identity {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
-.photographHeader .profil .identity .location {
+.container .profil .identity .location {
   font-size: 1.5rem;
 }
-.photographHeader .profil .identity h2 {
+.container .profil .identity h2 {
   font-size: 4rem;
   font-weight: 400;
 }
-.photographHeader .profil .identity ul {
+.container .profil .identity ul {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -316,7 +316,7 @@ h2 {
   line-height: 23px;
   margin-left: 5px;
 }
-.photographHeader .contactButton {
+.container .contactButton {
   padding: 15px;
   background: #901c1c;
   color: white;
@@ -325,7 +325,7 @@ h2 {
   border: none;
   border-radius: 5px;
 }
-.photographHeader .contactButton:hover {
+.container .contactButton:hover {
   transform: scale(1.1);
   background: #bb2424;
 }
@@ -829,7 +829,7 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
   z-index: 1000;
 }
 .tri #tri-select .popularite:hover, .tri #tri-select .date:hover, .tri #tri-select .titre:hover {
-  height: 23px;
+  height: 20px;
   width: 80px;
   border-radius: 5px;
   background: #bb2424;

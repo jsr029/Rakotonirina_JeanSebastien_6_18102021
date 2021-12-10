@@ -13,45 +13,48 @@
 
 <body>
     <div class="container" aria-label="Website Container">
-        <header class="photographHeader" role="Header of the website">
-            <div class="logo" >
-                <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/" tabindex="1"><img src="./img/logo.JPG"
-                        alt="logo Fisheye"></a>
+        <header class="photographHeader" role="banner">
+            <div class="logo">
+                <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/" tabindex="1">
+                    <img src="./img/logo.JPG" alt="logo Fisheye">
+                </a>
             </div>
-            <main class="global" aria-label="Photographer's info page">
-                <section id="Photograph" aria-label="Photograph's details">
-                    <header class="profil"></header>
-                </section>
-                <section class="tri" aria-label="Select by likes, by date or by title">
-                    <label for="tri-select" tabindex="6">Trier par : </label>
-                    <ul name="tri" id="tri-select" tabindex="7">
-                        <li class="popularite">Popularité</li>
-                        <li class="date">Date</li>
-                        <li class="titre">Titre</li>
-                        <i class="fas fa-chevron-down triArrow" role="button"></i>
-                        <i class="fas fa-chevron-up clicked" role="button"></i>
-                    </ul>
-                </section>
-                <section id="media" aria-label="Photographer's medias">
-                </section>
-                <section id="lightBox">
-                    <div id="slider">
-                        <div id="myLightModal" class="lightModal">
-                            <div class="imageModal" id="slide"></div>
-                            <div class="mediaDetails"></div>
-                            <span class="closeLightBox">X</span>
-                            <div id="precedent">
-                                <</div> <div id="suivant">>
-                            </div>
+        </header>
+         <main class="global" aria-label="Photographer's info page" role="main">
+            <section id="Photograph" aria-label="Photograph's details">
+                <header class="profil"></header>
+            </section>
+            <section class="tri" aria-label="Select by likes, by date or by title">
+                <label for="tri-select" tabindex="6">Trier par : </label>
+                <ul name="tri" id="tri-select" tabindex="7" role="navigation">
+                    <li class="popularite">Popularité</li>
+                    <li class="date">Date</li>
+                    <li class="titre">Titre</li>
+                    <i class="fas fa-chevron-down triArrow" role="button"></i>
+                    <i class="fas fa-chevron-up clicked" role="button"></i>
+                </ul>
+            </section>
+            <section id="media" aria-label="Photographer's medias">
+            </section>
+            <section id="lightBox" aria-modal="true">
+                <div id="slider">
+                    <div id="myLightModal" class="lightModal">
+                        <div class="imageModal" id="slide"></div>
+                        <div class="mediaDetails"></div>
+                        <span class="closeLightBox">X</span>
+                        <div id="precedent">
+                            <</div> <div id="suivant">>
                         </div>
                     </div>
-                </section>
-                <section class="totalLikes">
-                    <div class="likes"></div>
-                    <div class="icon"><i class="fas fa-heart" aria-label="likes"></i></div>
-                    <div class="salary"></div>
-                </section>
-            </main>
+                </div>
+            </section>
+            <section class="totalLikes" role="navigation">
+                <div class="likes" aria-label="likes"></div>
+                <div class="icon">
+                    <i class="fas fa-heart" aria-label="heart icon"></i></div>
+                <div class="salary" aria-label="price"></div>
+            </section>
+        </main>
     </div>
     <script type="module" src="./js/photograph.js"></script>
     <script src="https://kit.fontawesome.com/a773d24a5d.js" crossorigin="anonymous"></script>
