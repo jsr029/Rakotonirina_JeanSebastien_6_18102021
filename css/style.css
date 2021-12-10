@@ -860,7 +860,6 @@ form .blocName, form .blocFirstName, form .blocMessage, form .blocMail {
 
 select option:hover {
   background: ligthen(#901c1c, 10%);
-  -webkit-background: ligthen(#901c1c, 10%);
 }
 
 /*# sourceMappingURL=style.css.map */
