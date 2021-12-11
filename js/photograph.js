@@ -31,14 +31,14 @@ class Photograph {
             if (k.id == aClicked) {
                 let boxPhotograph = `
                     <div class="identity" aria-label="Photographer's id">
-                        <h2 class="name" tabindex="2">${k.name}</h2>
-                        <ul tabindex="3" aria-label="Location and tags">
+                        <h1 class="name" tabindex="2" role="header">${k.name}</h1>
+                        <ul tabindex="3" aria-label="Location and tags" role="text">
                             <li class="location">${k.city + ', ' + k.country}</li>
                             <li class="tagline">${k.tagline}</li>
                             <li class="tags">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
                         </ul>
                     </div>
-                    <ul class="contact" aria-label="Contacter-moi">
+                    <ul class="contact" aria-label="Contacter-moi" role="button">
                         <button class="contactButton" id="myBtn" tabindex="4">Contacter Moi</button>
                     </ul>
                     <ul class="image">
