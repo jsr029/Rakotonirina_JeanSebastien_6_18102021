@@ -23,7 +23,7 @@ class AddLikes {
             if (mediaLikesClassSplit.length < 2) {
                 console.log(mediaLikesClassSplit.length);
                 ico.target.classList.add('clicked');
-            console.log(mediaLikesClass);
+                //console.log(mediaLikesClass);
                 mediaLikesValue.innerHTML = likesNum + 1;
                 //increment +1 the total of like
                 totalNumberOfLikes++;
@@ -32,7 +32,7 @@ class AddLikes {
             if (mediaLikesClassSplit.length > 1) {
                 ico.target.classList.remove('clicked');
                 mediaLikesValue.innerHTML = likesNum - 1;
-            console.log(mediaLikesClass);
+                //console.log(mediaLikesClass);
                 console.log(mediaLikesValue.innerHTML);
                 totalNumberOfLikes--;
             }
