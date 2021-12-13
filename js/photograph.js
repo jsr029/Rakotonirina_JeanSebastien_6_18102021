@@ -10,10 +10,9 @@ databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
     new DropDown().upDown(r);
-   new AddLikes().adHeart();
      new KeyDownPh().rightArrow(r);
     new TabIndexPh().settriSelect();
- });
+});
 
 class Photograph {
     getProfilById(r) {
@@ -100,8 +99,9 @@ class Photograph {
         new Modal().addModal();
         new Form().getFields();
         new LightBox().addModal();
+   new AddLikes().adHeart();
         //this.splitProfilTags();
-}
+    }
     splitProfilTags() {
         let tags = document.querySelector('header .profil .tags');
         var tagsSplit = tags.innerHTML.split(',');
