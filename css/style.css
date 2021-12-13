@@ -278,7 +278,7 @@ h2 {
   align-items: center;
   color: #901c1c;
 }
-.container .pictVideos .mediaDetails .heartLikes {
+.container .pictVideos .mediaDetails .mediaLikes {
   cursor: pointer;
 }
 .container .pictVideos .mediaDetails h2 {
@@ -411,7 +411,6 @@ source {
 /* Modal Content/Box */
 .modal-content {
   position: relative;
-  max-height: 900px;
   max-width: 669px;
   border-radius: 5px;
   color: black;
@@ -460,7 +459,6 @@ form .formSubmit {
   width: 170px;
   height: 68px;
   margin-top: 20px;
-  padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 2rem;

@@ -1,11 +1,9 @@
 import SliderModal from "./Slider.js";
 import TabIndexModal from "./tabIndexModal.js";
-import TabIndexPh from "./tabIndexPh.js";
 class LightBox {
 
     addModal() {
         var lmc = document.querySelector('.light-modal-content');
-        const lmcH2 = document.querySelector('.light-modal-content h2');
         // Get the lightBoxModal
         var lightBoxModal = document.querySelector("#myLightModal");
         var imageModalH = document.querySelector('.imageModal');
@@ -13,8 +11,6 @@ class LightBox {
         const spanClose = document.querySelector(".closeLightBox");
         // When the user clicks on the class selector videoRimg, open the lightBoxModal
         // and display the img clicked
-        const videoRimg = document.querySelector('#myLightModal .videoRimg');
-        const videoOrimgAll = document.querySelectorAll("#myLightModal .videoRimg");
         const pv = Array.from(document.querySelectorAll('.pictVideos a'));
         pv.forEach((v, index) => v.addEventListener("click", function (elt) {
             imageModalH.innerHTML = v.innerHTML;
@@ -23,9 +19,27 @@ class LightBox {
             new SliderModal(pv, index);
             new TabIndexModal().tabIndexPhModal();
         }));
+        const pvimg = Array.from(document.querySelectorAll('.pictVideos a'));
+        pvimg.forEach((v, index) => v.addEventListener("keydown", function (event) {
+            if(event.code === "Enter"){
+                console.log(v);
+                 lightBoxModal.style.display = "flex";
+               imageModalH.innerHTML = v.innerHTML;
+                new SliderModal(pv, index);
+                new TabIndexModal().tabIndexPhModal();
+
+            }
+        }));
         // When the user clicks on <span> (x), close the lightBoxModal
         spanClose.addEventListener("click", function () {
             lightBoxModal.style.display = "none";
+        });
+        const modal = document.querySelector("#myLightModal");
+        var spanCloseLightModal = document.getElementsByClassName("closeLightBox")[0];
+        spanCloseLightModal.addEventListener("keydown", (event) => {
+            if (event.code === "Enter") {
+                modal.style.display = "none";
+            }
         });
 
         // When the user clicks anywhere outside of the lightBoxModal, close it

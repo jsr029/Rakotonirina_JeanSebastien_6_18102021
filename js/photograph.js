@@ -10,8 +10,8 @@ databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
     new DropDown().upDown(r);
-    new AddLikes().adHeart();
-    new KeyDownPh().rightArrow(r);
+   new AddLikes().adHeart();
+     new KeyDownPh().rightArrow(r);
     new TabIndexPh().settriSelect();
  });
 
@@ -89,7 +89,7 @@ class Photograph {
                     <h2>${d.title}</h2>
                         <span class="mediaPrice">${d.price}€</span>
                         <span class="mediaLikes">${d.likes}</span>
-                        <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
+                        <span class="heartLikes"><i class="fas fa-heart" aria-hidden="true"></i></span>
                     </div>
                 </article>
                     `;
