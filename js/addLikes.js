@@ -7,7 +7,7 @@ class AddLikes {
         //Get value type number, total of like before + or - clicked 
         var totalNumberOfLikes = parseInt(totalLikesH.parentNode.childNodes[1].innerHTML);
         //Selector i, fontawesome heart
-        let iconHeart = document.querySelectorAll('.heartLikes i');
+        let iconHeart = document.querySelectorAll('.tab .heartLikes i');
         //for each i, on click event, looking for class value iconSplit[0], putting condition far or fas
         iconHeart.forEach((ic) => ic.addEventListener("click", function (ico) {
             let iconSplit = ico.target.classList.value.split(" ");
