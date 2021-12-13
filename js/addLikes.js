@@ -8,19 +8,13 @@ class AddLikes {
         //Get value type number, total of like before + or - clicked 
         var totalNumberOfLikes = parseInt(totalLikesH.innerHTML);
         //Selector i, fontawesome heart
-<<<<<<< HEAD
+
         let mediaLikes = Array.from(document.querySelectorAll('.tab .mediaLikes'));
         //for each i, on click event, looking for class value mediaLikesClass, putting condition far or fas
         mediaLikes.forEach((ic) => ic.addEventListener("click", function (ico) {
             //console.log(ico.target.innerHTML);
             let mediaLikesValue = ico.target;
-=======
-        let iconHeart = document.querySelectorAll('.tab .heartLikes i');
-        //for each i, on click event, looking for class value iconSplit[0], putting condition far or fas
-        iconHeart.forEach((ic) => ic.addEventListener("click", function (ico) {
-            let iconSplit = ico.target.classList.value.split(" ");
-            let mediaLikes = ic.parentNode.parentNode;
->>>>>>> bee91adafb6a7bf5a8d5e461cba22601c878dc28
+
             //Set value type number
             let likesNum = parseInt(mediaLikesValue.innerHTML);
             let mediaLikesClass = ico.target.className;
