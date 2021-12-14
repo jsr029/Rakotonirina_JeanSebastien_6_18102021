@@ -9,8 +9,8 @@ import TabIndexPh from "./tabIndexPh.js";
 databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
-    new DropDown().upDown(r);
-     new KeyDownPh().rightArrow(r);
+    new DropDown(r).upDown(r);
+    new KeyDownPh().rightArrow(r);
     new TabIndexPh().settriSelect();
 });
 
@@ -99,7 +99,7 @@ class Photograph {
         new Modal().addModal();
         new Form().getFields();
         new LightBox().addModal();
-   new AddLikes().adHeart();
+        new AddLikes().adHeart();
         //this.splitProfilTags();
     }
     splitProfilTags() {

@@ -4,9 +4,12 @@ import LightBox from "./lightBox.js";
 import AddLikes from "./addLikes.js";
 
 class DropDown {
+    constructor(r) {
+        this.dataMedia = r.media;
+    }
     upDown(r) {
         let dataMediaSort = [];
-        let dataMedia = r.media;
+        let dataMedia = this.dataMedia;
         let pop = document.querySelector('#tri-select .popularite');
         let dat = document.querySelector('#tri-select .date');
         let tit = document.querySelector('#tri-select .titre');
@@ -173,12 +176,12 @@ var displayMediaSort = function (dataMediaSort) {
                             `;
             mediaH.insertAdjacentHTML('afterbegin', boxMedia);
         }
-        new Modal().showHtmlModal();
-        new Modal().addModal();
-        new Form().getFields();
-        new LightBox().addModal();
-        new AddLikes().adHeart();
     });
+    new Modal().showHtmlModal();
+    new Modal().addModal();
+    new Form().getFields();
+    new LightBox().addModal();
+    new AddLikes().adHeart();
 };
 
 export default DropDown;

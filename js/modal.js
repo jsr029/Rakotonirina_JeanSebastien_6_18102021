@@ -4,41 +4,41 @@ class Modal {
         const container = document.querySelector('.container');
         let nameTitleSplit = nameTitle.innerHTML.split(" ");
         let boxModal = `
-        <div id="myModal" class="modal" tabindex="5">
+        <div id="myModal" class="modal">
           <div class="modal-content" id="myModal">
             <form action="send.php" method="POST" class="contactForm" id="Contact">
-                <h1 tabindex="6">Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
+                <h1>Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
                 <div class="inputBloc">
                     <div class="blocName">
-                        <label for="lastName" id="nameLabel" tabindex="7">Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Name" tabindex="8">
+                        <label for="lastName" id="nameLabel" >Name</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Name">
                     </div>
                     <div class="error-blocName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocFirstName">
-                        <label for="firstName" id="first-name" tabindex="9">First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name" tabindex="10">
+                        <label for="firstName" id="first-name"">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name">
                     </div>
                     <div class="error-blocFirstName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMail">
-                        <label for="Email" id="emailLabel" tabindex="11">Email</label>
-                        <input type="email" name="email" id="Email" placeholder="Email" tabindex="12">
+                        <label for="Email" id="emailLabel">Email</label>
+                        <input type="email" name="email" id="Email" placeholder="Email">
                     </div>
                     <div class="error-blocMail">Email must contain @ and .</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMessage">
-                        <label for="Message" id="messageLabel" tabindex="13">Message</label>
-                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20" tabindex="14"></textarea>
+                        <label for="Message" id="messageLabel">Message</label>
+                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20"></textarea>
                     <div class="error-blocMessage">Message is alphabetic and more than 2 characters</div>
                     </div>
                 </div>
-                <input type="submit" value="Envoyer" class="formSubmit" tabindex="15">
+                <input type="submit" value="Envoyer" class="formSubmit">
             </form>
-            <span class="close" tabindex="16">X</span>
+            <span class="close">X</span>
           </div>
         </div>
         `;

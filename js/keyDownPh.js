@@ -1,3 +1,8 @@
+
+import Modal from "./modal.js";
+import Form from "./form.js";
+import LightBox from "./lightBox.js";
+import AddLikes from "./addLikes.js";
 class KeyDownPh {
     rightArrow(r) {
         let pop = document.querySelector('#tri-select .popularite');
@@ -13,8 +18,8 @@ class KeyDownPh {
                 pop.style.display = 'block';
                 dat.style.display = 'block';
                 tit.style.display = 'block';
-                clicked.style.display = 'block';
-                triArrow.style.display = 'none';
+                /*clicked.style.display = 'block';
+                triArrow.style.display = 'none';*/
             }
         });
         triSelect.addEventListener("keydown", (event) => {
@@ -22,8 +27,8 @@ class KeyDownPh {
                 pop.style.display = 'block';
                 dat.style.display = 'none';
                 tit.style.display = 'none';
-                clicked.style.display = 'none';
-                triArrow.style.display = 'block';
+                /*clicked.style.display = 'none';
+                triArrow.style.display = 'block';*/
             }
         });
         triSelect.addEventListener("keydown", (event) => {
@@ -36,11 +41,11 @@ class KeyDownPh {
                         pop.classList.add("selected");
                         tit.classList.remove("selected");
                         pop.style.display = 'block';
-                        //li.style.position = 'absolute';
                         dat.style.display = 'none';
-                        triArrow.style.display = 'block';
-                        clicked.style.display = 'none';
-                    } else if (pop.className.includes('date')) {
+                        /*triArrow.style.display = 'block';
+                        clicked.style.display = 'none';*/
+                    } 
+                    if (pop.className.includes('date')) {
                         dataMediaSort = dataMedia.sort((a, b) => {
                             return new Date(a.date).valueOf() - new Date(b.date).valueOf();
                         });
@@ -51,8 +56,8 @@ class KeyDownPh {
                         tit.classList.remove("selected");
                         pop.style.display = 'none';
                         li.style.position = 'absolute';
-                        triArrow.style.display = 'block';
-                        clicked.style.display = 'none';
+                        /*triArrow.style.display = 'block';
+                        clicked.style.display = 'none';*/
                     }
                 }
             });
@@ -100,11 +105,11 @@ class KeyDownPh {
                             `;
                 mediaH.insertAdjacentHTML('afterbegin', boxMedia);
             }
-            /*new Modal().showHtmlModal();
+            new Modal().showHtmlModal();
             new Modal().addModal();
             new Form().getFields();
             new LightBox().addModal();
-            new AddLikes().adHeart();*/
+            new AddLikes().adHeart();
         });
     };
     export default KeyDownPh;
