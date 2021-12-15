@@ -11,31 +11,21 @@ class TabIndexPh {
          * .videoRimg -> img
          * .mediaDetails -> n2, .mediaPrice, .mediaLikes, .heartLikes
          */
-        let triSelectLi = document.querySelectorAll('#tri-select');
-        triSelectLi.forEach(function (elm) {
-            var tab = 18;
-            let li = elm.children;
-            //magic number 3 cause just need 3 firsts li elements
-            for (let a = 0; a < 3; a++) {
-                li[a].setAttribute("tabindex", tab++);
-            }
-        });
         let pictVideos = document.querySelectorAll('#media .pictVideos');
         pictVideos.forEach(function (elm) {
-        elm.setAttribute("tabindex", 20);
+        elm.setAttribute("tabindex", 8);
             let details = elm.children[1].children;
             let img = elm.children[0].children[0].children[0];
             //console.log(details, img);
-            var tab = 20;
-            var tabd = 20;
+            var tab = 8;
                 img.setAttribute("tabindex", tab);
             for (let a = 0; a < details.length; a++) {
-                details[a].setAttribute("tabindex", 20);
+                details[a].setAttribute("tabindex", 8);
                 //console.log(details[a]);
             }
         });
         let likes = document.querySelector('.likes');
-        likes.setAttribute("tabindex", 21);
+        likes.setAttribute("tabindex", 8);
     }
 }
 export default TabIndexPh;

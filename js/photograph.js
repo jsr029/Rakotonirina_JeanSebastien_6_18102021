@@ -10,8 +10,8 @@ databaseAvailable.then(function (r) {
     new Photograph().getProfilById(r);
     new Photograph().getMediasByTags(r);
     new DropDown(r).upDown(r);
-    new KeyDownPh().rightArrow(r);
     new TabIndexPh().settriSelect();
+    new KeyDownPh().rightArrow(r);
 });
 
 class Photograph {
@@ -34,7 +34,7 @@ class Photograph {
                         <ul tabindex="3" aria-label="Location and tags" role="text">
                             <li class="location">${k.city + ', ' + k.country}</li>
                             <li class="tagline">${k.tagline}</li>
-                            <li class="tags">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
+                            <li class="tags" tabindex="-1">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
                         </ul>
                     </div>
                     <ul class="contact" aria-label="Contacter-moi" role="button">

@@ -21,10 +21,10 @@ class LightBox {
         }));
         const pvimg = Array.from(document.querySelectorAll('.pictVideos a'));
         pvimg.forEach((v, index) => v.addEventListener("keydown", function (event) {
-            if(event.code === "Enter"){
+            if (event.code === "Enter") {
                 console.log(v);
-                 lightBoxModal.style.display = "flex";
-               imageModalH.innerHTML = v.innerHTML;
+                lightBoxModal.style.display = "flex";
+                imageModalH.innerHTML = v.innerHTML;
                 new SliderModal(pv, index);
                 new TabIndexModal().tabIndexPhModal();
 

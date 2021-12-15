@@ -4,41 +4,41 @@ class Modal {
         const container = document.querySelector('.container');
         let nameTitleSplit = nameTitle.innerHTML.split(" ");
         let boxModal = `
-        <div id="myModal" class="modal">
+        <div id="myModal" class="modal" tabindex="-1">
           <div class="modal-content" id="myModal">
-            <form action="send.php" method="POST" class="contactForm" id="Contact">
-                <h1>Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
+            <form action="send.php" method="POST" class="contactForm" id="Contact" role="listbox">
+                <h1 tabindex="4" role="option">Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
                 <div class="inputBloc">
                     <div class="blocName">
-                        <label for="lastName" id="nameLabel" >Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Name">
+                        <label for="lastName" id="nameLabel" tabindex="4">Name</label>
+                        <input type="text" name="lastName" id="lastName" placeholder="Name" tabindex="4" role="option">
                     </div>
                     <div class="error-blocName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocFirstName">
-                        <label for="firstName" id="first-name"">First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name">
+                        <label for="firstName" id="first-name" tabindex="4" role="option">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" tabindex="4" role="option">
                     </div>
                     <div class="error-blocFirstName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMail">
-                        <label for="Email" id="emailLabel">Email</label>
-                        <input type="email" name="email" id="Email" placeholder="Email">
+                        <label for="Email" id="emailLabel" tabindex="4" role="option">Email</label>
+                        <input type="email" name="email" id="Email" placeholder="Email" tabindex="4" role="option">
                     </div>
                     <div class="error-blocMail">Email must contain @ and .</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMessage">
-                        <label for="Message" id="messageLabel">Message</label>
-                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20"></textarea>
+                        <label for="Message" id="messageLabel" tabindex="4" role="option">Message</label>
+                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20" tabindex="4" role="option"></textarea>
                     <div class="error-blocMessage">Message is alphabetic and more than 2 characters</div>
                     </div>
                 </div>
-                <input type="submit" value="Envoyer" class="formSubmit">
+                <input type="submit" value="Envoyer" class="formSubmit" tabindex="4" role="option">
             </form>
-            <span class="close">X</span>
+            <span class="close" tabindex="4">X</span>
           </div>
         </div>
         `;
@@ -63,6 +63,11 @@ class Modal {
         span.onclick = function () {
             modal.style.display = "none";
         };
+        span.addEventListener('keydown', function(event){
+            if(event.code === 'Enter'){
+                modal.style.display = "none";
+            }
+        });
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function (event) {
             if (event.target == modal) {

@@ -114,6 +114,24 @@ class DropDown {
             dat.after(tit);
             tit.style.order = "3";
         });
+        triArrow.addEventListener("keydown", function (event) {
+            if (event.code === 'Enter') {
+                dat.style.display = "block";
+                tit.style.display = "block";
+                pop.style.visibility = 'visible';
+                pop.classList.remove("selected");
+                dat.style.visibility = 'visible';
+                tit.style.visibility = 'visible';
+                clicked.style.display = 'block';
+                this.style.display = 'none';
+                ul.style.height = "150px";
+                pop.style.order = "1";
+                pop.after(dat);
+                dat.style.order = "2";
+                dat.after(tit);
+                tit.style.order = "3";
+            }
+        });
         clicked.addEventListener("click", function (event) {
             pop.style.visibility = 'visible';
             pop.classList.remove("selected");
@@ -130,6 +148,25 @@ class DropDown {
             pop.style.borderTop = "none";
             pop.style.borderBottom = "none";
             tit.style.order = "3";
+        });
+        clicked.addEventListener("keydown", function (event) {
+            if (event.code === 'Enter') {
+            pop.style.visibility = 'visible';
+            pop.classList.remove("selected");
+            dat.style.visibility = 'hidden';
+            tit.style.visibility = 'hidden';
+            triArrow.style.display = 'block';
+            this.style.display = 'none';
+            ul.style.height = "49px";
+            pop.style.order = "1";
+            pop.style.marginTop = "0px";
+            pop.after(dat);
+            dat.style.order = "2";
+            dat.after(tit);
+            pop.style.borderTop = "none";
+            pop.style.borderBottom = "none";
+            tit.style.order = "3";
+            }
         });
     }
 }
@@ -162,8 +199,6 @@ var displayMediaSort = function (dataMediaSort) {
                             </div>
                             <div class="mediaDetails">
                             <h2>${d.title}</h2>
-                                <span class="mediaPrice">${d.price}€</span>
-                                <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
                             </div>
                         </a>
                             <div class="mediaDetails tab">
