@@ -12,6 +12,10 @@ class TabIndexPh {
          * .mediaDetails -> n2, .mediaPrice, .mediaLikes, .heartLikes
          */
         let pictVideos = document.querySelectorAll('#media .pictVideos');
+        let liTagsA = document.querySelectorAll('li.tags a');
+        liTagsA.forEach(function(elm){
+            elm.setAttribute("tabindex", -1);
+        });
         pictVideos.forEach(function (elm) {
         elm.setAttribute("tabindex", 8);
             let details = elm.children[1].children;
