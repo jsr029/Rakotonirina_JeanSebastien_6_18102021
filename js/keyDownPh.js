@@ -1,6 +1,7 @@
 import Modal from "./modal.js";
 import Form from "./form.js";
 import LightBox from "./lightBox.js";
+import TabIndexPh from "./tabIndexPh.js";
 import AddLikes from "./addLikes.js";
 class KeyDownPh {
     rightArrow(r) {
@@ -33,9 +34,9 @@ class KeyDownPh {
         });
         let ul = document.querySelector('.tri #tri-select');
         triSelect.addEventListener("keydown", (event) => {
-            console.log(event.target.className.length);
+            //console.log(event.target.className.length);
             if (event.code === 'Enter') {
-                console.log(pop.className[0].length);
+                //console.log(pop.className[0].length);
                 var popClassNameSplit = pop.className.split(" ");
                 if (event.target.className === 'popularite') {
                     dataMediaSort = dataMedia.sort((a, b) => a.likes - b.likes);
@@ -111,7 +112,7 @@ class KeyDownPh {
                     pop.style.borderTop = "1px solid white";
                     pop.style.borderBottom = "1px solid white";
                 }
-                if(event.target.className.length > 10){
+                /*if(event.target.className.length > 10){
                     if (event.code === 'ArrowRight') {
                         pop.style.display = 'block';
                         dat.style.display = 'block';
@@ -126,7 +127,7 @@ class KeyDownPh {
                         clicked.style.display = 'none';
                         triArrow.style.display = 'block';
                     }
-                }
+                }*/
             }
         });
     }
@@ -177,5 +178,6 @@ var displayMediaSort = function (dataMediaSort) {
     new Form().getFields();
     new LightBox().addModal();
     new AddLikes().adHeart();
+    new TabIndexPh().settriSelect();
 };
 export default KeyDownPh;

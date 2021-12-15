@@ -7,11 +7,15 @@ import DropDown from "./DropDown.js";
 import KeyDownPh from "./keyDownPh.js";
 import TabIndexPh from "./tabIndexPh.js";
 databaseAvailable.then(function (r) {
-    new Photograph().getProfilById(r);
-    new Photograph().getMediasByTags(r);
-    new DropDown(r).upDown(r);
-    new TabIndexPh().settriSelect();
-    new KeyDownPh().rightArrow(r);
+    try {
+        new Photograph().getProfilById(r);
+        new Photograph().getMediasByTags(r);
+        new DropDown(r).upDown(r);
+        new KeyDownPh().rightArrow(r);
+        new TabIndexPh().settriSelect();
+    } catch (e) {
+        console.log(e.name + ": " + e.message);
+    }
 });
 
 class Photograph {
