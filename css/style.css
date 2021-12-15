@@ -123,6 +123,8 @@ header.entete a {
   list-style-type: none;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
 }
 .tags .tagsProfil {
   color: #901C1C;

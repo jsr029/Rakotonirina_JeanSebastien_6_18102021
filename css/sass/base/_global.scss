@@ -112,6 +112,8 @@ a{
         list-style-type: none;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 15px;
         .tagsProfil{
             color: #901C1C;
             border: 1px solid #901C1C;
