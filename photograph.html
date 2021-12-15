@@ -15,13 +15,12 @@
 
     <body>
         <div class="container">
-            <header class="photographHeader" tabindex="1">
+            <header class="photographHeader">
                 <div class="logo">
                     <a
                         href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/"
                         tabindex="1">
-                        <img src="./img/logo.JPG" alt="Fisheye Home page"
-                            role="image link">
+                        <img src="./img/logo.JPG" alt="Fisheye Home page">
                     </a>
                 </div>
             </header>
@@ -31,23 +30,21 @@
                     <header class="profil"></header>
                 </section>
                 <section class="tri" aria-label="Select by likes, by date or by
-                    title" role="input label">
+                    title" role="input label" id="tri-select">
                     <h2 style="display:none;">Select by 3 modes</h2>
                     <label for="tri-select" tabindex="6">Trier par : </label>
-                    <ul id="tri-select" role="listbox" tabindex="7">
-                        <li class="popularite" role="option" tabindex="8">Popularité</li>
-                        <li class="date" role="option" tabindex="9">Date</li>
-                        <li class="titre" role="option" tabindex="10">Titre</li>
-                        <i class="fas fa-chevron-down triArrow" role="button"
-                            tabindex="11"></i>
-                        <i class="fas fa-chevron-up clicked" role="button"
-                            tabindex="11"></i>
+                    <ul id="tri-select" role="listbox" tabindex="7" aria-activedescendant="pop" aria-labelledby="tri-select">
+                        <li class="popularite" role="option" id="pop" tabindex="8">Popularité</li>
+                        <li class="date" role="option" id="date" tabindex="9">Date</li>
+                        <li class="titre" role="option" id="tit" tabindex="10">Titre</li>
+                        <i class="fas fa-chevron-down triArrow" role="button" tabindex="11"></i>
+                        <i class="fas fa-chevron-up clicked" role="button" tabindex="11"></i>
                     </ul>
                 </section>
                 <section id="media" aria-label="Photographer's medias">
                     <h2 style="display:none;">Photographer's article</h2>
                 </section>
-                <section id="lightBox" aria-modal="true" role="complementary">
+                <section id="lightBox" role="complementary">
                     <h2 style="display:none;">Photographer Slider</h2>
                     <div id="slider">
                         <div id="myLightModal" class="lightModal"

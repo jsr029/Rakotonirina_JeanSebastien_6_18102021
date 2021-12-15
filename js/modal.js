@@ -6,37 +6,37 @@ class Modal {
         let boxModal = `
         <div id="myModal" class="modal" tabindex="-1">
           <div class="modal-content" id="myModal">
-            <form action="send.php" method="POST" class="contactForm" id="Contact" role="listbox">
-                <h1 tabindex="4" role="option">Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
+            <form action="send.php" method="POST" class="contactForm" id="Contact">
+                <h1 tabindex="4">Contactez-moi <br/> ${nameTitleSplit[0]} ${nameTitleSplit[1]}</h1>
                 <div class="inputBloc">
                     <div class="blocName">
                         <label for="lastName" id="nameLabel" tabindex="4">Name</label>
-                        <input type="text" name="lastName" id="lastName" placeholder="Name" tabindex="4" role="option">
+                        <input type="text" name="lastName" id="lastName" placeholder="Name" tabindex="4">
                     </div>
                     <div class="error-blocName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocFirstName">
-                        <label for="firstName" id="first-name" tabindex="4" role="option">First Name</label>
-                        <input type="text" name="firstName" id="firstName" placeholder="First Name" tabindex="4" role="option">
+                        <label for="firstName" id="first-name" tabindex="4">First Name</label>
+                        <input type="text" name="firstName" id="firstName" placeholder="First Name" tabindex="4">
                     </div>
                     <div class="error-blocFirstName">Last Name is alphabetic and more than 2 characters</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMail">
-                        <label for="Email" id="emailLabel" tabindex="4" role="option">Email</label>
-                        <input type="email" name="email" id="Email" placeholder="Email" tabindex="4" role="option">
+                        <label for="Email" id="emailLabel" tabindex="4">Email</label>
+                        <input type="email" name="email" id="Email" placeholder="Email" tabindex="4">
                     </div>
                     <div class="error-blocMail">Email must contain @ and .</div>
                 </div>
                 <div class="inputBloc">
                     <div class="blocMessage">
-                        <label for="Message" id="messageLabel" tabindex="4" role="option">Message</label>
-                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20" tabindex="4" role="option"></textarea>
+                        <label for="Message" id="messageLabel" tabindex="4">Message</label>
+                        <textarea name="message" id="Message" placeholder="Text......" rows="6" cols="20" tabindex="4"></textarea>
                     <div class="error-blocMessage">Message is alphabetic and more than 2 characters</div>
                     </div>
                 </div>
-                <input type="submit" value="Envoyer" class="formSubmit" tabindex="4" role="option">
+                <input type="submit" value="Envoyer" class="formSubmit" tabindex="4">
             </form>
             <span class="close" tabindex="4">X</span>
           </div>

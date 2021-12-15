@@ -33,9 +33,9 @@ class Photograph {
         dataPhotos.forEach(function (k) {
             if (k.id == aClicked) {
                 let boxPhotograph = `
-                    <div class="identity" aria-label="Photographer's id">
-                        <h1 class="name" tabindex="2" role="header">${k.name}</h1>
-                        <ul tabindex="3" aria-label="Location and tags" role="text">
+                    <div class="identity">
+                        <h1 class="name" tabindex="1" role="header">${k.name}</h1>
+                        <ul tabindex="2" aria-label="Location and tags" role="list">
                             <li class="location">${k.city + ', ' + k.country}</li>
                             <li class="tagline">${k.tagline}</li>
                             <li class="tags" tabindex="-1">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
