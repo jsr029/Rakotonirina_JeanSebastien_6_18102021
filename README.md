@@ -6,5 +6,5 @@ Développer une application web modulaire avec des design patterns
 Assurer l'accessibilité d'un site web
 Ecrire du code JavaScript maintenable
 Gérer les évènements d'un site avec JavaScript
-## myLib documentation
-see documentation [here](myLib/README.md)
+## my javascript documentation
+see documentation [here](plan.pdf)
