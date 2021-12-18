@@ -8,8 +8,8 @@ Ecrire du code JavaScript maintenable
 Gérer les évènements d'un site avec JavaScript
 
 ## My Fisheye's website
-<a target="_blank" href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021">Demo/</a>
+<a target="_blank" href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021">Demo</a>
 
 ## My javascript documentation
 see documentation 
-<a target="_blank" href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/plan.pdf">Here/</a>
+<a target="_blank" href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/plan.pdf">Here</a>
