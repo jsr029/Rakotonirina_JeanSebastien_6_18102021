@@ -13,7 +13,7 @@ class Datas {
         };
     }
 }
-var databaseAvailable = new Datas().getJson();
+let databaseAvailable = new Datas().getJson();
 databaseAvailable.then(function(r){
      console.log(r);
 });

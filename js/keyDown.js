@@ -5,7 +5,7 @@ class KeyDown{
             if(event.code === 'ArrowRight'){
             const aNav = document.querySelectorAll("nav a");
             aNav.forEach(function(e){
-                var z=4;
+                let z=4;
                 e.setAttribute("tabindex", z++);
             });
         }

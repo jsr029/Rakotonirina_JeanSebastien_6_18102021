@@ -171,24 +171,24 @@ class DropDown {
     }
 }
 
-var displayMediaSort = function (dataMediaSort) {
+let displayMediaSort = function (dataMediaSort) {
     document.querySelector('#media').innerHTML = '';
     //new Photograph().getMediasByTags(dataMediaSort);
-    var dataMedia = dataMediaSort;
-    var urlClicked = window.location.href;
+    let dataMedia = dataMediaSort;
+    let urlClicked = window.location.href;
     //split it by #
-    var urlSplit = urlClicked.split('=');
+    let urlSplit = urlClicked.split('=');
     // take the index 1 which contains the tag we need to compare
-    var aClicked = urlSplit[1];
+    let aClicked = urlSplit[1];
     const mediaH = document.querySelector('#media');
     const idn = document.querySelector('.identity .name');
-    var idnSplit = idn.innerHTML.split(" ");
+    let idnSplit = idn.innerHTML.split(" ");
     dataMedia.forEach(function (d) {
-        var media = (d.image) ? d.image : d.video;
-        var mediaSplit = media.split('.');
-        var mediaExt = mediaSplit[1];
+        let media = (d.image) ? d.image : d.video;
+        let mediaSplit = media.split('.');
+        let mediaExt = mediaSplit[1];
         if (d.photographerId == aClicked) {
-            var videoOrimg = (mediaExt === 'jpg') ?
+            let videoOrimg = (mediaExt === 'jpg') ?
                 `<img src="./img/${idnSplit[0]}/${d.image}" alt="${d.title}, a ${idn.innerHTML}'s work">` :
                 `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
             let boxMedia = `

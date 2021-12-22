@@ -2,13 +2,13 @@ class AddLikes {
     constructor() {
         //Object totalLikes
         this.totalLikes = function () {
-            var arrayLikes = [];
+            let arrayLikes = [];
             let allLikes = document.querySelectorAll('.tab .mediaLikes');
             allLikes.forEach((elm) => {
                 arrayLikes.push(parseInt(elm.innerHTML));
             });
-            var total = 0;
-            for (var i = 0; i < arrayLikes.length; i++) {
+            let total = 0;
+            for (let i = 0; i < arrayLikes.length; i++) {
                 total += arrayLikes[i];
             }
             const likes = document.querySelector('.likes');
@@ -21,7 +21,7 @@ class AddLikes {
         let totalLikesH = document.querySelector('.totalLikes .likes');
         totalLikesH.innerHTML = totalNumberOfLikes;
         //Get the total likes fron the constructor 
-        var totalNumberOfLikes = this.totalLikes();
+        let totalNumberOfLikes = this.totalLikes();
         //Selector mediaLikes
         let mediaLikes = Array.from(document.querySelectorAll('.tab .mediaLikes'));
         //for each mediaLikes, on click event, looking for class value mediaLikesClass, putting conditions on length <2 or >1

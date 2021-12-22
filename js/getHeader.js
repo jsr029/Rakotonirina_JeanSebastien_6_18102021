@@ -3,7 +3,7 @@ import GetPhs from "./GetPhs.js";
 import removeIndex from "./removeIndex.js";
 class Header { 
     getHeader(r) {
-        var dataPhotos = r.photographers;
+        let dataPhotos = r.photographers;
         const main = document.querySelector('.global');
         let header = document.createElement('header');
         header.className = "entete";
@@ -36,7 +36,7 @@ class Header {
         new ActiveClass().classActive();
     }
     getNavFilter(r) {
-        var dataPhotos = r.photographers;
+        let dataPhotos = r.photographers;
         const navA = document.querySelectorAll('nav a');
         navA.forEach((nav) => nav.addEventListener("click", function (nav) {
             removeIndex();
@@ -44,7 +44,7 @@ class Header {
             dataPhotos.forEach(function (elm) {
                 console.log(elm.tags);
                 if (elm.tags.includes(urlClicked)) {
-                    var datas = [];
+                    let datas = [];
                     datas.push(elm);
                     new GetPhs().listPhs(datas);
                 }
