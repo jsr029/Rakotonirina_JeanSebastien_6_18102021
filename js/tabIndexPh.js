@@ -18,7 +18,7 @@ class TabIndexPh {
         });
         pictVideos.forEach(function (elm) {
             elm.setAttribute("tabindex", 0);
-            console.log(elm.children[1].children);
+            //console.log(elm.children[1].children);
             let details = elm.children[1].children;
             let img = elm.children[0].children[0].children[0];
             //console.log(details, img);
