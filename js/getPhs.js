@@ -11,9 +11,9 @@ class GetPhs{
                 <h2>${element.name}</h2>
             </a>
             <ul class="locationTaglinePrice tabIndex" role="list">
-                <li>${element.city}, ${element.country}</li>
-                <li>${element.tagline}</li>
-                <li>${element.price}€/j</li>
+                <li class="location">${element.city}, ${element.country}</li>
+                <li class="tagline">${element.tagline}</li>
+                <li class="price">${element.price}€/j</li>
             </ul>
             <ul class="tags tabIndex">${element.tags.map(tag =>
                 `<li data-filter="${tag}">#${tag}</li>`).join(" ")}</li>
