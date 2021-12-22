@@ -1,76 +1,72 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Profil and Photograph's Work, Fisheye</title>
-        <link rel="stylesheet" href="./css/style.css">
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css?family=DM+Sans"
-            rel="stylesheet" />
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil and Photograph's Work, Fisheye</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
+    <link rel="icon" href="favicon.ico" />
+</head>
 
-    <body>
-        <div class="container">
-            <header class="photographHeader">
-                <div class="logo">
-                    <a
-                        href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/"
-                        tabindex="1">
-                        <img src="./img/logo.JPG" alt="Fisheye Home page">
-                    </a>
-                </div>
-            </header>
-            <main class="global" aria-label="Photographer's info page">
-                <section id="Photograph" aria-label="Photograph's details">
-                    <h2 style="display:none;">Photographer Details</h2>
-                    <header class="profil"></header>
-                </section>
-                <section class="tri" aria-label="Select by likes, by date or by
+<body>
+    <div class="container">
+        <header class="photographHeader">
+            <div class="logo">
+                <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/" tabindex="1">
+                    <img src="./img/logo.JPG" alt="Fisheye Home page">
+                </a>
+            </div>
+        </header>
+        <main class="global" aria-label="Photographer's info page">
+            <section id="Photograph" aria-label="Photograph's details">
+                <h2 style="display:none;">Photographer Details</h2>
+                <header class="profil"></header>
+            </section>
+            <section class="tri" aria-label="Select by likes, by date or by
                     title" role="input label" id="tri-select">
-                    <h2 style="display:none;">Select by 3 modes</h2>
-                    <label for="tri-select" tabindex="6">Trier par : </label>
-                    <ul id="tri-select" role="listbox" tabindex="7" aria-activedescendant="pop" aria-labelledby="tri-select">
-                        <li class="popularite" role="option" id="pop" tabindex="8">Popularité</li>
-                        <li class="date" role="option" id="date" tabindex="9">Date</li>
-                        <li class="titre" role="option" id="tit" tabindex="10">Titre</li>
-                        <i class="fas fa-chevron-down triArrow" role="button" tabindex="11"></i>
-                        <i class="fas fa-chevron-up clicked" role="button" tabindex="11"></i>
-                    </ul>
-                </section>
-                <section id="media" aria-label="Photographer's medias">
-                    <h2 style="display:none;">Photographer's article</h2>
-                </section>
-                <section id="lightBox" role="complementary">
-                    <h2 style="display:none;">Photographer Slider</h2>
-                    <div id="slider">
-                        <div id="myLightModal" class="lightModal"
-                            aria-label=”image closeup view”>
-                            <div class="imageModal" id="slide"></div>
-                            <div class="mediaDetails"></div>
-                            <span class="closeLightBox">X</span>
-                            <div id="precedent">&lt;
-                            </div>
-                            <div id="suivant">&gt;
-                            </div>
+                <h2 style="display:none;">Select by 3 modes</h2>
+                <label for="tri-select" tabindex="6">Trier par : </label>
+                <ul id="tri-select" role="listbox" tabindex="7" aria-activedescendant="pop"
+                    aria-labelledby="tri-select">
+                    <li class="popularite" role="option" id="pop" tabindex="8">Popularité</li>
+                    <li class="date" role="option" id="date" tabindex="9">Date</li>
+                    <li class="titre" role="option" id="tit" tabindex="10">Titre</li>
+                    <i class="fas fa-chevron-down triArrow" role="button" tabindex="11"></i>
+                    <i class="fas fa-chevron-up clicked" role="button" tabindex="11"></i>
+                </ul>
+            </section>
+            <section id="media" aria-label="Photographer's medias">
+                <h2 style="display:none;">Photographer's article</h2>
+            </section>
+            <section id="lightBox" role="complementary">
+                <h2 style="display:none;">Photographer Slider</h2>
+                <div id="slider">
+                    <div id="myLightModal" class="lightModal" aria-label=”image closeup view”>
+                        <div class="imageModal" id="slide"></div>
+                        <div class="mediaDetails"></div>
+                        <span class="closeLightBox">X</span>
+                        <div id="precedent">&lt;
+                        </div>
+                        <div id="suivant">&gt;
                         </div>
                     </div>
-                </section>
-                <section class="totalLikes" role="navigation">
-                    <h2 style="display:none;">Photographer Total likes</h2>
-                    <div class="likes"></div>
-                    <div class="icon">
-                        <i class="fas fa-heart"></i></div>
-                    <div class="salary"></div>
-                </section>
-            </main>
-        </div>
-        <script type="module" src="./js/photograph.js"></script>
-        <script src="https://kit.fontawesome.com/a773d24a5d.js"
-            crossorigin="anonymous"></script>
-    </body>
+                </div>
+            </section>
+            <section class="totalLikes" role="navigation">
+                <h2 style="display:none;">Photographer Total likes</h2>
+                <div class="likes"></div>
+                <div class="icon">
+                    <i class="fas fa-heart"></i></div>
+                <div class="salary"></div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./js/photograph.js"></script>
+    <script src="https://kit.fontawesome.com/a773d24a5d.js" crossorigin="anonymous"></script>
+</body>
 
 </html>
