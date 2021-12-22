@@ -12,8 +12,10 @@ class Header {
             console.log(element); 
             let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers">Passer au contenu</a>
+                <div class="logo">
                 <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/"><img src="../img/logo.JPG"
                         alt="logo Fisheye"></a>
+                </div>
                 <nav id="Menu" class="menu" role="navigation" aria-label="Navigation Menu">
                        <a href="javascript:void(0);" class="icon">
                        <i class="fa fa-bars"></i>
