@@ -40,10 +40,12 @@ class Header {
         const navA = document.querySelectorAll('nav a');
         navA.forEach((nav) => nav.addEventListener("click", function (nav) {
             removeIndex();
-            let urlClicked = nav.path[0].dataset.filter;
+            let urlClicked = nav.target.innerHTML.slice(1);
+            //console.log(urlClicked);
             dataPhotos.forEach(function (elm) {
+                elm.tags.filter((el)=>el.includes(urlClicked))
                 console.log(elm.tags);
-                if (elm.tags.includes(urlClicked)) {
+                if (elm.tags.includes(urlClicked.toLowerCase())) {
                     let datas = [];
                     datas.push(elm);
                     new GetPhs().listPhs(datas);
