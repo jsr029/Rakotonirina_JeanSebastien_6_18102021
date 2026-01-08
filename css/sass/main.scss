@@ -1,10 +1,10 @@
 
-@import './base//variables';
-@import './base/global';
-@import './base/color';
-@import './base/photographer';
-@import './layout/nav-responsive';
-@import './layout/modal';
-@import './base/slider';
-@import './layout/totalLikes';
-@import './layout/tri';
+@use 'base/variables' as *;
+@use 'base/global' as *;
+@use 'base/color' as *;
+@use 'base/photographer' as *;
+@use 'layout/nav-responsive' as *;
+@use 'layout/modal' as *;
+@use 'base/slider' as *;
+@use 'layout/totalLikes' as *;
+@use 'layout/tri' as *;
