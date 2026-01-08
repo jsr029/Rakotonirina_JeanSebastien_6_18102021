@@ -241,8 +241,9 @@ header.entete .titleH {
 }
 
 .profil {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: var(--space-xl);
   background: var(--bg-secondary);
   padding: var(--space-xl);
@@ -286,7 +287,7 @@ header.entete .titleH {
 .profil .contactButton {
   grid-column: 2;
   justify-self: end;
-  padding: clamp(1rem, 3vw, 1.25rem) clamp(2rem, 5vw, 2.5rem);
+  padding: 50px;
   background: var(--primary);
   color: var(--text-light);
   font-size: var(--fs-md);
