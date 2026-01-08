@@ -125,10 +125,26 @@ class Photograph {
 databaseAvailable
     .then(data => {
         const photographPage = new Photograph(data);
-        photographPage.init();
+        if (!photographPage.currentPhotographer) {
+            console.error("Photographe non trouvé");
+            return;
+        }
+
+        photographPage.renderProfile();
+        photographPage.renderMedia('likes');  // tri par défaut
+
+        // Initialisation des autres modules
+        new Modal().showHtmlModal();     // ou .init() si vous avez ajouté
+        new Modal().addModal();
+        new Form().getFields();          // ou .init()
+        new LightBox().init();           // important : utilisez .init() comme dans ma version corrigée
+        new AddLikes().init();           // utilisez .init() comme dans ma version corrigée
+        new DropDown(photographPage.photographerMedia, (sortBy) => photographPage.renderMedia(sortBy));
+        new KeyDownPh().rightArrow();    // ou .init()
+        new TabIndexPh().settriSelect();
     })
     .catch(err => {
         console.error("Erreur chargement données :", err);
     });
-
+    
 export default Photograph;
