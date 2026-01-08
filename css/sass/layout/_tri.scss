@@ -1,101 +1,86 @@
 .tri {
-    position: relative;
-    width: 80%;
-    margin: auto;
-    font-size: 2rem;
+  position: relative;
+  max-width: 400px;
+  margin: var(--space-2xl) auto 0;
+  
+  label {
     display: block;
-    margin-top: 2rem;
-    label {
-        margin-top: 15px;
-        font-size: 18px;
-        color: black;
-    }
-
-    #tri-select {
-        display: flex;
-        display: -webkit-flex;
-        flex-direction: column;
-        flex-direction: -webkit-column;
-        justify-content: flex-start;
-        background: #901c1c;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-        font-size: 1rem;
-        font-weight: 700;
-        left: 7rem;
+    font-size: var(--fs-sm);
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: var(--space-sm);
+  }
+  
+  #tri-select {
+    position: relative;
+    background: var(--primary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    
+    .selected {
+      display: flex;
+      align-items: center;
+      padding: var(--space-md) var(--space-lg);
+      color: var(--text-light);
+      font-weight: 700;
+      cursor: pointer;
+      min-height: 3.5rem;
+      
+      &::after {
+        content: '▼';
         position: absolute;
-        top: 0;
-        width: 10rem;
-        list-style-type: none;
-        text-align: left;
-        z-index: 2000;
-        .date, .titre{
-            display: none;
-        }
-
-        i.triArrow{
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            cursor: pointer;
-            z-index: 3000;
-        }
-        i.clicked {
-            display: none;
-            //visibility: hidden;
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            cursor: pointer;
-            z-index: 3000;
-        }
-
-        .popularite, .date, .titre{
-            height: 23px;
-            width: 80px;
-            left: 0;
-            top: 0;
-            font-size: 18px;
-            font-weight: 700;
-            padding: 13px 50px 13px 10px;
-            cursor: pointer;
-            display: block;
-            margin-left: 10px;
-            z-index: 1000;
-            &:hover {
-                height: 20px;
-                width: 80px;
-                border-radius: 5px;
-                background: lighten(#901c1c, 10%);
-            }
-        }
-        li:first-child{
-            order:1;
-        }
-        li:nth-child(2){
-           order:2;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-        }
-        li:nth-child(3){
-            order:3;
-        }
-        .selected{
-            position: absolute;
-            height: 23px;
-            width: 49px;
-            top: 0;
-            left: 0;
-            background: #901c1c;
-            overflow: hidden;
-            z-index: 2000;
-            border-radius: 5px;
-            padding: 13px 50px 13px 10px;
-        }
+        right: var(--space-lg);
+        font-size: var(--fs-sm);
+        transition: var(--transition-fast);
+      }
     }
+    
+    &.open::after {
+      transform: rotate(180deg);
+    }
+    
+    .options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 0 0 var(--border-radius) var(--border-radius);
+      max-height: 200px;
+      overflow-y: auto;
+      z-index: 10;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: var(--transition-normal);
+      
+      &.open {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .option {
+      padding: var(--space-md) var(--space-lg);
+      cursor: pointer;
+      transition: var(--transition-fast);
+      border-bottom: 1px solid var(--border);
+      
+      &:last-child {
+        border-bottom: none;
+      }
+      
+      &:hover,
+      &:focus,
+      &.active {
+        background: var(--bg-secondary);
+        color: var(--primary);
+      }
+      
+      &[aria-selected="true"] {
+        background: var(--primary);
+        color: var(--text-light);
+      }
+    }
+  }
 }
-
-select option:hover {
-    background: lighten(#901c1c, 10%);
- }

@@ -1,5 +1,5 @@
 import ActiveClass from "./activeClass.js";
-import GetPhs from "./GetPhs.js";
+import GetPhs from "./getPhs.js";
 import removeIndex from "./removeIndex.js";
 class Header { 
     getHeader(r) {
@@ -8,9 +8,7 @@ class Header {
         let header = document.createElement('header');
         header.className = "entete";
         main.prepend(header);
-        dataPhotos.forEach(element => { 
-            //console.log(element); 
-            let boxHeader = `
+        let boxHeader = `
                 <a id="flightMenu" href="#listPhotographers">Passer au contenu</a>
                 <div class="logo">
                 <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021"><img src="./img/logo.JPG"
@@ -31,28 +29,23 @@ class Header {
                     </nav>
                 <h2 class="titleH">Nos Photographes</h2> 
                 `;
-            header.innerHTML = boxHeader;
-        });
+        header.innerHTML = boxHeader;
         new ActiveClass().classActive();
     }
-    getNavFilter(r) {
-        let dataPhotos = r.photographers;
-        const navA = document.querySelectorAll('nav a');
-        navA.forEach((nav) => nav.addEventListener("click", function (nav) {
-            removeIndex();
-            let urlClicked = nav.target.innerHTML.slice(1);
-            //console.log(urlClicked);
-            dataPhotos.forEach(function (elm) {
-                elm.tags.filter((el)=>el.includes(urlClicked))
-                console.log(elm.tags);
-                if (elm.tags.includes(urlClicked.toLowerCase())) {
-                    let datas = [];
-                    datas.push(elm);
-                    new GetPhs().listPhs(datas);
-                }
-            });
-        }));
-        new GetPhs().listPhs(dataPhotos);
-    }
-}
+getNavFilter(r) {
+    let allPhotographers = r.photographers;
+    const navLinks = document.querySelectorAll('nav a[data-filter]');
+    navLinks.forEach(link => {
+        link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const filter = e.target.getAttribute('data-filter');
+            const filtered = allPhotographers.filter(ph => ph.tags.includes(filter));
+            removeIndex(); // vider la section
+            new GetPhs().listPhs(filtered.length ? filtered : allPhotographers); // fallback sur tous
+            // gérer classe active
+        });
+    });
+    // Affichage initial
+    new GetPhs().listPhs(allPhotographers);
+}}
 export default Header;

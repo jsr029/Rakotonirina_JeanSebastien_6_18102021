@@ -1,29 +1,34 @@
-.totalLikes{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 376px;
-    height: 55px;
-    position: fixed;
-    bottom: 0;
-    right: 2%;
-    background: #db8876;
-    border-radius: 5px;
-    font-size:24px;
-    font-weight: 500;
-    color: black;
-    .likes{
-        flex-direction: row;
-        justify-content: space-around;
-        padding: 11px 5px 17px 21px;
+.totalLikes {
+  position: fixed;
+  bottom: var(--space-lg);
+  right: var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--accent);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-weight: 600;
+  font-size: var(--fs-md);
+  color: var(--text);
+  z-index: 1000;
+  min-width: 200px;
+  
+  @media (max-width: 480px) {
+    bottom: var(--space-md);
+    right: var(--space-md);
+    left: var(--space-md);
+    justify-content: center;
+    font-size: var(--fs-sm);
+  }
+  
+  .heart {
+    cursor: pointer;
+    transition: var(--transition-fast);
+    
+    &:hover {
+      transform: scale(1.2);
     }
-    .salary{
-        width: 133px;
-        padding: 11px 24px 17px 5px;
-        text-align: right;
-    }
-    .icon{
-        width: 70px;
-    }
+  }
 }

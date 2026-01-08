@@ -5,68 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil and Photograph's Work, Fisheye</title>
+    <title>Fisheye - Profil Photographe</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans" rel="stylesheet" />
-    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome via kit (conservé car déjà utilisé) -->
+    <script src="https://kit.fontawesome.com/a773d24a5d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
-        <header class="photographHeader">
+        <!-- Header avec logo et retour à l'accueil -->
+        <header class="photographHeader" role="banner">
             <div class="logo">
-                <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/" tabindex="1">
-                    <img src="./img/logo.JPG" alt="Fisheye Home page">
+                <a href="https://jsr029.github.io/Rakotonirina_JeanSebastien_6_18102021/" tabindex="1" aria-label="Retour à la page d'accueil Fisheye">
+                    <img src="./img/logo.JPG" alt="Logo Fisheye - Page d'accueil">
                 </a>
             </div>
         </header>
-        <main class="global" aria-label="Photographer's info page">
-            <section id="Photograph" aria-label="Photograph's details">
-                <h2 style="display:none;">Photographer Details</h2>
-                <header class="profil"></header>
+
+        <main class="global" aria-label="Page profil du photographe">
+            <!-- Section profil du photographe -->
+            <section id="Photograph" class="profil-section" aria-labelledby="photographer-name">
+                <header class="profil" aria-labelledby="photographer-name"></header>
             </section>
-            <section class="tri" aria-label="Select by likes, by date or by
-                    title" role="input label" id="tri-select">
-                <h2 style="display:none;">Select by 3 modes</h2>
-                <label for="tri-select" tabindex="6">Trier par : </label>
-                <ul id="tri-select" role="listbox" tabindex="7" aria-activedescendant="pop"
-                    aria-labelledby="tri-select">
-                    <li class="popularite" role="option" id="pop" tabindex="8">Popularité</li>
-                    <li class="date" role="option" id="date" tabindex="9">Date</li>
-                    <li class="titre" role="option" id="tit" tabindex="10">Titre</li>
-                    <i class="fas fa-chevron-down triArrow" role="button" tabindex="11"></i>
-                    <i class="fas fa-chevron-up clicked" role="button" tabindex="11"></i>
-                </ul>
-            </section>
-            <section id="media" aria-label="Photographer's medias">
-                <h2 style="display:none;">Photographer's article</h2>
-            </section>
-            <section id="lightBox" role="complementary">
-                <h2 style="display:none;">Photographer Slider</h2>
-                <div id="slider">
-                    <div id="myLightModal" class="lightModal" aria-label=”image closeup view”>
-                        <div class="imageModal" id="slide"></div>
-                        <div class="mediaDetails"></div>
-                        <span class="closeLightBox">X</span>
-                        <div id="precedent">&lt;
-                        </div>
-                        <div id="suivant">&gt;
-                        </div>
-                    </div>
+
+            <!-- Bouton de contact (généré par JS, mais on réserve l'emplacement pour l'accessibilité) -->
+            <!-- Le bouton sera inséré dynamiquement dans .profil par votre JS -->
+
+            <!-- Tri des médias -->
+            <section class="tri" aria-labelledby="tri-label">
+                <label id="tri-label" for="tri-select">Trier par</label>
+                <div role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="tri-label" aria-controls="tri-list" id="tri-combobox">
+                    <button type="button" aria-label="Ouvrir le menu de tri" class="tri-button" tabindex="2">
+                        <span id="tri-selected">Popularité</span>
+                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                    </button>
+                    <ul id="tri-list" role="listbox" aria-labelledby="tri-label" class="tri-options" hidden>
+                        <li role="option" data-value="popularite" id="pop" tabindex="-1">Popularité</li>
+                        <li role="option" data-value="date" id="date" tabindex="-1">Date</li>
+                        <li role="option" data-value="titre" id="tit" tabindex="-1">Titre</li>
+                    </ul>
                 </div>
             </section>
-            <section class="totalLikes" role="navigation">
-                <h2 style="display:none;">Photographer Total likes</h2>
-                <div class="likes"></div>
-                <div class="icon">
-                    <i class="fas fa-heart"></i></div>
-                <div class="salary"></div>
+
+            <!-- Galerie des médias -->
+            <section id="media" aria-label="Galerie des médias du photographe">
+                <!-- Les médias seront insérés ici par JS -->
             </section>
+
+            <!-- Lightbox (modale) -->
+            <div id="lightBox" class="lightModal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="lightbox-title">
+                <div class="light-modal-content">
+                    <button type="button" class="closeLightBox" aria-label="Fermer la visionneuse">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <button type="button" id="precedent" class="arrow-btn" aria-label="Image précédente">
+                        <span aria-hidden="true">&lt;</span>
+                    </button>
+                    <button type="button" id="suivant" class="arrow-btn" aria-label="Image suivante">
+                        <span aria-hidden="true">&gt;</span>
+                    </button>
+                    <div class="videoRimg" id="slide" role="img" aria-live="polite"></div>
+                    <div class="mediaDetails" aria-label="Détails du média">
+                        <h2 id="lightbox-title"></h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bloc likes totaux + prix journalier -->
+            <aside class="totalLikes" role="region" aria-label="Statistiques du photographe">
+                <div class="likes" aria-live="polite">
+                    <span class="total-likes-count"></span>
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                </div>
+                <div class="salary" aria-label="Tarif journalier"></div>
+            </aside>
         </main>
     </div>
+
     <script type="module" src="./js/photograph.js"></script>
-    <script src="https://kit.fontawesome.com/a773d24a5d.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

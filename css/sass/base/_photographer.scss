@@ -1,101 +1,122 @@
-.container {
-    .logo {
-        a img {
-            width: 200px;
-        }
+.profil {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  background: var(--bg-secondary);
+  padding: var(--space-xl);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--space-2xl);
+  
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .identity {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    
+    h1 {
+      font-size: clamp(2rem, 8vw, 4rem);
+      color: var(--secondary);
+      margin: 0;
+      font-weight: 400;
     }
-
-    #media {
-        margin: 2rem 5rem;
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-around;
-        margin-bottom: 5rem;
+    
+    .location {
+      font-size: clamp(1.125rem, 4vw, 1.5rem);
+      color: var(--primary);
+      font-weight: 600;
     }
-
-    #media img,
-    #media video {
-        width: 320px;
-        height: 300px;
-        margin: 0.5rem;
-        object-fit: cover;
-        //object-position: center 0%;
+    
+    .tagline {
+      color: var(--text);
+      font-size: var(--fs-md);
     }
-
-    .pictVideos a .mediaDetails {
-        display: none;
+  }
+  
+  .tags {
+    align-self: flex-start;
+    margin-top: auto;
+  }
+  
+  .contactButton {
+    grid-column: 2;
+    justify-self: end;
+    padding: clamp(1rem, 3vw, 1.25rem) clamp(2rem, 5vw, 2.5rem);
+    background: var(--primary);
+    color: var(--text-light);
+    font-size: var(--fs-md);
+    font-weight: 700;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition-normal);
+    
+    &:hover,
+    &:focus {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
     }
-
-    .pictVideos .mediaDetails {
-        max-width: 320px;
-        display: flex;
-        margin: 0 5px 5px 8px;
-        flex-flow: row wrap;
-        justify-content: space-between;
-        align-items: center;
-        color: #901c1c;
-        .mediaLikes{
-            cursor: pointer;
-        }
-        h2 {
-            width: 222px;
-            font-size: 1rem;
-            color: #901c1c;
-            font-weight: 300;
-        }
-    }
-
-    .mediaPrice,
-    .mediaLikes {
-        font-weight: bold;
-    }
-    .mediaLikes{
-        margin-left: 15px;
-    }
-    .profil .identity{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        .location{
-            font-size: 1.5rem;
-        }
-        h1{
-            font-size: 4rem;
-            font-weight: 400;
-        }
-        ul{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            row-gap: 20px;
-            font-size: 1.12rem;
-            list-style-type: none;
-            line-height: 23px;
-            margin-left: 5px;
-        }
-    }
-    .contactButton {
-        padding: 15px;
-        background: #901c1c;
-        color: white;
-        font-size: 1.25rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 5px;
-
-        &:hover {
-            transform: scale(1.1);
-            background: #DB8876;
-        }
-    }
+  }
 }
 
-video,
-source {
+#media {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-2xl) auto;
+  max-width: 1440px;
+}
+
+.pictVideos {
+  position: relative;
+  aspect-ratio: 16/15;
+  
+  a {
+    display: block;
+    height: 100%;
+  }
+  
+  img,
+  video {
     width: 100%;
-}
-
-.index {
-    visibility: hidden;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: var(--transition-fast);
+  }
+  
+  .mediaDetails {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: var(--space-md);
+    opacity: 0;
+    transition: var(--transition-normal);
+    
+    h2 {
+      font-size: var(--fs-sm);
+      margin: 0 0 var(--space-xs) 0;
+      font-weight: 400;
+    }
+    
+    .mediaLikes {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 600;
+    }
+  }
+  
+  &:hover .mediaDetails,
+  &:focus-within .mediaDetails {
+    opacity: 1;
+  }
 }

@@ -1,0 +1,68 @@
+.menu {
+  /* Desktop */
+  @media (min-width: 801px) {
+    a:first-child { display: none; }  // Cache l'icône hamburger
+  }
+  
+  /* Mobile */
+  @media (max-width: 800px) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-secondary);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);
+    transition: var(--transition-normal);
+    gap: var(--space-lg);
+    z-index: var(--z-nav);
+    padding: var(--space-2xl);
+    
+    &.open {
+      transform: translateX(0);
+    }
+    
+    a:not(:first-child) {
+      display: none;
+      font-size: var(--fs-lg);
+    }
+    
+    a.icon {
+      display: block;
+      position: absolute;
+      top: var(--space-md);
+      right: var(--space-md);
+      font-size: var(--fs-lg);
+      border: none;
+      background: none;
+      z-index: var(--z-nav + 1);
+    }
+    
+    &.responsive a:not(:first-child) {
+      display: block;
+    }
+    
+    &.responsive a.icon {
+      position: fixed;
+      top: var(--space-md);
+      right: var(--space-md);
+    }
+  }
+}
+
+/* Overlay mobile */
+@media (max-width: 800px) {
+  body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: var(--z-nav - 1);
+  }
+}

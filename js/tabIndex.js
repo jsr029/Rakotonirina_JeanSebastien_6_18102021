@@ -18,9 +18,9 @@ class TabIndex{
                 logo.setAttribute("tabindex", 2);                
                 menu.setAttribute("tabindex", 3);
                 titleH.setAttribute("tabindex", 4);
+                let i = 5;
                 tab.forEach(function(e){
-                    var i = 5;
-                    e.setAttribute("tabindex", i++);
+                     e.setAttribute("tabindex", i++);
             });
     }
 }

@@ -1,122 +1,194 @@
-/* The Modal (background) */
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
-    height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 3000;
-    /* Black w/ opacity */
+/* MODALES UNIFIÉES */
+.modal,
+.lightModal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  z-index: var(--z-modal);
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-slow);
+  
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* Échap keyboard trap */
+  &:focus-within {
+    outline: none;
+  }
 }
 
-/* Modal Content/Box */
+/* Modal contact */
 .modal-content {
-    position: relative;
-    //max-height: 900px;
-    max-width: 669px;
-    border-radius: 5px;
-    color: black;
-    background-color:#DB8876;
-    margin: 15% auto;
-    /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-}
-
-/* The Close Button */
-.close {
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    color: #fff;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
+  max-width: min(90vw, 669px);
+  max-height: 90vh;
+  width: 100%;
+  background: var(--bg);
+  border-radius: var(--border-radius-lg);
+  padding: var(--space-xl);
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 3rem);
+    margin-bottom: var(--space-lg);
+    color: var(--primary);
+  }
+  
+  .inputBloc {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+    
+    input,
+    textarea {
+      padding: var(--space-md);
+      border: 1px solid var(--border);
+      border-radius: var(--border-radius);
+      font-size: clamp(1.125rem, 4vw, 2.25rem);
+      font-family: inherit;
+      transition: var(--transition-fast);
+      
+      &:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(217, 28, 28, 0.1);
+      }
+      
+      &:invalid {
+        border-color: var(--danger);
+      }
+    }
+    
+    .error {
+      color: var(--danger);
+      font-size: var(--fs-sm);
+      margin-top: 0.25rem;
+    }
+  }
+  
+  .formSubmit {
+    align-self: flex-start;
+    padding: clamp(1rem, 3vw, 2rem) clamp(2rem, 5vw, 3rem);
+    background: var(--primary);
+    color: var(--text-light);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--fs-md);
+    font-weight: 700;
     cursor: pointer;
+    transition: var(--transition-normal);
+    
+    &:hover:not(:disabled),
+    &:focus:not(:disabled) {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
 }
 
-.classContactForm {
-    display: flex;
-    flex-direction: column;
+/* Lightbox */
+.lightModal {
+  .videoRimg {
+    max-width: 95vw;
+    max-height: 80vh;
+    img,
+    video {
+      width: 100%;
+      height: auto;
+      max-height: 70vh;
+      object-fit: contain;
+      border-radius: var(--border-radius);
+    }
+  }
+  
+  .mediaDetails {
+    position: absolute;
+    bottom: var(--space-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.95);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    min-width: 300px;
+    
+    h2 {
+      color: var(--primary);
+      font-size: var(--fs-md);
+      margin: 0;
+    }
+  }
 }
 
-form {
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
+/* Boutons modales (unifiés) */
+.close,
+.closeLightBox {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  background: none;
+  border: none;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--text-light);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: var(--transition-fast);
+  z-index: var(--z-modal + 1);
+  
+  &:hover,
+  &:focus {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    transform: scale(1.1);
+  }
+}
 
-    h1 {
-        margin-bottom: 20px;
-        font-size: 3rem;
-        font-weight: 400;
+.arrow {
+  .leftArrow,
+  .rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: none;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    font-size: clamp(1.5rem, 5vw, 3rem);
+    color: var(--primary);
+    cursor: pointer;
+    transition: var(--transition-fast);
+    
+    &:hover,
+    &:focus {
+      background: white;
+      transform: translateY(-50%) scale(1.1);
+      box-shadow: var(--shadow-md);
     }
-
-    .formSubmit {
-        background: #901C1C;
-        color: white;
-        width: 170px;
-        height: 68px;
-        margin-top: 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 2rem;
-
-        &:hover {
-            background: lighten(#901C1C, 10%);
-            transform: scale(1.1);
-        }
-    }
-
-    .inputBloc {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        font-size: 2.25rem;
-        margin: auto;
-        input[type="text"], input[type="email"]{
-            height: 68px;
-            max-width: 100%;
-            border-radius: 5px;
-            border: none;
-            font-size: 2.25rem;
-        }
-        textarea{
-            font-size: 2rem;
-            border-radius: 5px;
-        }
-        .error-firstName,
-        .error-lastName,
-        .error-blocName,
-        .error-blocFirstName,
-        .error-blocMail,
-        .error-blocMessage {
-            margin-left: 30px;
-            color: red;
-            font-size: 1.5rem;
-            font-weight: 400;
-        }
-    }
-    .blocName, .blocFirstName, .blocMessage, .blocMail{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-    }
-}    
+    
+    &.leftArrow { left: 1rem; }
+    &.rightArrow { right: 1rem; }
+  }
+}
