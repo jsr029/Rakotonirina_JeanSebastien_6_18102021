@@ -3,8 +3,8 @@ function editNav() {
     var icon = document.querySelector(".icon");
     if (x.className === "entete") {
       x.className += " responsive";
-  } else {
+    } else {
       x.className = "entete";
-  }
+    }
 }
 export default editNav;
