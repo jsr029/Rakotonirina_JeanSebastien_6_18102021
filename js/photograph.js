@@ -1,7 +1,7 @@
 import databaseAvailable from "./json2Js.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
-import LightBox from "./LightBox.js";  // Attention à la casse si vous avez renommé
+import LightBox from "./lightBox.js";  // Attention à la casse si vous avez renommé
 import AddLikes from "./addLikes.js";
 import DropDown from "./DropDown.js";
 import KeyDownPh from "./keyDownPh.js";
