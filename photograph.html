@@ -34,21 +34,20 @@
             <!-- Le bouton sera inséré dynamiquement dans .profil par votre JS -->
 
             <!-- Tri des médias -->
-            <section class="tri" aria-labelledby="tri-label">
-                <label id="tri-label" for="tri-select">Trier par</label>
-                <div role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="tri-label" aria-controls="tri-list" id="tri-combobox">
-                    <button type="button" aria-label="Ouvrir le menu de tri" class="tri-button" tabindex="2">
-                        <span id="tri-selected">Popularité</span>
-                        <i class="fas fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <ul id="tri-list" role="listbox" aria-labelledby="tri-label" class="tri-options" hidden>
-                        <li role="option" data-value="popularite" id="pop" tabindex="-1">Popularité</li>
-                        <li role="option" data-value="date" id="date" tabindex="-1">Date</li>
-                        <li role="option" data-value="titre" id="tit" tabindex="-1">Titre</li>
-                    </ul>
-                </div>
-            </section>
-
+<section class="tri" aria-labelledby="tri-label">
+    <label id="tri-label">Trier par</label>
+    <div id="tri-combobox" role="combobox" aria-expanded="false" aria-haspopup="listbox" aria-controls="tri-list">
+        <button type="button" class="tri-button" aria-label="Choisir le mode de tri">
+            <span id="tri-selected">Popularité</span>
+            <i class="fas fa-chevron-down" aria-hidden="true"></i>
+        </button>
+        <ul id="tri-list" role="listbox" hidden>
+            <li role="option" data-value="popularite" tabindex="-1">Popularité</li>
+            <li role="option" data-value="date" tabindex="-1">Date</li>
+            <li role="option" data-value="titre" tabindex="-1">Titre</li>
+        </ul>
+    </div>
+</section>
             <!-- Galerie des médias -->
             <section id="media" aria-label="Galerie des médias du photographe">
                 <!-- Les médias seront insérés ici par JS -->

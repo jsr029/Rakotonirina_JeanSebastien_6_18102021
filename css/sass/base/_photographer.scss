@@ -48,8 +48,9 @@
   
   .contactButton {
     grid-column: 2;
+    height:4px;
+    padding: 10px;
     justify-self: end;
-    padding: 50px;
     background: var(--primary);
     color: var(--text-light);
     font-size: var(--fs-md);
