@@ -1,55 +1,137 @@
 import SliderModal from "./Slider.js";
 import TabIndexModal from "./tabIndexModal.js";
+
 class LightBox {
+    constructor() {
+        this.lightBoxModal = document.getElementById("myLightModal");
+        this.closeBtn = document.querySelector(".closeLightBox");
+        this.mediaLinks = []; // Sera rempli une fois
+        this.currentIndex = 0;
+        this.previousFocusElement = null;
 
-    addModal() {
-        var lmc = document.querySelector('.light-modal-content');
-        // Get the lightBoxModal
-        var lightBoxModal = document.querySelector("#myLightModal");
-        var imageModalH = document.querySelector('.imageModal');
-        // Get the <span> element that closes the lightBoxModal
-        const spanClose = document.querySelector(".closeLightBox");
-        // When the user clicks on the class selector videoRimg, open the lightBoxModal
-        // and display the img clicked
-        const pv = Array.from(document.querySelectorAll('.pictVideos a'));
-        pv.forEach((v, index) => v.addEventListener("click", function (elt) {
-            imageModalH.innerHTML = v.innerHTML;
-            //mD.innerHTML = v.parentNode.childNodes[3].innerHTML;
-            lightBoxModal.style.display = "flex";
-            new SliderModal(pv, index);
-            new TabIndexModal().tabIndexPhModal();
-        }));
-        const pvimg = Array.from(document.querySelectorAll('.pictVideos a'));
-        pvimg.forEach((v, index) => v.addEventListener("keydown", function (event) {
-            if (event.code === "Enter") {
-                console.log(v);
-                lightBoxModal.style.display = "flex";
-                imageModalH.innerHTML = v.innerHTML;
-                new SliderModal(pv, index);
-                new TabIndexModal().tabIndexPhModal();
+        // Éviter les ajouts multiples d'event listeners
+        this.boundHandleMediaOpen = this.handleMediaOpen.bind(this);
+        this.boundHandleClose = this.handleClose.bind(this);
+        this.boundHandleKeyClose = this.handleKeyClose.bind(this);
+        this.boundHandleOutsideClick = this.handleOutsideClick.bind(this);
+        this.boundHandleKeyNav = this.handleKeyNav.bind(this);
+    }
 
-            }
-        }));
-        // When the user clicks on <span> (x), close the lightBoxModal
-        spanClose.addEventListener("click", function () {
-            lightBoxModal.style.display = "none";
-        });
-        const modal = document.querySelector("#myLightModal");
-        var spanCloseLightModal = document.getElementsByClassName("closeLightBox")[0];
-        spanCloseLightModal.addEventListener("keydown", (event) => {
-            if (event.code === "Enter") {
-                modal.style.display = "none";
-            }
+    init() {
+        if (!this.lightBoxModal || !this.closeBtn) {
+            console.warn("Lightbox elements not found in DOM");
+            return;
+        }
+
+        // Récupérer tous les liens médias une seule fois
+        this.mediaLinks = Array.from(document.querySelectorAll('.pictVideos a'));
+
+        // Ajouter les événements (click + Enter) sur chaque média
+        this.mediaLinks.forEach((link, index) => {
+            link.addEventListener("click", (e) => this.boundHandleMediaOpen(e, index));
+            link.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    this.boundHandleMediaOpen(e, index);
+                }
+            });
         });
 
-        // When the user clicks anywhere outside of the lightBoxModal, close it
-        window.onclick = function (event) {
-            if (event.target == lightBoxModal) {
-                lightBoxModal.style.display = "none";
+        // Fermeture
+        this.closeBtn.addEventListener("click", this.boundHandleClose);
+        this.closeBtn.addEventListener("keydown", this.boundHandleKeyClose);
+
+        // Fermeture au clic extérieur ou Escape
+        this.lightBoxModal.addEventListener("click", this.boundHandleOutsideClick);
+        document.addEventListener("keydown", this.boundHandleKeyNav);
+    }
+
+    open(index) {
+        this.currentIndex = index;
+        const clickedLink = this.mediaLinks[index];
+        const mediaContent = clickedLink.innerHTML;
+
+        // Insérer le média dans la lightbox
+        const slideContainer = document.getElementById("slide");
+        if (slideContainer) {
+            slideContainer.innerHTML = mediaContent;
+        }
+
+        // Accessibilité
+        this.previousFocusElement = document.activeElement;
+        this.lightBoxModal.style.display = "flex"; // ou utilisez une classe .open
+        this.lightBoxModal.setAttribute("aria-hidden", "false");
+
+        // Trap focus dans la modale
+        this.trapFocus();
+
+        // Initialiser le slider et le tabindex
+        new SliderModal(this.mediaLinks, index);
+        new TabIndexModal().tabIndexPhModal();
+
+        // Focus sur le bouton de fermeture pour une meilleure accessibilité
+        this.closeBtn.focus();
+    }
+
+    close() {
+        this.lightBoxModal.style.display = "none";
+        this.lightBoxModal.setAttribute("aria-hidden", "true");
+
+        // Retour du focus à l'élément précédent
+        if (this.previousFocusElement) {
+            this.previousFocusElement.focus();
+        }
+    }
+
+    // Handlers
+    handleMediaOpen(e, index) {
+        e.preventDefault();
+        this.open(index);
+    }
+
+    handleClose() {
+        this.close();
+    }
+
+    handleKeyClose(e) {
+        if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            this.close();
+        }
+    }
+
+    handleOutsideClick(e) {
+        if (e.target === this.lightBoxModal) {
+            this.close();
+        }
+    }
+
+    handleKeyNav(e) {
+        if (e.key === "Escape" && this.lightBoxModal.style.display === "flex") {
+            this.close();
+        }
+    }
+
+    // Focus trap simple dans la modale
+    trapFocus() {
+        const focusableElements = this.lightBoxModal.querySelectorAll(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+        );
+        const first = focusableElements[0];
+        const last = focusableElements[focusableElements.length - 1];
+
+        this.lightBoxModal.addEventListener("keydown", (e) => {
+            if (e.key === "Tab") {
+                if (e.shiftKey && document.activeElement === first) {
+                    e.preventDefault();
+                    last.focus();
+                } else if (!e.shiftKey && document.activeElement === last) {
+                    e.preventDefault();
+                    first.focus();
+                }
             }
-        };
+        });
     }
 }
-
 
 export default LightBox;

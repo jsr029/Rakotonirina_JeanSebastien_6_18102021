@@ -1,123 +1,134 @@
 import databaseAvailable from "./json2Js.js";
 import Modal from "./modal.js";
 import Form from "./form.js";
-import LightBox from "./lightBox.js";
+import LightBox from "./LightBox.js";  // Attention à la casse si vous avez renommé
 import AddLikes from "./addLikes.js";
 import DropDown from "./DropDown.js";
 import KeyDownPh from "./keyDownPh.js";
 import TabIndexPh from "./tabIndexPh.js";
-databaseAvailable.then(function (r) {
-    try {
-        new Photograph().getProfilById(r);
-        new Photograph().getMediasByTags(r);
-        new DropDown(r).upDown(r);
-        new KeyDownPh().rightArrow(r);
-        new TabIndexPh().settriSelect();
-    } catch (e) {
-        console.log(e.name + ": " + e.message);
-    }
-});
 
 class Photograph {
-    getProfilById(r) {
-        var dataPhotos = r.photographers;
-        var urlClicked = window.location.href;
-        //split it by #
-        var urlSplit = urlClicked.split('=');
-        // take the index 1 which contains the tag we need to compare
-        var aClicked = urlSplit[1];
+    constructor(data) {
+        this.photographers = data.photographers;
+        this.media = data.media;
+        this.photographerId = this.getPhotographerIdFromUrl();
+        this.currentPhotographer = this.photographers.find(p => p.id == this.photographerId);
+        this.photographerMedia = this.media.filter(m => m.photographerId == this.photographerId);
+    }
+
+    // Récupère l'ID depuis l'URL (?id=XXX)
+    getPhotographerIdFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id');
+    }
+
+    // Affichage du profil photographe
+    renderProfile() {
+        if (!this.currentPhotographer) return;
 
         const profil = document.querySelector('.profil');
+        const salary = document.querySelector('.salary');
 
-        // Loop in the photographers tab
-        dataPhotos.forEach(function (k) {
-            if (k.id == aClicked) {
-                let boxPhotograph = `
-                    <div class="identity">
-                        <h1 class="name" tabindex="1" role="header">${k.name}</h1>
-                        <ul tabindex="2" aria-label="Location and tags" role="list">
-                            <li class="location">${k.city + ', ' + k.country}</li>
-                            <li class="tagline">${k.tagline}</li>
-                            <li class="tags" tabindex="-1">${k.tags.map(tag => `<a class="tagsProfil" href="../#${tag}">#${tag}</a>`).join(" ")}</li>
-                        </ul>
-                    </div>
-                    <ul class="contact" aria-label="Contacter-moi" role="button">
-                        <button class="contactButton" id="myBtn" tabindex="4">Contacter Moi</button>
-                    </ul>
-                    <ul class="image">
-                        <li class="photo">
-                            <a href="javascript:void(0)" class="mediaPhVd"><img src="${"./img/Photographers ID Photos/" + k.portrait}" alt="${k.name}" tabindex="5"></a>
-                        </li>
-                    </ul>
-            `;
-                profil.insertAdjacentHTML("afterbegin", boxPhotograph);
-                /** Inject in the Html the salary per day */
-                const salary = document.querySelector('.salary');
-                salary.insertAdjacentHTML("beforeend", k.price + '€/jour');
-                /*** End Salary injection */
-            }
-        });
+        const profileHTML = `
+            <div class="identity">
+                <h1 class="name" tabindex="2">${this.currentPhotographer.name}</h1>
+                <ul aria-label="Localisation et description">
+                    <li class="location" tabindex="3">${this.currentPhotographer.city}, ${this.currentPhotographer.country}</li>
+                    <li class="tagline" tabindex="4">${this.currentPhotographer.tagline}</li>
+                </ul>
+            </div>
+            <button class="contactButton" id="myBtn" tabindex="5">Contactez-moi</button>
+            <div class="image">
+                <img class="ph foto" src="./img/Photographers ID Photos/${this.currentPhotographer.portrait}" 
+                     alt="${this.currentPhotographer.name}" tabindex="6">
+            </div>
+            <ul class="tags" aria-label="Tags du photographe">
+                ${this.currentPhotographer.tags.map(tag => 
+                    `<li><a class="tagsProfil" href="../index.html#${tag}" tabindex="7">#${tag}</a></li>`
+                ).join('')}
+            </ul>
+        `;
+
+        profil.innerHTML = profileHTML;
+        salary.textContent = `${this.currentPhotographer.price}€ / jour`;
     }
-    getMediasByTags(r) {
-        var dataMedia = r.media;
-        var urlClicked = window.location.href;
-        //split it by #
-        var urlSplit = urlClicked.split('=');
-        // take the index 1 which contains the tag we need to compare
-        var aClicked = urlSplit[1];
-        const mediaH = document.querySelector('#media');
-        const idn = document.querySelector('.identity .name');
-        var idnSplit = idn.innerHTML.split(" ");
-        dataMedia.forEach(function (d) {
-            var media = (d.image) ? d.image : d.video;
-            var mediaSplit = media.split('.');
-            var mediaExt = mediaSplit[1];
-            if (d.photographerId == aClicked) {
-                var videoOrimg = (mediaExt === 'jpg') ?
-                    `<img src="./img/${idnSplit[0]}/${d.image}" alt="${d.title}, a ${idn.innerHTML}'s work">` :
-                    `<video controls><source src="./img/${idnSplit[0]}/${d.video}"></video>`;
-                let boxMedia = `
-                <article class="pictVideos">
-                <a href="javascript:void(0)">
-                    <div class="videoRimg">
-                        ${videoOrimg}
-                    </div>
+
+    // Affichage des médias (triés par popularité par défaut)
+    renderMedia(sortBy = 'likes') {
+        const mediaSection = document.querySelector('#media');
+        mediaSection.innerHTML = ''; // Vidage complet
+
+        // Copie triée
+        let sortedMedia = [...this.photographerMedia];
+        if (sortBy === 'likes') {
+            sortedMedia.sort((a, b) => b.likes - a.likes);
+        } else if (sortBy === 'date') {
+            sortedMedia.sort((a, b) => new Date(b.date) - new Date(a.date));
+        } else if (sortBy === 'title') {
+            sortedMedia.sort((a, b) => a.title.localeCompare(b.title));
+        }
+
+        const folderName = this.currentPhotographer.name.split(' ')[0].replace('-', ' ');
+
+        sortedMedia.forEach(item => {
+            const isVideo = item.video !== undefined;
+            const src = isVideo ? item.video : item.image;
+            const mediaElement = isVideo
+                ? `<video controls aria-label="${item.title}">
+                       <source src="./img/${folderName}/${src}" type="video/mp4">
+                   </video>`
+                : `<img src="./img/${folderName}/${src}" alt="${item.title}, photographie de ${this.currentPhotographer.name}">`;
+
+            const mediaHTML = `
+                <article class="pictVideos" data-media-id="${item.id}">
+                    <a href="javascript:void(0);" class="media-link" tabindex="8" aria-label="Ouvrir ${item.title} en plein écran">
+                        ${mediaElement}
+                    </a>
                     <div class="mediaDetails">
-                    <h2>${d.title}</h2>
-                        <span class="mediaPrice">${d.price}€</span>
-                        <span class="heartLikes"><i class="far fa-heart clicked" aria-hidden="true"></i></span>
-                    </div>
-                </a>
-                    <div class="mediaDetails tab">
-                    <h2>${d.title}</h2>
-                        <span class="mediaPrice">${d.price}€</span>
-                        <span class="mediaLikes">${d.likes}</span>
-                        <span class="heartLikes"><i class="fas fa-heart" aria-hidden="true"></i></span>
+                        <h2>${item.title}</h2>
+                        <span class="mediaPrice">${item.price}€</span>
+                        <span class="mediaLikes" tabindex="9" role="button" aria-label="J'aime (${item.likes} likes)">
+                            <span class="likes-count">${item.likes}</span>
+                            <i class="fas fa-heart" aria-hidden="true"></i>
+                        </span>
                     </div>
                 </article>
-                    `;
-                mediaH.insertAdjacentHTML('afterbegin', boxMedia);
-            }
+            `;
+            mediaSection.insertAdjacentHTML('beforeend', mediaHTML);
         });
-        new Modal().showHtmlModal();
-        new Modal().addModal();
-        new Form().getFields();
-        new LightBox().addModal();
-        new AddLikes().adHeart();
-        //this.splitProfilTags();
+
+        // Initialisation des fonctionnalités après insertion
+        new LightBox().init();
+        new AddLikes().init(); // supposant que addLikes a une méthode init()
     }
-    splitProfilTags() {
-        let tags = document.querySelector('header .profil .tags');
-        var tagsSplit = tags.innerHTML.split(',');
-        let tagsHtml1 = document.createElement('span');
-        tagsHtml1.className = 'first';
-        tags.appendChild(tagsHtml1);
-        for (let i = 0; i < 8; i++) {
-            if (tagsSplit[i] !== 'undefined' && !isNaN(tagsSplit[i])) {
-                console.log(tagsSplit[i]);
-            }
+
+    // Initialisation complète
+    init() {
+        if (!this.currentPhotographer) {
+            console.error("Photographe non trouvé pour l'ID :", this.photographerId);
+            return;
         }
-        console.log(tagsSplit[1]);
+
+        this.renderProfile();
+        this.renderMedia('likes'); // tri par défaut
+
+        // Autres modules
+        new Modal().init(); // si vous avez une méthode init
+        new Form().init();
+        new DropDown(this.photographerMedia, (sortBy) => this.renderMedia(sortBy));
+        new KeyDownPh().init();
+        new TabIndexPh().settriSelect();
     }
 }
+
+// Chargement des données et lancement
+databaseAvailable
+    .then(data => {
+        const photographPage = new Photograph(data);
+        photographPage.init();
+    })
+    .catch(err => {
+        console.error("Erreur chargement données :", err);
+    });
+
 export default Photograph;

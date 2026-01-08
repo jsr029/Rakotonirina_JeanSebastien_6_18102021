@@ -7,3 +7,6 @@
 @use 'base/slider' as *;
 @use 'layout/totalLikes' as *;
 @use 'layout/tri' as *;
+ul{
+  list-style-type: none;
+}

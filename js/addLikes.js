@@ -1,98 +1,98 @@
 class AddLikes {
     constructor() {
-        //Object totalLikes
-        this.totalLikes = function () {
-            var arrayLikes = [];
-            let allLikes = document.querySelectorAll('.tab .mediaLikes');
-            allLikes.forEach((elm) => {
-                arrayLikes.push(parseInt(elm.innerHTML));
-            });
-            var total = 0;
-            for (var i = 0; i < arrayLikes.length; i++) {
-                total += arrayLikes[i];
-            }
-            const likes = document.querySelector('.likes');
-            likes.innerHTML = total;
-            return likes.innerHTML;
-        };
+        this.totalLikesElement = document.querySelector('.totalLikes .likes');
+        this.likesCountSpan = null; // Sera rempli avec <span class="likes-count">
+        this.totalLikes = 0;
     }
-    adHeart() {
-        //Selector class likes
-        let totalLikesH = document.querySelector('.totalLikes .likes');
-        totalLikesH.innerHTML = totalNumberOfLikes;
-        //Get the total likes fron the constructor 
-        var totalNumberOfLikes = this.totalLikes();
-        //Selector mediaLikes
-        let mediaLikes = Array.from(document.querySelectorAll('.tab .mediaLikes'));
-        //for each mediaLikes, on click event, looking for class value mediaLikesClass, putting conditions on length <2 or >1
-        mediaLikes.forEach((ic) => ic.addEventListener("click", function (ico) {
-            //console.log(ico.target.innerHTML);
-            //set medialikes html targeted by the mouse click
-            let mediaLikesValue = ico.target;
-            //Set value type number of the innerHtml
-            let likesNum = parseInt(mediaLikesValue.innerHTML);
-            //find mediaLikes className
-            let mediaLikesClass = ico.target.className;
-            //Split the classname mediaLikes clicked
-            let mediaLikesClassSplit = mediaLikesClass.split(" ");
-            //If the array.length containing className is less than 2 
-            if (mediaLikesClassSplit.length < 2) {
-                //console.log(mediaLikesClassSplit.length);
-                //add clicked to the className mediaLikes
-                mediaLikesValue.classList.add('clicked');
-                //console.log(mediaLikesClass);
-                //Add 1 to the mediaLikesValue in its Html 
-                mediaLikesValue.innerHTML = likesNum + 1;
-                //increment +1 the total of like
-                ++totalNumberOfLikes;
-            }
-            //if the array.length containing className is more than 1, as it used to be [mediaLikes, clicked]
-            if (mediaLikesClassSplit.length > 1) {
-                //remove clicked in the array class
-                mediaLikesValue.classList.remove('clicked');
-                //Substract 1 from the value type number 
-                mediaLikesValue.innerHTML = likesNum - 1;
-                //Substract 1 from the total of likes
-                --totalNumberOfLikes;
-            }
-            //inject the total of likes inside class likes
-            totalLikesH.innerHTML = totalNumberOfLikes;
-        }));
-        mediaLikes.forEach((ic) => ic.addEventListener("keydown", function (ico) {
-            if (ico.code === 'Enter') {
-                //console.log(ico.target.innerHTML);
-                //set medialikes html targeted by the mouse click
-                let mediaLikesValue = ico.target;
-                //Set value type number of the innerHtml
-                let likesNum = parseInt(mediaLikesValue.innerHTML);
-                //find mediaLikes className
-                let mediaLikesClass = ico.target.className;
-                //Split the classname mediaLikes clicked
-                let mediaLikesClassSplit = mediaLikesClass.split(" ");
-                //If the array.length containing className is less than 2 
-                if (mediaLikesClassSplit.length < 2) {
-                    //console.log(mediaLikesClassSplit.length);
-                    //add clicked to the className mediaLikes
-                    mediaLikesValue.classList.add('clicked');
-                    //console.log(mediaLikesClass);
-                    //Add 1 to the mediaLikesValue in its Html 
-                    mediaLikesValue.innerHTML = likesNum + 1;
-                    //increment +1 the total of like
-                    ++totalNumberOfLikes;
+
+    /**
+     * Initialise le système de likes :
+     * - Calcule le total initial
+     * - Attache les événements click + Enter sur tous les boutons likes
+     */
+    init() {
+        if (!this.totalLikesElement) {
+            console.warn("Élément .totalLikes .likes non trouvé");
+            return;
+        }
+
+        // Récupérer tous les éléments contenant le nombre de likes individuels
+        const likesElements = document.querySelectorAll('.mediaLikes .likes-count');
+
+        // Calcul du total initial
+        this.totalLikes = 0;
+        likesElements.forEach(el => {
+            this.totalLikes += parseInt(el.textContent, 10) || 0;
+        });
+
+        // Mise à jour de l'affichage du total (avec cœur)
+        this.updateTotalDisplay();
+
+        // Attacher les événements (click + clavier) une seule fois
+        document.querySelectorAll('.mediaLikes').forEach(likeContainer => {
+            likeContainer.addEventListener('click', (e) => this.handleLikeToggle(e, likeContainer));
+            likeContainer.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.handleLikeToggle(e, likeContainer);
                 }
-                //if the array.length containing className is more than 1, as it used to be [mediaLikes, clicked]
-                if (mediaLikesClassSplit.length > 1) {
-                    //remove clicked in the array class
-                    mediaLikesValue.classList.remove('clicked');
-                    //Substract 1 from the value type number 
-                    mediaLikesValue.innerHTML = likesNum - 1;
-                    //Substract 1 from the total of likes
-                    --totalNumberOfLikes;
-                }
-                //inject the total of likes inside class likes
-                totalLikesH.innerHTML = totalNumberOfLikes;
-            }
-        }));
+            });
+
+            // Accessibilité : rôle bouton + aria-label dynamique
+            likeContainer.setAttribute('role', 'button');
+            likeContainer.setAttribute('tabindex', '0');
+            const count = parseInt(likeContainer.querySelector('.likes-count').textContent, 10);
+            likeContainer.setAttribute('aria-label', `J'aime cette photo (${count} likes)`);
+        });
+    }
+
+    /**
+     * Gère le like/delike
+     */
+    handleLikeToggle(event, container) {
+        // Empêche la propagation si clic sur l'icône cœur
+        event.stopPropagation();
+
+        const countElement = container.querySelector('.likes-count');
+        if (!countElement) return;
+
+        let currentLikes = parseInt(countElement.textContent, 10);
+
+        if (container.classList.contains('clicked')) {
+            // Déjà liké → on retire
+            currentLikes--;
+            container.classList.remove('clicked');
+            this.totalLikes--;
+        } else {
+            // Pas encore liké → on ajoute
+            currentLikes++;
+            container.classList.add('clicked');
+            this.totalLikes++;
+        }
+
+        // Mise à jour affichage
+        countElement.textContent = currentLikes;
+        this.updateTotalDisplay();
+
+        // Mise à jour aria-label
+        container.setAttribute('aria-label', `J'aime cette photo (${currentLikes} likes)`);
+    }
+
+    /**
+     * Met à jour l'affichage du total des likes
+     */
+    updateTotalDisplay() {
+        // Structure attendue : <div class="likes"><span class="likes-count">123</span> <i class="fas fa-heart"></i></div>
+        if (!this.likesCountSpan) {
+            // Créer la structure si elle n'existe pas encore
+            this.totalLikesElement.innerHTML = `
+                <span class="likes-count">${this.totalLikes}</span>
+                <i class="fas fa-heart" aria-hidden="true"></i>
+            `;
+            this.likesCountSpan = this.totalLikesElement.querySelector('.likes-count');
+        } else {
+            this.likesCountSpan.textContent = this.totalLikes;
+        }
     }
 }
 
